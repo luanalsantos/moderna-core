@@ -109,7 +109,7 @@ const css = `
 
 .site-footer {
   background-color: #ffffff;
-  padding: 40px 0 36px;
+  padding: 24px 0 20px;
   border-top: 1px solid #e8e8e8;
 }
 
@@ -117,6 +117,11 @@ const css = `
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: flex-start;
 }
 
 .footer-logo img {
@@ -127,7 +132,7 @@ const css = `
 .footer-links {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 6px;
 }
@@ -146,7 +151,7 @@ const css = `
 .footer-contact {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
   gap: 6px;
 }
@@ -165,24 +170,27 @@ const css = `
 
 .footer-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
 }
 
 .footer-col-logo {
   flex: 0 0 auto;
-  width: 33.333%;
+  display: flex;
+  align-items: flex-start;
 }
 
 .footer-col-links {
   flex: 0 0 auto;
-  width: 33.333%;
+  display: flex;
+  align-items: flex-start;
 }
 
 .footer-col-contact {
   flex: 0 0 auto;
-  width: 33.333%;
+  display: flex;
+  align-items: flex-start;
 }
 
 .jornada-row {
