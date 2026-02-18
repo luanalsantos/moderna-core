@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moderna Core - Jornada Integrada</title>
-  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -21,18 +20,20 @@
       overflow-x: hidden;
     }
 
-    /* ===== JORNADA INTEGRADA SECTION ===== */
     .jornada-integrada {
       background-color: #f5f6f8;
       position: relative;
       overflow: hidden;
-      padding: 80px 0 60px;
+      padding: 80px 0 0;
+      min-height: 480px;
     }
 
     .jornada-integrada .content-wrapper {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
+      position: relative;
+      z-index: 3;
     }
 
     .jornada-text-col {
@@ -40,7 +41,8 @@
       flex-direction: column;
       justify-content: center;
       position: relative;
-      z-index: 2;
+      z-index: 3;
+      padding-bottom: 60px;
     }
 
     .jornada-text-col h2 {
@@ -78,22 +80,39 @@
       transform: translateY(-2px);
     }
 
-    .jornada-image-col {
+    .jornada-image-area {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 55%;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
-      position: relative;
+      pointer-events: none;
+    }
+
+    .jornada-3d-element {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 110%;
+      height: 120%;
+      object-fit: cover;
+      object-position: left center;
       z-index: 1;
     }
 
-    .jornada-image-col img {
-      max-width: 100%;
-      height: auto;
-      max-height: 480px;
+    .jornada-child {
+      position: relative;
+      z-index: 2;
+      max-height: 460px;
+      width: auto;
       object-fit: contain;
+      margin-bottom: 0;
     }
 
-    /* ===== FOOTER ===== */
     .site-footer {
       background-color: #ffffff;
       padding: 40px 0 36px;
@@ -150,10 +169,30 @@
       color: #1a3a4a;
     }
 
-    /* ===== RESPONSIVE ===== */
+    @media (min-width: 1400px) {
+      .jornada-3d-element {
+        width: 120%;
+        height: 140%;
+      }
+    }
+
+    @media (min-width: 1800px) {
+      .jornada-3d-element {
+        width: 130%;
+        height: 160%;
+      }
+    }
+
     @media (max-width: 991.98px) {
       .jornada-integrada {
-        padding: 60px 0 40px;
+        padding: 60px 0 0;
+        min-height: auto;
+      }
+
+      .jornada-text-col {
+        align-items: center;
+        text-align: center;
+        padding-bottom: 32px;
       }
 
       .jornada-text-col h2 {
@@ -161,20 +200,31 @@
         text-align: center;
       }
 
-      .jornada-text-col {
-        align-items: center;
-        text-align: center;
-        margin-bottom: 32px;
+      .jornada-image-area {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        min-height: 350px;
       }
 
-      .jornada-image-col img {
-        max-height: 380px;
+      .jornada-3d-element {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        transform: none;
+        object-position: center bottom;
+      }
+
+      .jornada-child {
+        max-height: 340px;
       }
     }
 
     @media (max-width: 767.98px) {
       .jornada-integrada {
-        padding: 48px 0 32px;
+        padding: 48px 0 0;
       }
 
       .jornada-text-col h2 {
@@ -186,8 +236,12 @@
         padding: 8px 24px;
       }
 
-      .jornada-image-col img {
-        max-height: 300px;
+      .jornada-child {
+        max-height: 280px;
+      }
+
+      .jornada-image-area {
+        min-height: 280px;
       }
 
       .footer-logo {
@@ -208,11 +262,9 @@
 </head>
 <body>
 
-  <!-- ===== JORNADA INTEGRADA ===== -->
   <section class="jornada-integrada" id="jornada_integrada">
     <div class="content-wrapper">
-      <div class="row align-items-center g-4">
-        <!-- Text Column -->
+      <div class="row align-items-center g-0">
         <div class="col-lg-6 jornada-text-col">
           <h2>
             QUER CONSTRUIR ESSA<br>
@@ -221,34 +273,35 @@
           </h2>
           <a href="#" class="btn-escola-parceira">SEJA UMA ESCOLA PARCEIRA</a>
         </div>
-        <!-- Image Column -->
-        <div class="col-lg-6 jornada-image-col">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crianca-brincando-com-3d-Gc1NmkqnIOGBufr93cZ657S1JKz4L2.png"
-            alt="Crianca feliz brincando no balanco com efeito 3D"
-          >
-        </div>
       </div>
+    </div>
+    <div class="jornada-image-area">
+      <img
+        class="jornada-3d-element"
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/elemento-3d-variante-1-zLdhun2QsLcdr3GmxSEnGhg1PIH5wc.png"
+        alt=""
+      >
+      <img
+        class="jornada-child"
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crianca-brincando-S8LXyrsP2u304tPm0R3A6pi4zSaEJN.png"
+        alt="Crianca feliz brincando no balanco"
+      >
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="content-wrapper">
       <div class="row align-items-center g-3">
-        <!-- Logo -->
         <div class="col-md-4 footer-logo">
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-core-azul-hxsvdquRcy22ha78lbdUuMDxT2apEx.png"
             alt="Logo Moderna Core"
           >
         </div>
-        <!-- Links -->
         <div class="col-md-4 footer-links">
           <a href="#">Fale conosco</a>
           <a href="#">Politica de privacidade</a>
         </div>
-        <!-- Contact -->
         <div class="col-md-4 footer-contact">
           <span>0800 770 3004</span>
           <a href="#">Termos de uso</a>
@@ -257,7 +310,6 @@
     </div>
   </footer>
 
-  <!-- Bootstrap 5 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
