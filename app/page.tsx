@@ -1,12 +1,14 @@
-import { JornadaIntegrada } from "@/components/jornada-integrada"
-import { Footer } from "@/components/footer"
-
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
-      <div className="flex-1" />
-      <JornadaIntegrada />
-      <Footer />
-    </main>
+    <iframe
+      src="/jornada-integrada.html"
+      style={{
+        width: "100%",
+        height: "100vh",
+        border: "none",
+        display: "block",
+      }}
+      title="Moderna Core - Jornada Integrada"
+    />
   )
 }
