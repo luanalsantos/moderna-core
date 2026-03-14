@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Moderna Core - Jornada Integrada</title>
+
+    <link rel="icon" type="image/png" href="public/images/favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        color: #1a3a4a;
+        background: #f1f1f1;
+      }
+
+      /* largura padrão do projeto */
+      .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        width: 100%;
+      }
+
+      /* HEADER (mesmo da home) */
+
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: transparent;
+      }
+
+      /* footer */
+
+      .site-footer {
+        padding: 24px 0 20px;
+        border-top: 1px solid #e8e8e8;
+      }
+
+      .footer-logo img {
+        height: 72px;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .footer-links a {
+        color: #5a6a72;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .footer-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+        font-size: 0.9rem;
+        color: #5a6a72;
+      }
+
+      .carousel-item {
+        padding: 10px;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        filter: invert(25%) sepia(10%) saturate(900%) hue-rotate(160deg);
+      }
+
+      .carousel-indicators button {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
+    <!-- HEADER -->
+
+    <header class="site-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-sm-4 col-2">
+            <img
+              src="public/images/Logo CORE Color.png"
+              alt="Moderna Core"
+              class="img-fluid"
+              style="max-width: 90px"
+            />
+          </div>
+
+          <!-- BOTÃO DESKTOP -->
+
+          <div class="col-sm-6 col-8 text-end d-flex justify-content-end">
+            <a
+              href="#"
+              class="d-none d-md-block btn rounded-pill px-4 py-2 fw-semibold text-white small"
+              style="background-color: #1f4c59; width: max-content"
+            >
+              ➤ SEJA UMA ESCOLA PARCEIRA
+            </a>
+          </div>
+
+          <div class="col-2 text-end">
+            <button
+              class="btn rounded-pill px-3 py-2"
+              style="background-color: #1f4c59"
+            >
+              <span class="text-white fs-5">☰</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- BOTÃO MOBILE -->
+
+        <div class="d-flex justify-content-center d-md-none">
+          <a
+            href="#"
+            class="btn rounded-pill px-4 py-2 fw-semibold text-white small"
+            style="background-color: #1f4c59"
+          >
+            ➤ SEJA UMA ESCOLA PARCEIRA
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+
+    <main class="flex-grow-1 bg-page-jornada">
+      <section class="moderna-core" id="moderna_core">
+        <style>
+          .moderna-core {
+            padding: 190px 0 100px;
+            position: relative;
+            overflow: hidden;
+          }
+
+          .moderna-core .hero-text h1 {
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 1.3;
+            max-width: 420px;
+            position: relative;
+            z-index: 2;
+          }
+
+          .moderna-core .hero-text strong {
+            font-weight: 700;
+          }
+
+          .moderna-core .hero-kid {
+            position: absolute;
+            right: 0;
+            top: 170px;
+            width: 100%;
+            z-index: 2;
+          }
+
+          .moderna-core .dna-ribbon {
+            position: absolute;
+
+            inset: calc(45vh + 420px) calc(16vw) auto auto;
+
+            width: clamp(160px, 11vw, 220px);
+
+            z-index: 1;
+            opacity: 0.95;
+          }
+
+          /* zoom normal ~65% pra baixo */
+          @media (max-resolution: 0.8dppx) {
+            .moderna-core .hero-kid {
+              top: 115px;
+            }
+
+            .moderna-core .dna-ribbon {
+              inset: calc(45vh + 390px) calc(16vw) auto auto;
+            }
+          }
+
+          /* zoom normal ~80% pra baixo */
+          @media (min-resolution: 1dppx) {
+            .moderna-core .hero-kid {
+              top: 115px;
+            }
+
+            .moderna-core .dna-ribbon {
+              inset: calc(45vh + 390px) calc(16vw) auto auto;
+            }
+          }
+          @media (min-resolution: 1dppx) and (max-width: 1300px) {
+            .moderna-core .dna-ribbon {
+              inset: calc(45vh + 230px) calc(16vw) auto auto;
+            }
+          }
+          @media (min-resolution: 1dppx) and (min-width: 992px) {
+            .moderna-core .porque-bloco {
+              margin-top: 420px !important;
+            }
+
+            .content-wrapper {
+              max-width: 1200px !important;
+            }
+          }
+          @media (min-resolution: 1dppx) and (min-width: 1400px) {
+            .moderna-core .porque-bloco {
+              margin-top: 620px !important;
+            }
+          }
+
+          @media (min-resolution: 1dppx) and (max-width: 992px) {
+            .moderna-core .dna-ribbon {
+              inset: calc(45vh + 90px) calc(16vw) auto auto;
+            }
+
+            .content-wrapper {
+              max-width: 960px;
+            }
+
+            .moderna-core .porque-bloco {
+              margin-top: 280px !important;
+              text-align: center !important;
+            }
+
+            .moderna-core .hero-text h1 {
+              font-size: 35px;
+            }
+          }
+
+          @media (max-width: 992px) {
+            .beneficios-coletivo .beneficio-image {
+              height: auto !important;
+            }
+          }
+
+          @media (min-width: 768px) {
+            .content-wrapper {
+              max-width: 720px;
+            }
+          }
+
+          /* zoom alto ~90% pra cima */
+          @media (min-resolution: 1.25dppx) {
+            .moderna-core .porque-bloco {
+              margin-top: 470px;
+            }
+
+            .moderna-core .dna-ribbon {
+              inset: calc(45vh + 315px) calc(16vw) auto auto;
+            }
+
+            .moderna-core .section-title {
+              max-width: 700px;
+              font-size: 42px;
+            }
+
+            .moderna-core .icon-hero {
+              width: 140px;
+              margin-bottom: 12px;
+            }
+          }
+
+          .moderna-core .porque-bloco {
+            margin-top: 620px;
+            text-align: center;
+          }
+
+          .moderna-core .section-title {
+            max-width: 760px;
+            margin: 60px auto 70px;
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1.2;
+            text-transform: uppercase;
+          }
+
+          .moderna-core .section-title strong {
+            font-weight: 700;
+          }
+
+          .moderna-core .icon-hero {
+            width: 180px;
+            margin-bottom: 24px;
+          }
+
+          /* SLIDER */
+
+          .cards-slider {
+            overflow: hidden;
+            margin: auto;
+            position: relative;
+          }
+
+          .cards-track {
+            display: flex;
+            gap: 24px;
+            transition: transform 0.4s ease;
+          }
+
+          .card-moderna {
+            min-width: calc(33.333% - 16px);
+            background: #fff;
+            border-radius: 14px;
+            padding: 30px;
+            text-align: left;
+          }
+
+          .card-icon {
+            margin-bottom: 16px;
+          }
+
+          .card-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+          }
+
+          .card-text {
+            font-size: 14px;
+            color: #5f6e75;
+            line-height: 1.6;
+          }
+
+          /* CONTROLES */
+
+          .slider-controls {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 22px;
+          }
+
+          .arrow {
+            font-size: 52px;
+            cursor: pointer;
+          }
+
+          .dots {
+            display: flex;
+            gap: 10px;
+          }
+
+          .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #c8d1d5;
+          }
+
+          .dot.active {
+            background: #244a55;
+          }
+
+          @media (max-width: 991px) {
+            .card-moderna {
+              min-width: 80%;
+            }
+          }
+
+          @media (max-width: 767px) {
+            .moderna-core {
+              padding: 180px 0 80px;
+              text-align: center;
+            }
+
+            .moderna-core .hero-kid {
+              position: relative;
+              width: 180%;
+              margin-top: 40px;
+              top: auto;
+              right: 300px;
+            }
+
+            .moderna-core .porque-bloco {
+              margin-top: 0px !important;
+            }
+
+            .dna-ribbon {
+              display: none;
+            }
+          }
+        </style>
+
+        <div class="content-wrapper hero-text">
+          <h1>
+            Porque é moderna<br />
+            na tecnologia.<br />
+            <strong>E Moderna no DNA.</strong>
+          </h1>
+        </div>
+
+        <img
+          class="hero-kid"
+          src="public/images/hero-crianca-notebook.png"
+          alt="Aluno usando notebook"
+        />
+
+        <img
+          class="dna-ribbon"
+          src="public/images/dna-ribbon.png"
+          alt="Ribbon Moderna"
+        />
+
+        <div class="content-wrapper porque-bloco">
+          <img
+            class="icon-hero"
+            src="public/images/icon-hero.png"
+            alt="icon hero"
+          />
+
+          <h2 class="section-title">
+            Sabe por que <strong>MODERNA CORE</strong> é a solução educacional
+            ideal para a sua escola?
+          </h2>
+
+          <div class="cards-slider">
+            <div class="cards-track" id="cardsTrack">
+              <!-- CARD 1 -->
+
+              <div class="card-moderna">
+                <div class="card-icon">
+                  <img src="public/images/card-1.png" width="45" />
+                </div>
+
+                <div class="card-title">
+                  Porque leva o estudante à sua melhor versão.
+                </div>
+
+                <div class="card-text">
+                  Integramos processos cognitivos, micro-habilidades, dados e
+                  vivências para orientar cada estudante em uma evolução
+                  contínua: acadêmica, emocional e, sobretudo, humana.
+                </div>
+              </div>
+
+              <!-- CARD 2 -->
+
+              <div class="card-moderna">
+                <div class="card-icon">
+                  <img src="public/images/card-2.png" width="38" />
+                </div>
+
+                <div class="card-title">
+                  Porque vem com a tradição da Moderna.
+                </div>
+
+                <div class="card-text">
+                  A Editora Moderna construiu uma trajetória sólida ao longo de
+                  quase 60 anos, tornando-se referência na educação brasileira.
+                </div>
+              </div>
+
+              <!-- CARD 3 -->
+
+              <div class="card-moderna">
+                <div class="card-icon">
+                  <img src="public/images/card-3.png" width="45" />
+                </div>
+
+                <div class="card-title">
+                  Porque respeita a individualidade de cada estudante.
+                </div>
+
+                <div class="card-text">
+                  No Moderna Core, o desenvolvimento emocional está integrado à
+                  jornada pedagógica e o estudante sente e regula o que aprende.
+                </div>
+              </div>
+
+              <!-- CARD 4 (criado) -->
+
+              <div class="card-moderna">
+                <div class="card-icon">
+                  <img src="public/images/card-4.png" width="45" />
+                </div>
+
+                <div class="card-title">
+                  Porque conecta tecnologia, dados e aprendizagem.
+                </div>
+
+                <div class="card-text">
+                  A solução integra inteligência pedagógica, análise de dados e
+                  recursos digitais para apoiar educadores e potencializar o
+                  desenvolvimento de cada estudante ao longo de toda a jornada
+                  escolar.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider-controls">
+            <div class="arrow" onclick="prevCard()">‹</div>
+
+            <div class="dots">
+              <div class="dot active"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+
+            <div class="arrow" onclick="nextCard()">›</div>
+          </div>
+        </div>
+
+        <script>
+          let cardIndex = 0;
+
+          const track = document.getElementById("cardsTrack");
+          const dots = document.querySelectorAll(".dot");
+
+          function updateSlider() {
+            track.style.transform = `translateX(-${cardIndex * 360}px)`;
+
+            dots.forEach((d) => d.classList.remove("active"));
+            dots[cardIndex].classList.add("active");
+          }
+
+          function nextCard() {
+            cardIndex++;
+
+            if (cardIndex >= dots.length) {
+              cardIndex = 0;
+            }
+
+            updateSlider();
+          }
+
+          function prevCard() {
+            cardIndex--;
+
+            if (cardIndex < 0) {
+              cardIndex = dots.length - 1;
+            }
+
+            updateSlider();
+          }
+        </script>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SECTION BENEFICIOS COLETIVO -->
+      <!-- ============================================ -->
+      <section class="beneficios-coletivo" id="beneficios_coletivo">
+        <style>
+          /* ============================================ */
+          /* CSS - BENEFICIOS COLETIVO */
+          /* ============================================ */
+
+          .beneficios-coletivo {
+            padding: 80px 0;
+          }
+
+          .beneficios-coletivo .section-title {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 60px;
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.2;
+            text-transform: uppercase;
+            color: #d11f08;
+          }
+
+          .beneficios-coletivo .section-title strong {
+            font-weight: 700;
+          }
+
+          .beneficios-coletivo .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 26px;
+          }
+
+          /* CARD */
+
+          .beneficios-coletivo .beneficio-card {
+            display: flex;
+            align-items: stretch;
+            background: #ffffff;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0px 0.3rem 3rem rgba(0, 0, 0, 0.075);
+          }
+
+          /* IMAGEM */
+
+          .beneficios-coletivo .beneficio-image {
+            min-width: 140px;
+            height: 140px;
+            overflow: hidden;
+          }
+
+          .beneficios-coletivo .beneficio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+
+          /* TEXTO */
+
+          .beneficios-coletivo .content-text-card {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+
+          .beneficios-coletivo .beneficio-title {
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 16px;
+          }
+
+          .beneficios-coletivo .beneficio-text {
+            font-size: 14px;
+            color: #5f6e75;
+            line-height: 1.6;
+          }
+
+          /* HOVER CARD */
+
+          .beneficios-coletivo .beneficio-card {
+            display: flex;
+            align-items: stretch;
+            background: #ffffff;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0px 0.3rem 3rem rgba(0, 0, 0, 0.075);
+            transition:
+              transform 0.35s ease,
+              box-shadow 0.35s ease;
+          }
+
+          .beneficios-coletivo .beneficio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 1rem 3.5rem rgba(0, 0, 0, 0.12);
+          }
+
+          /* ANIMAÇÃO DA IMAGEM */
+
+          .beneficios-coletivo .beneficio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+          }
+
+          .beneficios-coletivo .beneficio-card:hover .beneficio-image img {
+            transform: scale(1.06);
+          }
+
+          /* ANIMAÇÃO DE ENTRADA */
+
+          .beneficio-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s ease;
+          }
+
+          .beneficio-card.show {
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          /* delay progressivo */
+
+          .beneficio-card:nth-child(1) {
+            transition-delay: 0.1s;
+          }
+          .beneficio-card:nth-child(2) {
+            transition-delay: 0.25s;
+          }
+          .beneficio-card:nth-child(3) {
+            transition-delay: 0.4s;
+          }
+          .beneficio-card:nth-child(4) {
+            transition-delay: 0.55s;
+          }
+
+          /* RESPONSIVO */
+          @media (max-width: 767px) {
+            .moderna-core .section-title {
+              font-size: 38px;
+            }
+
+            .beneficios-coletivo .beneficios-grid {
+              grid-template-columns: 1fr;
+            }
+
+            .beneficios-coletivo .beneficio-card {
+              flex-direction: column;
+            }
+
+            .beneficios-coletivo .beneficio-image {
+              width: 100%;
+              height: 200px !important;
+            }
+          }
+        </style>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">
+            Porque quando a gente cuida de cada um,<br />
+            <strong>o coletivo se transforma:</strong>
+          </h2>
+
+          <div class="beneficios-grid">
+            <!-- CARD -->
+
+            <div class="beneficio-card">
+              <div class="beneficio-image">
+                <img src="public/images/estudantes.png" alt="Estudantes" />
+              </div>
+
+              <div class="content-text-card">
+                <div class="beneficio-title">› Estudantes</div>
+                <div class="beneficio-text">
+                  Contam com feedback contínuo, reconhecimento de suas potências
+                  e lacunas, além de indicações objetivas do próximo passo.
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="beneficio-card">
+              <div class="beneficio-image">
+                <img src="public/images/gestores.png" alt="Gestores" />
+              </div>
+
+              <div class="content-text-card">
+                <div class="beneficio-title">› Gestores</div>
+                <div class="beneficio-text">
+                  Ganham uma visão sistêmica, que garante mais segurança nas
+                  tomadas de decisão.
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="beneficio-card">
+              <div class="beneficio-image">
+                <img src="public/images/professores.png" alt="Professores" />
+              </div>
+
+              <div class="content-text-card">
+                <div class="beneficio-title">› Professores</div>
+                <div class="beneficio-text">
+                  Têm a rotina simplificada e mais tempo para dar feedback e se
+                  conectar com o estudante.
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="beneficio-card">
+              <div class="beneficio-image">
+                <img src="public/images/familias.png" alt="Famílias" />
+              </div>
+
+              <div class="content-text-card">
+                <div class="beneficio-title">› Famílias</div>
+                <div class="beneficio-text">
+                  Passam a acompanhar constantemente o desenvolvimento acadêmico
+                  do filho.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================ -->
+    <!-- BLOCO: FOOTER - INÍCIO -->
+    <!-- ============================================ -->
+    <footer class="site-footer">
+      <style>
+        .site-footer {
+          padding: 30px 0 18px;
+          border-top: 1px solid #e8e8e8;
+          font-size: 14px;
+          color: #5a6a72;
+        }
+
+        .footer-logo img {
+          height: 72px;
+        }
+
+        .footer-links {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+
+        .footer-links a,
+        .footer-contact a {
+          color: #5a6a72;
+          text-decoration: none;
+          font-size: 0.9rem;
+        }
+
+        .footer-links a:hover,
+        .footer-contact a:hover {
+          text-decoration: underline;
+        }
+
+        .footer-contact {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 6px;
+          font-size: 0.9rem;
+        }
+
+        /* linha institucional */
+
+        .footer-bottom {
+          margin-top: 26px;
+          padding-top: 16px;
+          border-top: 1px solid #e8e8e8;
+          text-align: center;
+          font-size: 0.85rem;
+          color: #6b7c84;
+          line-height: 1.6;
+        }
+
+        .footer-bottom a {
+          color: #6b7c84;
+          text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+          text-decoration: underline;
+        }
+
+        /* responsivo */
+
+        @media (max-width: 768px) {
+          .footer-contact {
+            align-items: flex-start;
+            margin-top: 20px;
+          }
+
+          .footer-links {
+            margin-top: 20px;
+          }
+
+          .footer-bottom {
+            font-size: 12px;
+          }
+        }
+      </style>
+
+      <div class="content-wrapper">
+        <div class="row align-items-start">
+          <div class="col-md-4 footer-logo">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-core-azul-hxsvdquRcy22ha78lbdUuMDxT2apEx.png"
+              alt="Moderna Core"
+            />
+          </div>
+
+          <div class="col-md-4 footer-links">
+            <a href="#">Fale conosco</a>
+            <a href="#">Política de privacidade</a>
+          </div>
+
+          <div class="col-md-4 footer-contact">
+            <a href="tel:08007703004">0800 770 3004</a>
+            <a href="#">Termos de uso</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2026 Santillana Educação. Todos os direitos reservados. |
+          <a href="#">Código de Ética</a>
+          |
+          <a href="#">Código Fornecedores</a>
+          |
+          <a href="#">Aviso Privacidade</a>
+          |
+          <a href="#">Solicitação de Dados</a>
+          |
+          <a href="#">Canal de denúncias</a>
+          |
+          <a href="#">SAC</a>
+        </div>
+      </div>
+    </footer>
+    <!-- ============================================ -->
+    <!-- BLOCO: FOOTER - FIM -->
+    <!-- ============================================ -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ============================================ -->
+    <!-- ANIMACAO DE ENTRADA DO BLOCO beneficios_coletivo -->
+    <!-- ============================================ -->
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        },
+      );
+
+      document
+        .querySelectorAll(".beneficio-card")
+        .forEach((card) => observer.observe(card));
+    </script>
+  </body>
+</html>
