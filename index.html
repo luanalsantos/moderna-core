@@ -593,6 +593,222 @@
 			<!-- ============================================ -->
 			
 			<!-- ============================================ -->
+			<!-- BLOCO: PELO ESTUDANTE - INÍCIO -->
+			<!-- ============================================ -->
+			<section class="pelo-estudante" id="pelo_estudante">
+				
+				<!-- CSS do Bloco Pelo Estudante -->
+				<style>
+					/* ============================================ */
+					/* CSS - BLOCO PELO ESTUDANTE */
+					/* ============================================ */
+					
+					.pelo-estudante * {
+						margin: 0;
+						padding: 0;
+						box-sizing: border-box;
+					}
+					
+					.pelo-estudante {
+						font-family: 'Poppins', sans-serif;
+						background-color: #1a3a4a;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						overflow: hidden;
+						will-change: height;
+					}
+					
+					.pelo-estudante .content-wrapper {
+						max-width: 1200px;
+						margin: 0 auto;
+						padding: 0 24px;
+						width: 100%;
+					}
+					
+					/* Layout da frase */
+					.pelo-estudante-phrase {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						gap: 16px;
+						position: relative;
+					}
+					
+					.pelo-estudante-text {
+						font-size: 3.8rem;
+						font-weight: 300;
+						color: #ffffff;
+						white-space: nowrap;
+						line-height: 1;
+					}
+					
+					.pelo-estudante-text--bold {
+						font-weight: 700;
+					}
+					
+					/* Container das moedas */
+					.pelo-estudante-coins {
+						position: relative;
+						width: 150px;
+    					height: 100px;
+						flex-shrink: 0;
+					}
+					
+					.pelo-estudante-coin {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						height: 120px;
+						width: auto;
+						object-fit: contain;
+						transition: opacity 0.1s linear;
+					}
+					
+					.pelo-estudante-coin--1 {
+						opacity: 1;
+					}
+					
+					.pelo-estudante-coin--2 {
+						opacity: 0;
+					}
+					
+					/* Frases alternativas */
+					.pelo-estudante-state {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						gap: 16px;
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+					}
+					
+					.pelo-estudante-state--1 {
+						opacity: 1;
+					}
+					
+					.pelo-estudante-state--2 {
+						opacity: 0;
+					}
+					
+					/* Media Queries - Tablets */
+					@media (max-width: 991.98px) {
+						.pelo-estudante-text {
+							font-size: 2rem;
+						}
+						
+						.pelo-estudante-coins {
+							width: 80px;
+							height: 70px;
+						}
+						
+						.pelo-estudante-coin {
+							height: 60px;
+						}
+					}
+					
+					/* Media Queries - Mobile */
+					@media (max-width: 767.98px) {
+						.pelo-estudante-text {
+							font-size: 1.3rem;
+						}
+						
+						.pelo-estudante-coins {
+							width: 50px;
+							height: 50px;
+						}
+						
+						.pelo-estudante-coin {
+							height: 40px;
+						}
+						
+						.pelo-estudante-phrase {
+							gap: 8px;
+						}
+					}
+				</style>
+				
+				<!-- HTML do Bloco Pelo Estudante -->
+				<div class="content-wrapper">
+					<div class="pelo-estudante-phrase">
+						<!-- State 1: TODOS PELO [moeda] ESTUDANTE. -->
+						<div class="pelo-estudante-state pelo-estudante-state--1">
+							<span class="pelo-estudante-text">TODOS PELO</span>
+							<div class="pelo-estudante-coins">
+								<img class="pelo-estudante-coin pelo-estudante-coin--1" src="public/images/moedas.png" alt="">
+							</div>
+							<span class="pelo-estudante-text pelo-estudante-text--bold">ESTUDANTE.</span>
+						</div>
+						
+						<!-- State 2: TUDO PELA SUA [moeda] EVOLUÇÃO. -->
+						<div class="pelo-estudante-state pelo-estudante-state--2">
+							<span class="pelo-estudante-text">TUDO PELA SUA</span>
+							<div class="pelo-estudante-coins">
+								<img class="pelo-estudante-coin pelo-estudante-coin--2" src="public/images/moedas.png" alt="">
+							</div>
+							<span class="pelo-estudante-text pelo-estudante-text--bold">EVOLUÇÃO.</span>
+						</div>
+					</div>
+				</div>
+				
+				<!-- JavaScript do Bloco Pelo Estudante -->
+				<script>
+					(function() {
+						'use strict';
+						
+						var section = document.getElementById('pelo_estudante');
+						var state1 = section.querySelector('.pelo-estudante-state--1');
+						var state2 = section.querySelector('.pelo-estudante-state--2');
+						
+						var maxHeight = 500;
+						var minHeight = 200;
+						section.style.height = maxHeight + 'px';
+						
+						function animatePeloEstudante() {
+							var rect = section.getBoundingClientRect();
+							var windowH = window.innerHeight;
+							
+							// Progress: 0 quando seção entra, 1 quando já passou bastante
+							var start = windowH;
+							var end = -rect.height * 0.5;
+							var progress = (start - rect.top) / (start - end);
+							progress = Math.max(0, Math.min(1, progress));
+							
+							// Altura diminui conforme scrolla
+							var currentHeight = maxHeight - (progress * (maxHeight - minHeight));
+							section.style.height = currentHeight + 'px';
+							
+							// Transição entre states: 0→0.5 = state1, 0.5→1 = state2
+							var swapPoint = 0.45;
+							
+							if (progress < swapPoint) {
+								// State 1 visível
+								var state1Opacity = 1;
+								state1.style.opacity = state1Opacity;
+								state2.style.opacity = 0;
+							} else {
+								// State 2 aparece
+								var fadeProgress = Math.min(1, (progress - swapPoint) / 0.2);
+								state1.style.opacity = 1 - fadeProgress;
+								state2.style.opacity = fadeProgress;
+							}
+						}
+						
+						window.addEventListener('scroll', animatePeloEstudante);
+						animatePeloEstudante();
+					})();
+				</script>
+				
+			</section>
+			<!-- ============================================ -->
+			<!-- BLOCO: PELO ESTUDANTE - FIM -->
+			<!-- ============================================ -->
+			
+			<!-- ============================================ -->
 			<!-- BLOCO: ACOMPANHAMENTO ESTRATEGICO - INÍCIO -->
 			<!-- ============================================ -->
 			<section class="acompanhamento-estrategico" id="acompanhamento_estrategico">
