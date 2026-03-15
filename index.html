@@ -614,12 +614,14 @@
 					.acompanhamento-estrategico {
 						font-family: 'Poppins', sans-serif;
 						color: #1a3a4a;
-						min-height: 100vh;
+						height: 90vh;
 						display: flex;
 						align-items: center;
 						justify-content: center;
 						background: linear-gradient(135deg, #ffffff 0%, #fff5f0 30%, #ffe5d4 70%, #ffdcc4 100%);
 						padding: 80px 0;
+						position: relative;
+						overflow: hidden;
 					}
 					
 					/* Wrapper de conteúdo */
@@ -628,6 +630,28 @@
 						margin: 0 auto;
 						padding: 0 24px;
 						width: 100%;
+						position: relative;
+						z-index: 2;
+					}
+					
+					/* Elementos decorativos laranja */
+					.estrategico-element {
+						position: absolute;
+						top: 50%;
+						left: 60%;
+						height: 100%;
+						width: auto;
+						z-index: 3;
+						pointer-events: none;
+						will-change: transform;
+					}
+					
+					.estrategico-element--dir {
+						transform: translate(-30%, -50%);
+					}
+					
+					.estrategico-element--esq {
+						transform: translate(-70%, -50%);
 					}
 					
 					/* Container do conteúdo */
@@ -653,7 +677,7 @@
 						color: #1a3a4a;
 					}
 					
-					/* Botão - reutilizando classe do jornada-integrada */
+					/* Botão */
 					.acompanhamento-estrategico .btn-escola-parceira {
 						display: inline-block;
 						background-color: #e86c3a;
@@ -668,6 +692,7 @@
 						text-decoration: none;
 						transition: background-color 0.3s ease, transform 0.2s ease;
 						width: fit-content;
+						opacity: 0;
 					}
 					
 					.acompanhamento-estrategico .btn-escola-parceira:hover {
@@ -689,6 +714,14 @@
 						
 						.acompanhamento-estrategico .acompanhamento-content {
 							gap: 28px;
+						}
+						
+						.estrategico-element {
+							display: none;
+						}
+						
+						.acompanhamento-estrategico .btn-escola-parceira {
+							opacity: 1;
 						}
 					}
 					
@@ -715,6 +748,18 @@
 					}
 				</style>
 				
+				<!-- Elementos decorativos laranja -->
+				<img
+					class="estrategico-element estrategico-element--esq"
+					src="public/images/ESTRATEGICO-Laranja-Esq.png"
+					alt=""
+				>
+				<img
+					class="estrategico-element estrategico-element--dir"
+					src="public/images/ESTRATEGICO-Laranja-Dir.png"
+					alt=""
+				>
+				
 				<!-- HTML do Bloco Acompanhamento Estrategico -->
 				<div class="content-wrapper">
 					<div class="acompanhamento-content">
@@ -724,6 +769,57 @@
 						<a href="#" class="btn-escola-parceira">CONHEÇA NOSSA SOLUÇÃO</a>
 					</div>
 				</div>
+				
+				<!-- JavaScript do Bloco Acompanhamento Estrategico -->
+				<script>
+					(function() {
+						'use strict';
+						
+						var section = document.getElementById('acompanhamento_estrategico');
+						var elEsq = section.querySelector('.estrategico-element--esq');
+						var elDir = section.querySelector('.estrategico-element--dir');
+						var btnSolucao = section.querySelector('.btn-escola-parceira');
+						
+						function animateEstrategico() {
+							if (window.innerWidth <= 991) return;
+							
+							var rect = section.getBoundingClientRect();
+							var windowH = window.innerHeight;
+							var sectionCenter = rect.top + rect.height / 2;
+							var viewportCenter = windowH / 2;
+							
+							// Progress: 0 quando seção entra na viewport, 1 quando o topo da seção sai pela viewport
+							var start = windowH; // rect.top quando seção aparece embaixo
+							var end = -rect.height * 0.3; // rect.top quando já passou bastante
+							var progress = (start - rect.top) / (start - end);
+							progress = Math.max(0, Math.min(1, progress));
+							
+							// Steps 1-3: elementos se abrem (progress 0 → 0.75)
+							var openProgress = Math.min(1, progress / 0.75);
+							
+							// Deslocamento diagonal máximo (reduzido para manter elementos visíveis)
+							var maxOffsetX = 35;  // % horizontal
+							var maxOffsetY = 25;   // % vertical
+							
+							var offsetX = openProgress * maxOffsetX;
+							var offsetY = openProgress * maxOffsetY;
+							
+							// Dir vai pra right e top (diagonal ↗) - mais escondido
+							var dirOffsetX = openProgress * 50;
+							elDir.style.transform = 'translate(calc(-30% + ' + dirOffsetX + '%), calc(-50% - ' + offsetY + '%))';
+							
+							// Esq vai pra left e bottom (diagonal ↙)
+							elEsq.style.transform = 'translate(calc(-70% - ' + offsetX + '%), calc(-50% + ' + offsetY + '%))';
+							
+							// Step 4: botão aparece (progress 0.75 → 1)
+							var btnProgress = Math.max(0, (progress - 0.45) / 0.25);
+							btnSolucao.style.opacity = btnProgress;
+						}
+						
+						window.addEventListener('scroll', animateEstrategico);
+						animateEstrategico();
+					})();
+				</script>
 				
 			</section>
 			<!-- ============================================ -->
