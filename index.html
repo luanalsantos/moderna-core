@@ -36,56 +36,120 @@
 			data-lum-singleton-id="bootstrap.bundle.min.js"></script>
 		
 		<script src="scripts/custom.js" defer></script>
+
+		<style>
+			body {
+				font-family: "Poppins", sans-serif;
+				color: #1a3a4a;
+				background: #f1f1f1;
+			}
+
+			/* largura padrão do projeto */
+			.content-wrapper {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 24px;
+				width: 100%;
+			}
+
+			/* HEADER (mesmo da home) */
+			.site-header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 1000;
+				background: transparent;
+			}
+
+			/* footer */
+			.site-footer {
+				padding: 24px 0 20px;
+				border-top: 1px solid #e8e8e8;
+			}
+
+			.footer-logo img {
+				height: 72px;
+			}
+
+			.footer-links {
+				display: flex;
+				flex-direction: column;
+				gap: 6px;
+			}
+
+			.footer-links a {
+				color: #5a6a72;
+				text-decoration: none;
+				font-size: 0.9rem;
+			}
+
+			.footer-contact {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+				gap: 6px;
+				font-size: 0.9rem;
+				color: #5a6a72;
+			}
+
+			/* Media Queries - Mobile */
+			@media (max-width: 767.98px) {
+				.content-btn-header-mobile {
+					margin-top: 20px;
+				}
+			}
+		</style>
 	</head>
 	<body class="d-flex flex-column min-vh-100">
 	
 		<header class="site-header">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-sm-4 col-2">
-            <img
-              src="public/images/Logo CORE Color.png"
-              alt="Moderna Core"
-              class="img-fluid"
-              style="max-width: 90px"
-            />
-          </div>
+		<div class="container">
+			<div class="row align-items-center">
+			<div class="col-sm-4 col-2">
+				<img
+				src="public/images/Logo CORE Color.png"
+				alt="Moderna Core"
+				class="img-fluid"
+				style="max-width: 90px"
+				/>
+			</div>
 
-          <!-- BOTÃO DESKTOP -->
+			<!-- BOTÃO DESKTOP -->
 
-          <div class="col-sm-6 col-8 text-end d-flex justify-content-end">
-            <a
-              href="#"
-              class="d-none d-md-block btn rounded-pill px-4 py-2 fw-semibold text-white small"
-              style="background-color: #1f4c59; width: max-content"
-            >
-              ➤ SEJA UMA ESCOLA PARCEIRA
-            </a>
-          </div>
+			<div class="col-sm-6 col-8 text-end d-flex justify-content-end">
+				<a
+				href="#"
+				class="d-none d-md-block btn rounded-pill px-4 py-2 fw-semibold text-white small"
+				style="background-color: #1f4c59; width: max-content"
+				>
+				➤ SEJA UMA ESCOLA PARCEIRA
+				</a>
+			</div>
 
-          <div class="col-2 text-end">
-            <button
-              class="btn rounded-pill px-3 py-2"
-              style="background-color: #1f4c59"
-            >
-              <span class="text-white fs-5">☰</span>
-            </button>
-          </div>
-        </div>
+			<div class="col-2 text-end">
+				<button
+				class="btn rounded-pill px-3 py-2"
+				style="background-color: #1f4c59"
+				>
+				<span class="text-white fs-5">☰</span>
+				</button>
+			</div>
+			</div>
 
-        <!-- BOTÃO MOBILE -->
+			<!-- BOTÃO MOBILE -->
 
-        <div class="d-flex justify-content-center d-md-none">
-          <a
-            href="#"
-            class="btn rounded-pill px-4 py-2 fw-semibold text-white small"
-            style="background-color: #1f4c59"
-          >
-            ➤ SEJA UMA ESCOLA PARCEIRA
-          </a>
-        </div>
-      </div>
-    </header>
+			<div class="d-flex justify-content-center d-md-none content-btn-header-mobile">
+			<a
+				href="#"
+				class="btn rounded-pill px-4 py-2 fw-semibold text-white small"
+				style="background-color: #1f4c59"
+			>
+				➤ SEJA UMA ESCOLA PARCEIRA
+			</a>
+			</div>
+		</div>
+		</header>
 	
 		<main class="flex-grow-1" page:holder="main">
 			<!-- ============================================ -->
@@ -101,7 +165,7 @@
 
 			.banner-home{
 				font-family:'Poppins',sans-serif;
-				min-height:100vh;
+				min-height:110vh;
 				background: linear-gradient(
 								165deg,
 								#852323 -1%,
@@ -115,6 +179,7 @@
 				overflow:hidden;
 				text-align:center;
 				padding-top:100px;
+				margin-top: -110px;
 			}
 
 			/* largura padrão */
@@ -154,7 +219,7 @@
 
 			.banner-home .hero-3d{
 				position:absolute;
-				top:-54%;
+				top:-40%;
 				left:40%;
 				transform:translateX(-50%);
 				width:120%;
@@ -171,10 +236,10 @@
 
 			.banner-home .hero-child{
 				position:absolute;
-				bottom:105px;
+				bottom: 198px;
 				right:12%;
 				max-height:420px;
-				z-index:2;
+				z-index:999;
 			}
 
 			.banner-home .arrow{
@@ -221,7 +286,9 @@
 			}
 
 			.banner-home .hero-child{
-			max-height:260px;
+			max-height: 280px;
+        bottom: 18px;
+        right: 15px;
 			}
 
 			}
@@ -282,6 +349,7 @@
 					
 					/* Container principal */
 					.proposta-pedagogica {
+						position: relative;
 						font-family: 'Poppins', sans-serif;
 						color: #1a3a4a;
 						min-height: 100vh;
@@ -290,6 +358,7 @@
 						justify-content: center;
 						background: radial-gradient(circle at center, #ffffff 0%, #f0f4f7 40%, #e0e8ed 70%, #d0dce3 100%);
 						padding: 80px 0;
+						overflow: hidden;
 					}
 					
 					/* Wrapper de conteúdo */
@@ -298,17 +367,39 @@
 						margin: 0 auto;
 						padding: 0 24px;
 						width: 100%;
+						position: relative;
+						z-index: 2;
+					}
+					
+					/* Leques decorativos */
+					.proposta-leque {
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						height: 80%;
+						width: auto;
+						z-index: 3;
+						pointer-events: none;
+						will-change: transform;
+					}
+					
+					.proposta-leque--laranja {
+						left: -5%;
+					}
+					
+					.proposta-leque--azul {
+						right: -5%;
 					}
 					
 					/* Título principal */
 					.proposta-pedagogica .proposta-title {
 						text-align: center;
-						font-size: 2.4rem;
+						font-size: 2.22rem;
 						font-weight: 400;
 						line-height: 1.3;
 						color: #1a3a4a;
 						margin-bottom: 60px;
-						max-width: 1200px;
+						max-width: 1000px;
 						margin-left: auto;
 						margin-right: auto;
 					}
@@ -337,7 +428,7 @@
 					
 					/* Parágrafos */
 					.proposta-pedagogica .proposta-col p {
-						font-size: 1.1rem;
+						font-size: 1.3rem;
 						line-height: 1.6;
 						color: #1a3a4a;
 						font-weight: 400;
@@ -346,10 +437,16 @@
 					/* Texto em negrito no final da coluna direita */
 					.proposta-pedagogica .proposta-col .proposta-bold {
 						font-weight: 700;
-						font-size: 1.1rem;
+						font-size: 1.3rem;
 						line-height: 1.6;
 						color: #1a3a4a;
 						margin-top: 8px;
+					}
+
+					@media (min-resolution: 1dppx) and (max-width: 1400px) {
+						.proposta-leque {
+							height: 60%;
+						}
 					}
 					
 					/* Media Queries - Tablets */
@@ -359,20 +456,29 @@
 							min-height: 100vh;
 						}
 						
+						.proposta-pedagogica .content-wrapper {
+							max-width: 720px;
+						}
+						
 						.proposta-pedagogica .proposta-title {
 							font-size: 2rem;
 							margin-bottom: 40px;
 						}
 						
 						.proposta-pedagogica .proposta-columns {
-							gap: 40px;
+							flex-direction: column;
+							gap: 32px;
+						}
+						
+						.proposta-leque {
+							display: none;
 						}
 					}
 					
 					/* Media Queries - Mobile */
 					@media (max-width: 767.98px) {
 						.proposta-pedagogica {
-							padding: 48px 0;
+							padding: 198px 0;
 							min-height: 100vh;
 						}
 						
@@ -394,31 +500,92 @@
 						.proposta-pedagogica .proposta-col .proposta-bold {
 							font-size: 1rem;
 						}
+						
+						.proposta-leque {
+							display: none;
+						}
 					}
 				</style>
+				
+				<!-- Leques decorativos com animação de scroll -->
+				<img
+					class="proposta-leque proposta-leque--laranja"
+					src="public/images/O-QUE-NOS-MOVE-leque-laranja.png"
+					alt=""
+				>
+				<img
+					class="proposta-leque proposta-leque--azul"
+					src="public/images/O-QUE-NOS-MOVE-leque-azul.png"
+					alt=""
+				>
 				
 				<!-- HTML do Bloco Proposta Pedagogica -->
 				<div class="content-wrapper">
 					<h1 class="proposta-title">
-						O QUE NOS MOVE? <strong>ENTENDER O QUE MOVE O ALUNO.</strong>
+						O QUE NOS MOVE? <strong>ENTENDER O QUE MOVE O ESTUDANTE.</strong>
 					</h1>
 					
 					<div class="proposta-columns">
 						<!-- Coluna Esquerda -->
 						<div class="proposta-col">
-							<p>Aprender é viver experiências, emoções e escolhas todos os dias. É um caminho único para cada aluno.</p>
-							<p>Moderna Core integra o que antes estava separado. Conecta currículo. pessoas e tecnologia para dar sentido ao percurso de aprendizagem e revelar o melhor de cada estudante.</p>
+							<p>Acreditamos que a Educação é o caminho para que cada estudante alcance seu melhor.</p>
+							<p>Por isso, Moderna Core integra inteligência curricular, pessoas e tecnologia para tornar a aprendizagem mais efetiva, personalizada em um sistema de ensino orientado ao desenvolvimento contínuo.</p>
 						</div>
 						
 						<!-- Coluna Direita -->
 						<div class="proposta-col">
-							<p>Aqui, a tecnologia amplia o olhar humano. Os dados ganham significado.</p>
-							<p>E a evolução se torna clara e continua. Afinal, aprender não é acumular. É evoluir.</p>
+							<p>Aqui, dados e tecnologia atuam como ferramentas para acompanhar a evolução real de cada estudante, permitindo identificar oportunidades, apoiar decisões e impulsionar seu potencial de forma consistente.</p>
 							<div class="proposta-bold">Moderna Core.
               </br> Expandir o aprender é o que nos move.</div>
 						</div>
 					</div>
 				</div>
+				
+				<!-- JavaScript do Bloco Proposta Pedagogica -->
+				<script>
+					(function() {
+						'use strict';
+						
+						var section = document.getElementById('proposta_pedagogica');
+						var lequeLaranja = section.querySelector('.proposta-leque--laranja');
+						var lequeAzul = section.querySelector('.proposta-leque--azul');
+						
+						var isMobile = window.innerWidth <= 767;
+						
+						window.addEventListener('resize', function() {
+							isMobile = window.innerWidth <= 767;
+						});
+						
+						function animateLeques() {
+							var rect = section.getBoundingClientRect();
+							var windowH = window.innerHeight;
+							
+							var sectionCenter = rect.top + rect.height / 2;
+							var viewportCenter = windowH / 2;
+							
+							if (isMobile) {
+								return;
+							} else {
+								// Desktop: animação horizontal
+								var endPoint = viewportCenter + (viewportCenter * 0.05);
+								var progress = .8 - (sectionCenter - endPoint) / (windowH - endPoint);
+								progress = Math.max(0, Math.min(1, progress));
+								
+								var maxOffset = 110;
+								var offset = progress * maxOffset;
+								
+								var maxRotate = 8;
+								var rotate = progress * maxRotate;
+								
+								lequeLaranja.style.transform = 'translateY(-50%) translateX(-' + offset + '%) rotate(-' + rotate + 'deg)';
+								lequeAzul.style.transform = 'translateY(-50%) translateX(' + offset + '%) rotate(' + rotate + 'deg)';
+							}
+						}
+						
+						window.addEventListener('scroll', animateLeques);
+						animateLeques();
+					})();
+				</script>
 				
 			</section>
 			<!-- ============================================ -->
@@ -851,161 +1018,164 @@
 		<!-- BLOCO: FOOTER - INÍCIO -->
 		<!-- ============================================ -->
 		<footer class="site-footer">
-			<style>
-				.site-footer {
-				background: #ffffff;
-				padding: 30px 0 18px;
-				border-top: 1px solid #e8e8e8;
-				font-size: 14px;
-				color: #5a6a72;
-				}
+		<style>
+			.site-footer {
+			padding: 30px 0 18px;
+			border-top: 1px solid #e8e8e8;
+			font-size: 14px;
+			color: #5a6a72;
+			}
 
-				.footer-logo img {
-				height: 72px;
-				}
+			.footer-logo img {
+			height: 72px;
+			}
 
-				.footer-links {
-				display: flex;
-				flex-direction: column;
-				gap: 6px;
-				}
+			.footer-links {
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+			}
 
-				.footer-links a,
-				.footer-contact a {
-				color: #5a6a72;
-				text-decoration: none;
-				font-size: 0.9rem;
-				}
+			.footer-links a,
+			.footer-contact a {
+			color: #5a6a72;
+			text-decoration: none;
+			font-size: 0.9rem;
+			}
 
-				.footer-links a:hover,
-				.footer-contact a:hover {
-				text-decoration: underline;
-				}
+			.footer-links a:hover,
+			.footer-contact a:hover {
+			text-decoration: underline;
+			}
 
-				.footer-contact {
-				display: flex;
-				flex-direction: column;
-				align-items: flex-end;
-				gap: 6px;
-				font-size: 0.9rem;
-				}
+			.footer-contact {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			gap: 6px;
+			font-size: 0.9rem;
+			}
 
-				/* linha institucional */
+			/* linha institucional */
 
-				.footer-bottom {
-				margin-top: 26px;
-				padding-top: 16px;
-				border-top: 1px solid #e8e8e8;
-				text-align: center;
-				font-size: 0.85rem;
-				color: #6b7c84;
-				line-height: 1.6;
-				}
+			.footer-bottom {
+			margin-top: 26px;
+			padding-top: 16px;
+			border-top: 1px solid #e8e8e8;
+			text-align: center;
+			font-size: 0.85rem;
+			color: #6b7c84;
+			line-height: 1.6;
+			}
 
-				.footer-bottom a {
-				color: #6b7c84;
-				text-decoration: none;
-				}
+			.footer-bottom a {
+			color: #6b7c84;
+			text-decoration: none;
+			}
 
-				.footer-bottom a:hover {
-				text-decoration: underline;
-				}
+			.footer-bottom a:hover {
+			text-decoration: underline;
+			}
 
-				/* responsivo */
+			/* responsivo */
 
-				@media (max-width: 768px) {
-				.footer-contact {
-					align-items: flex-start;
-					margin-top: 20px;
-				}
+			@media (max-width: 768px) {
+			.footer-contact {
+				align-items: flex-start;
+				margin-top: 20px;
+			}
 
-				.footer-links {
-					margin-top: 20px;
-				}
+			.footer-links {
+				margin-top: 20px;
+			}
 
-				.footer-bottom {
-					font-size: 12px;
-				}
-				}
-			</style>
+			.footer-bottom {
+				font-size: 12px;
+			}
+			}
+		</style>
 
-			<div class="content-wrapper">
-				<div class="row align-items-start">
-				<div class="col-md-4 footer-logo">
-					<img
-					src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-core-azul-hxsvdquRcy22ha78lbdUuMDxT2apEx.png"
-					alt="Moderna Core"
-					/>
-				</div>
-
-				<div class="col-md-4 footer-links">
-					<a href="#">Fale conosco</a>
-					<a href="#">Política de privacidade</a>
-				</div>
-
-				<div class="col-md-4 footer-contact">
-					<a href="tel:08007703004">0800 770 3004</a>
-					<a href="#">Termos de uso</a>
-				</div>
-				</div>
-
-				<div class="footer-bottom">
-				© 2026 Santillana Educação. Todos os direitos reservados.
-				|
-				<a href="#">Código de Ética</a>
-				|
-				<a href="#">Código Fornecedores</a>
-				|
-				<a href="#">Aviso Privacidade</a>
-				|
-				<a href="#">Solicitação de Dados</a>
-				|
-				<a href="#">Canal de denúncias</a>
-				|
-				<a href="#">SAC</a>
-				</div>
+		<div class="content-wrapper">
+			<div class="row align-items-start">
+			<div class="col-md-4 footer-logo">
+				<img
+				src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-core-azul-hxsvdquRcy22ha78lbdUuMDxT2apEx.png"
+				alt="Moderna Core"
+				/>
 			</div>
+
+			<div class="col-md-4 footer-links">
+				<a href="#">Fale conosco</a>
+				<a href="#">Política de privacidade</a>
+			</div>
+
+			<div class="col-md-4 footer-contact">
+				<a href="tel:08007703004">0800 770 3004</a>
+				<a href="#">Termos de uso</a>
+			</div>
+			</div>
+
+			<div class="footer-bottom">
+			© 2026 Santillana Educação. Todos os direitos reservados. |
+			<a href="#">Código de Ética</a>
+			|
+			<a href="#">Código Fornecedores</a>
+			|
+			<a href="#">Aviso Privacidade</a>
+			|
+			<a href="#">Solicitação de Dados</a>
+			|
+			<a href="#">Canal de denúncias</a>
+			|
+			<a href="#">SAC</a>
+			</div>
+		</div>
 		</footer>
 		<!-- ============================================ -->
 		<!-- BLOCO: FOOTER - FIM -->
 		<!-- ============================================ -->
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 		<script>
-document.addEventListener("DOMContentLoaded", function () {
+			document.addEventListener("DOMContentLoaded", function () {
 
-  const section = document.querySelector(".banner-home");
-  const hero3d = document.querySelector(".hero-3d");
-  const heroChild = document.querySelector(".hero-child");
+			const section = document.querySelector(".banner-home");
+			const hero3d = document.querySelector(".hero-3d");
+			const heroChild = document.querySelector(".hero-child");
 
-  if (!section || !hero3d || !heroChild) return;
+			if (!section || !hero3d || !heroChild) return;
 
-  const maxMove = 420;
-  const scrollLimit = 350;
+			const maxMove = 420;
+			const scrollLimit = 350;
 
-  function animateHero(){
+			function animateHero(){
 
-    const rect = section.getBoundingClientRect();
+				const rect = section.getBoundingClientRect();
 
-    let scrollProgress = Math.max(0, -rect.top);
-    let move = Math.min(scrollProgress, scrollLimit);
+				let scrollProgress = Math.max(0, -rect.top);
+				let move = Math.min(scrollProgress, scrollLimit);
 
-    hero3d.style.transform = `translate(-50%, ${move}px)`;
-    heroChild.style.transform = `translateY(${move}px)`;
+				hero3d.style.transform = `translate(-50%, ${move}px)`;
+				if (window.innerWidth > 767) {
+					heroChild.style.transform = `translateY(${move}px)`;
+				}
 
-    /* quando começa o scroll */
-    if(scrollProgress > 10){
-		hero3d.style.zIndex = "999";
-	}else{
-		hero3d.style.zIndex = "1";
-	}
+				/* quando começa o scroll */
+				if(scrollProgress > 10){
+					hero3d.style.zIndex = "999";
+				}else{
+					hero3d.style.zIndex = "1";
+				}
 
-  }
+			}
 
-  window.addEventListener("scroll", animateHero);
-  animateHero();
+			window.addEventListener("scroll", animateHero);
+			animateHero();
 
-});
-</script>
+			});
+		</script>
 	</body>
 </html>
 
