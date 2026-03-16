@@ -4,7 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Moderna Core - Jornada Integrada</title>
+    <title>Moderna Core | Razões para Acreditar</title>
+
+    <!-- SEO / Social -->
+    <meta name="author" content="Santillana Educação" />
+    <meta name="theme-color" content="#1f4c59" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Moderna Core | Razões para Acreditar" />
+    <meta
+      property="og:description"
+      content="A solução educacional que transforma escolas."
+    />
+    <meta
+      property="og:image"
+      content="http://modernacore.com.br/public/images/og-thumbnail.png"
+    />
+    <meta
+      property="og:url"
+      content="http://modernacore.com.br/razoes-para-acreditar.html"
+    />
+    <meta property="og:locale" content="pt_BR" />
 
     <link rel="icon" type="image/png" href="public/images/favicon.png" />
 
@@ -210,6 +229,7 @@
             padding: 190px 0 100px;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(180deg, #83b2c4 0%, #f1f1f1 100%);
           }
 
           .moderna-core .hero-text h1 {
@@ -586,7 +606,10 @@
           const dots = document.querySelectorAll(".dot");
 
           function updateSlider() {
-            track.style.transform = `translateX(-${cardIndex * 360}px)`;
+            const card = track.firstElementChild;
+            const gap = parseFloat(window.getComputedStyle(track).gap) || 24;
+            const step = card.offsetWidth + gap;
+            track.style.transform = `translateX(-${cardIndex * step}px)`;
 
             dots.forEach((d) => d.classList.remove("active"));
             dots[cardIndex].classList.add("active");
