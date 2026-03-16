@@ -308,6 +308,21 @@
 			}
 
 			/* responsivo */
+			/* zoom alto ~90% pra cima */
+			@media (min-resolution: 1.25dppx) {
+				.banner-home .hero-child {
+					bottom: 168px;
+					right: 12%;
+					max-height: 410px;
+				}
+			}
+
+			/* zoom ~65% pra baixo */
+          	@media (max-resolution: 1dppx) {
+				.banner-home .hero-child {
+					max-height: 550px;
+				}
+			}
 
 			@media (max-width:991px){
 
@@ -1411,6 +1426,25 @@
 						}
 					}
 
+					/* zoom ~65% pra baixo */
+					@media (max-resolution: 1dppx) {
+						.no-seu-core {
+							padding-bottom: 260px;
+						}
+
+						.nsc-card--cultura {
+							right: 36%;
+						}
+
+						.nsc-card--tecnologia {
+    						right: 25%;
+						}
+
+						.nsc-card--curricular {
+							left: 38%;
+							top: 530px;
+						}
+					}
 
 					@media (min-width: 1400px) {
 						.no-seu-core .content-wrapper {
@@ -1645,42 +1679,63 @@
 						var cards = section.querySelectorAll('.nsc-card');
 						var mobileItems = section.querySelectorAll('.nsc-mobile-item');
 
-						function closeOverlay() {
-							section.classList.remove('is-overlay-active');
-							hotspots.forEach(function (spot) { spot.classList.remove('is-active'); });
-							overlay.classList.remove('is-active');
-							cards.forEach(function (card) { card.classList.remove('is-visible'); });
-						}
+					var closeTimer = null;
 
-						function openOverlay(topic, hotspotEl) {
-							section.classList.add('is-overlay-active');
-							hotspots.forEach(function (spot) { spot.classList.toggle('is-active', spot === hotspotEl); });
-							overlay.classList.add('is-active');
-							cards.forEach(function (card) {
-								card.classList.toggle('is-visible', card.getAttribute('data-card') === topic);
-							});
-						}
+					function scheduleClose() {
+						closeTimer = setTimeout(closeOverlay, 120);
+					}
 
-						hotspots.forEach(function (hotspot) {
-							var topic = hotspot.getAttribute('data-topic');
-							hotspot.addEventListener('mouseenter', function () { openOverlay(topic, hotspot); });
-							hotspot.addEventListener('mouseleave', closeOverlay);
-							hotspot.addEventListener('focus', function () { openOverlay(topic, hotspot); });
-							hotspot.addEventListener('blur', closeOverlay);
-							hotspot.addEventListener('click', function () { openOverlay(topic, hotspot); });
+					function cancelClose() {
+						clearTimeout(closeTimer);
+					}
+
+					function closeOverlay() {
+						section.classList.remove('is-overlay-active');
+						hotspots.forEach(function (spot) { spot.classList.remove('is-active'); });
+						overlay.classList.remove('is-active');
+						cards.forEach(function (card) { card.classList.remove('is-visible'); });
+					}
+
+					function openOverlay(topic, hotspotEl) {
+						cancelClose();
+						section.classList.add('is-overlay-active');
+						hotspots.forEach(function (spot) { spot.classList.toggle('is-active', spot === hotspotEl); });
+						overlay.classList.add('is-active');
+						cards.forEach(function (card) {
+							card.classList.toggle('is-visible', card.getAttribute('data-card') === topic);
 						});
+					}
 
-						overlay.addEventListener('click', function (event) {
-							if (event.target === overlay) closeOverlay();
-						});
+					hotspots.forEach(function (hotspot) {
+						var topic = hotspot.getAttribute('data-topic');
+						hotspot.addEventListener('mouseenter', function () { openOverlay(topic, hotspot); });
+						hotspot.addEventListener('mouseleave', scheduleClose);
+						hotspot.addEventListener('focus', function () { openOverlay(topic, hotspot); });
+						hotspot.addEventListener('blur', scheduleClose);
+						hotspot.addEventListener('click', function () { openOverlay(topic, hotspot); });
+					});
 
-						mobileItems.forEach(function (item) {
-							var trigger = item.querySelector('.nsc-mobile-trigger');
-							trigger.addEventListener('click', function () {
-								item.classList.toggle('is-open');
-								trigger.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
-							});
+					cards.forEach(function (card) {
+						var topic = card.getAttribute('data-card');
+						var matchingHotspot = section.querySelector('.nsc-hotspot[data-topic="' + topic + '"]');
+						card.addEventListener('mouseenter', function () {
+							if (matchingHotspot) openOverlay(topic, matchingHotspot);
+							else cancelClose();
 						});
+						card.addEventListener('mouseleave', scheduleClose);
+					});
+
+					overlay.addEventListener('click', function (event) {
+						if (event.target === overlay) closeOverlay();
+					});
+
+					mobileItems.forEach(function (item) {
+						var trigger = item.querySelector('.nsc-mobile-trigger');
+						trigger.addEventListener('click', function () {
+							item.classList.toggle('is-open');
+							trigger.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
+						});
+					});
 					})();
 				</script>
 			</section>
@@ -1940,7 +1995,7 @@
 					/* zoom alto ~90% pra cima */
 					@media (min-resolution: 1.25dppx) {
 						.impacto-layer {
-							inset: 128px -80px 0 0;
+							inset: 128px -160px 0 0;
 						}
 					}
 
@@ -2404,11 +2459,24 @@
 						flex: 0 0 auto;
 						width: 50%;
 					}
+
+					/* zoom alto ~90% pra cima */
+					@media (min-resolution: 1.25dppx) { 
+						.jornada-integrada {
+							height: 85vh;
+						}
+					}
+
+					/* zoom ~65% pra baixo */
+					@media (max-resolution: 1dppx) {
+
+					}
 					
 					@media (min-width: 1800px) {
 						.jornada-3d-element {
-							width: 130%;
-							height: 160%;
+							width: 90%;
+							height: 100%;
+							top: 45%;
 						}
 					}
 					
@@ -2460,6 +2528,7 @@
 					@media (max-width: 767.98px) {
 						.jornada-integrada {
 							padding: 48px 0 0;
+							height: auto;
 						}
 						
 						.jornada-text-col h2 {
