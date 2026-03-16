@@ -38,8 +38,24 @@
 		<script src="scripts/custom.js" defer></script>
 
 		<style>
+			@font-face {
+				font-family: 'GothamLight';
+				src: url('public/fonts/Gotham Light.otf') format('opentype');
+			}
+
+			@font-face {
+				font-family: 'GothamBook';
+				src: url('public/fonts/Gotham Book.otf') format('opentype');
+			}
+
+			@font-face {
+				font-family: 'GothamBold';
+				src: url('public/fonts/Gotham Bold.otf') format('opentype');
+			}
+
 			body {
-				font-family: "Poppins", sans-serif;
+				font-family: 'GothamBook', 'Poppins', sans-serif;
+
 				color: #1a3a4a;
 				background: #f1f1f1;
 			}
@@ -164,7 +180,7 @@
 			/* ============================================ */
 
 			.banner-home{
-				font-family:'Poppins',sans-serif;
+				font-family: 'GothamLight', 'Poppins', sans-serif;
 				min-height:110vh;
 				background: linear-gradient(
 								165deg,
@@ -206,6 +222,7 @@
 			}
 
 			.banner-home h1 strong{
+				font-family: 'GothamBold';
 				font-weight:700;
 			}
 
@@ -350,7 +367,8 @@
 					/* Container principal */
 					.proposta-pedagogica {
 						position: relative;
-						font-family: 'Poppins', sans-serif;
+								font-family: 'GothamBook', 'Poppins', sans-serif;
+
 						color: #1a3a4a;
 						min-height: 100vh;
 						display: flex;
@@ -405,6 +423,7 @@
 					}
 					
 					.proposta-pedagogica .proposta-title strong {
+						font-family: 'GothamBold', 'Poppins', sans-serif;
 						font-weight: 700;
 						color: #1a3a4a;
 					}
@@ -478,7 +497,7 @@
 					/* Media Queries - Mobile */
 					@media (max-width: 767.98px) {
 						.proposta-pedagogica {
-							padding: 198px 0;
+							padding: 198px 0 30px;
 							min-height: 100vh;
 						}
 						
@@ -610,7 +629,8 @@
 					}
 					
 					.pelo-estudante {
-						font-family: 'Poppins', sans-serif;
+										font-family: 'GothamLight', 'Poppins', sans-serif;
+
 						background-color: #1a3a4a;
 						display: flex;
 						align-items: center;
@@ -644,6 +664,8 @@
 					}
 					
 					.pelo-estudante-text--bold {
+										font-family: 'GothamBold', 'Poppins', sans-serif;
+
 						font-weight: 700;
 					}
 					
@@ -671,7 +693,7 @@
 					}
 					
 					.pelo-estudante-coin--2 {
-						opacity: 0;
+						opacity: 1;
 					}
 					
 					/* Frases alternativas */
@@ -695,9 +717,14 @@
 						opacity: 0;
 					}
 					
+					.pelo-estudante-state--2 .pelo-estudante-text {
+						font-size: 3.2rem;
+					}
+					
 					/* Media Queries - Tablets */
 					@media (max-width: 991.98px) {
-						.pelo-estudante-text {
+						.pelo-estudante-text,
+						.pelo-estudante-state--2 .pelo-estudante-text {
 							font-size: 2rem;
 						}
 						
@@ -713,7 +740,7 @@
 					
 					/* Media Queries - Mobile */
 					@media (max-width: 767.98px) {
-						.pelo-estudante-text {
+						.pelo-estudante-text, .pelo-estudante-state--2 .pelo-estudante-text {
 							font-size: 1.3rem;
 						}
 						
@@ -748,7 +775,7 @@
 						<div class="pelo-estudante-state pelo-estudante-state--2">
 							<span class="pelo-estudante-text">TUDO PELA SUA</span>
 							<div class="pelo-estudante-coins">
-								<img class="pelo-estudante-coin pelo-estudante-coin--2" src="public/images/moedas.png" alt="">
+								<img class="pelo-estudante-coin pelo-estudante-coin--2" src="public/images/moeda.png" alt="">
 							</div>
 							<span class="pelo-estudante-text pelo-estudante-text--bold">EVOLUÇÃO.</span>
 						</div>
@@ -828,7 +855,8 @@
 					
 					/* Container principal */
 					.acompanhamento-estrategico {
-						font-family: 'Poppins', sans-serif;
+										font-family: 'GothamLight', 'Poppins', sans-serif;
+
 						color: #1a3a4a;
 						height: 90vh;
 						display: flex;
@@ -891,10 +919,14 @@
 					.acompanhamento-estrategico .acompanhamento-text strong {
 						font-weight: 700;
 						color: #1a3a4a;
+										font-family: 'GothamBold', 'Poppins', sans-serif;
+
 					}
 					
 					/* Botão */
 					.acompanhamento-estrategico .btn-escola-parceira {
+										font-family: 'GothamLight', 'Poppins', sans-serif;
+
 						display: inline-block;
 						background-color: #e86c3a;
 						color: #ffffff;
@@ -946,7 +978,7 @@
 					@media (max-width: 767.98px) {
 						.acompanhamento-estrategico {
 							padding: 48px 0;
-							min-height: 100vh;
+							min-height: auto;
 						}
 						
 						.acompanhamento-estrategico .acompanhamento-text {
@@ -1044,6 +1076,1161 @@
 			<!-- ============================================ -->
 			
 			<!-- ============================================ -->
+			<!-- BLOCO: NO SEU CORE - INÍCIO -->
+			<!-- ============================================ -->
+			<section class="no-seu-core" id="no_seu_core">
+				<style>
+					/* ============================================ */
+					/* CSS - BLOCO NO SEU CORE */
+					/* ============================================ */
+			
+					.no-seu-core {
+						--nsc-pad-y: 150px;
+						padding: var(--nsc-pad-y) 0;
+						position: relative;
+						min-height: 950px;
+						background: #ffffff;
+						overflow: hidden;
+					}
+
+					.no-seu-core .content-wrapper {
+						max-width: 1200px;
+						margin: 0 auto;
+						padding: 0 24px;
+						width: 100%;
+						height: auto;
+						min-height: 760px;
+						position: relative;
+						z-index: 8;
+					}
+
+					.nsc-heading {
+						position: absolute;
+						top: 28px;
+						left: 24px;
+						right: 24px;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						z-index: 3;
+						font-family: 'GothamLight', 'Poppins', sans-serif;
+						font-size: 2.4rem;
+						letter-spacing: 0.3px;
+						color: #1a4f63;
+					}
+
+					.nsc-heading strong {
+						font-family: 'GothamBold', 'Poppins', sans-serif;
+					}
+
+					.nsc-wave {
+						position: absolute;
+						left: 50%;
+						bottom: 164px;
+						transform: translateX(-50%);
+						width: 100vw;
+						height: auto;
+						z-index: 1;
+						pointer-events: none;
+					}
+
+					.nsc-girl {
+						position: absolute;
+						left: 50%;
+						bottom: 144px;
+						transform: translateX(-50%);
+						max-height: 480px;
+						width: auto;
+						z-index: 2;
+						pointer-events: none;
+					}
+
+					.nsc-hotspot {
+						position: absolute;
+						background: transparent;
+						border: none;
+						cursor: pointer;
+						font-family: 'GothamBold', 'Poppins', sans-serif;
+						font-size: 1rem;
+						line-height: 1;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						gap: 10px;
+						transition: transform 0.35s ease, filter 0.35s ease;
+						z-index: 14;
+					}
+
+					.no-seu-core.is-overlay-active .nsc-hotspot {
+						opacity: 0;
+						pointer-events: none;
+					}
+
+					.no-seu-core.is-overlay-active .nsc-hotspot.is-active {
+						opacity: 1;
+						pointer-events: auto;
+					}
+
+					.nsc-hotspot:hover,
+					.nsc-hotspot:focus-visible {
+						transform: translateY(-4px);
+						filter: saturate(1.12);
+						outline: none;
+					}
+
+					.nsc-hotspot-label {
+						font-size: 2.05rem;
+						line-height: 0.95;
+						text-align: center;
+					}
+
+					.nsc-hotspot-marker {
+						width: 2px;
+						height: 56px;
+						background: currentColor;
+						opacity: 0.9;
+						position: relative;
+						align-self: flex-end;
+					}
+
+					.nsc-hotspot-marker::after {
+						content: '';
+						position: absolute;
+						left: 50%;
+						bottom: -12px;
+						transform: translateX(-50%);
+						width: 10px;
+						height: 10px;
+						border-radius: 50%;
+						background: currentColor;
+					}
+
+					.nsc-hotspot--curricular {
+						left: 14%;
+						top: 400px;
+						color: #134d62;
+					}
+
+					.nsc-hotspot--curricular .nsc-hotspot-marker {
+						margin-right: 4px;
+					}
+
+					.nsc-hotspot--tecnologia {
+						left: 50%;
+						top: 150px;
+						transform: translateX(-50%);
+						color: #f25a2a;
+					}
+
+					.nsc-hotspot--tecnologia .nsc-hotspot-marker {
+						margin-right: 6px;
+					}
+
+					.nsc-hotspot--tecnologia:hover,
+					.nsc-hotspot--tecnologia:focus-visible {
+						transform: translateX(-50%) translateY(-4px);
+					}
+
+					.nsc-hotspot--cultura {
+						right: 12%;
+						top: 370px;
+						color: #d52a13;
+					}
+
+					.nsc-hotspot--cultura .nsc-hotspot-marker {
+						align-self: flex-start;
+						margin-left: 6px;
+					}
+
+					.nsc-overlay {
+						position: absolute;
+						top: calc(-1 * var(--nsc-pad-y));
+						left: 50%;
+						transform: translateX(-50%);
+						width: 100vw;
+						height: calc(100% + (var(--nsc-pad-y) * 2));
+						background: rgba(255, 255, 255, 0.62);
+						-webkit-backdrop-filter: blur(14px);
+						backdrop-filter: blur(14px);
+						opacity: 0;
+						pointer-events: none;
+						transition: opacity 0.4s ease;
+						z-index: 11;
+					}
+
+					.nsc-overlay.is-active {
+						opacity: 1;
+						pointer-events: auto;
+					}
+
+					.nsc-card {
+						position: absolute;
+						background: rgba(255, 255, 255, 0.94);
+						border-radius: 18px;
+						padding: 28px 30px;
+						box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
+						opacity: 0;
+						transform: translateY(16px);
+						transition: opacity 0.35s ease, transform 0.35s ease;
+						pointer-events: none;
+						z-index: 13;
+					}
+
+					.nsc-card.is-visible {
+						opacity: 1;
+						transform: translateY(0);
+						pointer-events: auto;
+					}
+
+					.nsc-card--curricular {
+						left:  35%;
+						top: 550px;
+						max-width: 670px;
+					}
+
+					.nsc-card--tecnologia {
+						right: 22%;
+						top: 280px;
+						max-width: 320px;
+					}
+
+					.nsc-card--cultura {
+						right: 33%;
+						top: 500px;
+						max-width: 340px;
+						display: flex;
+						flex-direction: column;
+						align-items: flex-end;
+						text-align: right;
+					}
+
+					.nsc-card--cultura .nsc-card-icon {
+						margin-left: auto;
+					}
+
+					.nsc-card-icon {
+						width: 58px;
+						height: 58px;
+						object-fit: contain;
+						margin-bottom: 16px;
+					}
+
+					.nsc-card-text {
+						font-family: 'GothamBook', 'Poppins', sans-serif;
+						font-size: 1.2rem;
+						line-height: 1.15;
+						color: #6b6d72;
+						margin-bottom: 18px;
+					}
+
+					.nsc-card-link {
+						font-family: 'GothamBold', 'Poppins', sans-serif;
+						font-size: 20px;
+						text-transform: uppercase;
+						text-decoration: underline;
+						text-underline-offset: 4px;
+					}
+
+					.nsc-card-link--blue,
+					.nsc-card-link--blue:visited {
+						color: #144f63;
+					}
+
+					.nsc-card-link--orange,
+					.nsc-card-link--orange:visited {
+						color: #f25a2a;
+					}
+
+					.nsc-card-link--red,
+					.nsc-card-link--red:visited {
+						color: #d52a13;
+					}
+
+					.nsc-mobile-list {
+						display: none;
+					}
+
+					/* zoom alto ~80% pra cima */
+					@media (min-resolution: 1.20dppx) {
+
+						.nsc-card--curricular {
+							left:  35%;
+							top: 550px;
+							max-width: 670px;
+						}
+
+						.nsc-card--tecnologia {
+							right: 18%;
+							top: 290px;
+							max-width: 320px;
+						}
+
+						.nsc-card--cultura {
+							right: 33%;
+							top: 500px;
+							max-width: 340px;
+						}
+					}
+
+
+					@media (min-width: 1400px) {
+						.no-seu-core .content-wrapper {
+							max-width: 1320px;
+						}
+					}
+
+					@media (max-width: 1399px) {
+						.nsc-card--curricular {
+							left:  40%;
+							top: 550px;
+							max-width: 350px;
+						}
+
+						.nsc-card--tecnologia {
+							right: 42%;
+							top: 410px;
+							max-width: 350px;
+						}
+					}
+
+					@media (max-width: 991.98px) {
+						.no-seu-core .content-wrapper {
+							min-height: auto;
+						}
+
+						.no-seu-core {
+							min-height: auto;
+							--nsc-pad-y: 120px;
+							padding: var(--nsc-pad-y) 0 56px;
+						}
+
+						.nsc-heading {
+							position: static;
+							font-size: 2.1rem;
+							margin-bottom: 16px;
+						}
+
+						.nsc-wave {
+							position: static;
+							transform: none;
+							width: 100%;
+							margin-top: 24px;
+						}
+
+						.nsc-girl,
+						.nsc-hotspot,
+						.nsc-overlay {
+							display: none;
+						}
+
+						.nsc-mobile-list {
+							display: grid;
+							gap: 14px;
+							margin-top: 8px;
+						}
+
+						.nsc-mobile-item {
+							background: rgb(238 242 245);
+							border-radius: 14px;
+							padding: 14px;
+							backdrop-filter: blur(4px);
+						}
+
+						.nsc-mobile-trigger {
+							width: 100%;
+							background: transparent;
+							border: none;
+							text-align: left;
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+							gap: 12px;
+							font-family: 'GothamBold', 'Poppins', sans-serif;
+							font-size: 1.35rem;
+							cursor: pointer;
+						}
+
+						.nsc-mobile-trigger-text {
+							flex: 1;
+						}
+
+						.nsc-mobile-chevron {
+							font-size: 0.9em;
+							line-height: 1;
+							transition: transform 0.25s ease;
+							flex-shrink: 0;
+						}
+
+						.nsc-mobile-trigger--blue { color: #134d62; }
+						.nsc-mobile-trigger--orange { color: #f25a2a; }
+						.nsc-mobile-trigger--red { color: #d52a13; }
+
+						.nsc-mobile-content {
+							max-height: 0;
+							overflow: hidden;
+							transition: max-height 0.35s ease;
+						}
+
+						.nsc-mobile-item.is-open .nsc-mobile-content {
+							max-height: 240px;
+						}
+
+						.nsc-mobile-item.is-open .nsc-mobile-chevron {
+							transform: rotate(180deg);
+						}
+
+						.nsc-mobile-content p {
+							font-family: 'GothamBook', 'Poppins', sans-serif;
+							font-size: 1rem;
+							line-height: 1.28;
+							color: #6b6d72;
+							margin: 10px 0 8px;
+						}
+
+						.nsc-mobile-content a {
+							font-family: 'GothamBold', 'Poppins', sans-serif;
+							font-size: 1rem;
+							text-transform: uppercase;
+							text-decoration: underline;
+							text-underline-offset: 4px;
+						}
+					}
+
+					@media (max-width: 767.98px) {
+						.nsc-heading {
+							font-size: 1.7rem;
+							line-height: 1.15;
+							flex-direction: column;
+							align-items: flex-start;
+							gap: 4px;
+						}
+
+						.nsc-mobile-trigger {
+							font-size: 1.2rem;
+						}
+
+						.nsc-mobile-content p,
+						.nsc-mobile-content a {
+							font-size: 0.95rem;
+						}
+					}
+				</style>
+
+				<div class="content-wrapper">
+					<div class="nsc-heading">
+						<span>CONHECER O ESTUDANTE.</span>
+						<strong>NO SEU CORE.</strong>
+					</div>
+
+					<button class="nsc-hotspot nsc-hotspot--curricular" data-topic="curricular" type="button">
+						<span class="nsc-hotspot-label">Inteligência<br>curricular</span>
+						<span class="nsc-hotspot-marker" aria-hidden="true"></span>
+					</button>
+
+					<button class="nsc-hotspot nsc-hotspot--tecnologia" data-topic="tecnologia" type="button">
+						<span class="nsc-hotspot-label">Menos tela,<br>mais tecnologia</span>
+						<span class="nsc-hotspot-marker" aria-hidden="true"></span>
+					</button>
+
+					<button class="nsc-hotspot nsc-hotspot--cultura" data-topic="cultura" type="button">
+						<span class="nsc-hotspot-label">Cultura da<br>evolução</span>
+						<span class="nsc-hotspot-marker" aria-hidden="true"></span>
+					</button>
+
+					<div class="nsc-overlay" id="nsc-overlay" aria-hidden="true">
+						<article class="nsc-card nsc-card--curricular" data-card="curricular">
+							<img class="nsc-card-icon" src="public/images/NO-SEU-CORE-inteligencia curricular.png" alt="Icone inteligencia curricular">
+							<p class="nsc-card-text">Organiza e orienta o processo pedagógico com precisão, transformando cada etapa da aprendizagem em unidades objetivas, mensuráveis e voltadas à evolução, o que garante uma visão real do progresso individual e coletivo.</p>
+							<a class="nsc-card-link nsc-card-link--blue" href="#">SAIBA MAIS »</a>
+						</article>
+
+						<article class="nsc-card nsc-card--tecnologia" data-card="tecnologia">
+							<img class="nsc-card-icon" src="public/images/NO-SEU-CORE-menos tela.png" alt="Icone menos tela mais tecnologia">
+							<p class="nsc-card-text">Atua de forma integrada nos bastidores, unindo dados, microtestes e ferramentas de IA para ampliar o olhar pedagógico, sem substituir o papel do educador.</p>
+							<a class="nsc-card-link nsc-card-link--orange" href="#">SAIBA MAIS »</a>
+						</article>
+
+						<article class="nsc-card nsc-card--cultura" data-card="cultura">
+							<img class="nsc-card-icon" src="public/images/NO-SEU-CORE-cultura de evolucao.png" alt="Icone cultura da evolucao">
+							<p class="nsc-card-text">Promove o avanço em cada conquista, com consciência, autonomia e fortalecimento socioemocional ao longo da jornada.</p>
+							<a class="nsc-card-link nsc-card-link--red" href="#">SAIBA MAIS »</a>
+						</article>
+					</div>
+
+					<div class="nsc-mobile-list" aria-label="Tópicos no seu core">
+						<div class="nsc-mobile-item">
+							<button class="nsc-mobile-trigger nsc-mobile-trigger--blue" type="button" aria-expanded="false" aria-controls="nsc-mobile-content-1">
+								<span class="nsc-mobile-trigger-text">Inteligência curricular</span>
+								<i class="bi bi-chevron-down nsc-mobile-chevron" aria-hidden="true"></i>
+							</button>
+							<div class="nsc-mobile-content" id="nsc-mobile-content-1">
+								<p>Organiza e orienta o processo pedagógico com precisão, transformando cada etapa da aprendizagem em unidades objetivas, mensuráveis e voltadas à evolução, o que garante uma visão real do progresso individual e coletivo.</p>
+								<a class="nsc-card-link--blue" href="#">SAIBA MAIS »</a>
+							</div>
+						</div>
+						<div class="nsc-mobile-item">
+							<button class="nsc-mobile-trigger nsc-mobile-trigger--orange" type="button" aria-expanded="false" aria-controls="nsc-mobile-content-2">
+								<span class="nsc-mobile-trigger-text">Menos tela, mais tecnologia</span>
+								<i class="bi bi-chevron-down nsc-mobile-chevron" aria-hidden="true"></i>
+							</button>
+							<div class="nsc-mobile-content" id="nsc-mobile-content-2">
+								<p>Atua de forma integrada nos bastidores, unindo dados, microtestes e ferramentas de IA para ampliar o olhar pedagógico, sem substituir o papel do educador.</p>
+								<a class="nsc-card-link--orange" href="#">SAIBA MAIS »</a>
+							</div>
+						</div>
+						<div class="nsc-mobile-item">
+							<button class="nsc-mobile-trigger nsc-mobile-trigger--red" type="button" aria-expanded="false" aria-controls="nsc-mobile-content-3">
+								<span class="nsc-mobile-trigger-text">Cultura da evolução</span>
+								<i class="bi bi-chevron-down nsc-mobile-chevron" aria-hidden="true"></i>
+							</button>
+							<div class="nsc-mobile-content" id="nsc-mobile-content-3">
+								<p>Promove o avanço em cada conquista, com consciência, autonomia e fortalecimento socioemocional ao longo da jornada.</p>
+								<a class="nsc-card-link--red" href="#">SAIBA MAIS »</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<img class="nsc-wave" src="public/images/NO-SEU-CORE-onda.png" alt="Onda decorativa">
+				<img class="nsc-girl" src="public/images/NO-SEU-CRE-menina.png" alt="Menina ao centro">
+
+				<script>
+					(function () {
+						'use strict';
+
+						var section = document.getElementById('no_seu_core');
+						if (!section) return;
+
+						var overlay = section.querySelector('#nsc-overlay');
+						var hotspots = section.querySelectorAll('.nsc-hotspot');
+						var cards = section.querySelectorAll('.nsc-card');
+						var mobileItems = section.querySelectorAll('.nsc-mobile-item');
+
+						function closeOverlay() {
+							section.classList.remove('is-overlay-active');
+							hotspots.forEach(function (spot) { spot.classList.remove('is-active'); });
+							overlay.classList.remove('is-active');
+							cards.forEach(function (card) { card.classList.remove('is-visible'); });
+						}
+
+						function openOverlay(topic, hotspotEl) {
+							section.classList.add('is-overlay-active');
+							hotspots.forEach(function (spot) { spot.classList.toggle('is-active', spot === hotspotEl); });
+							overlay.classList.add('is-active');
+							cards.forEach(function (card) {
+								card.classList.toggle('is-visible', card.getAttribute('data-card') === topic);
+							});
+						}
+
+						hotspots.forEach(function (hotspot) {
+							var topic = hotspot.getAttribute('data-topic');
+							hotspot.addEventListener('mouseenter', function () { openOverlay(topic, hotspot); });
+							hotspot.addEventListener('mouseleave', closeOverlay);
+							hotspot.addEventListener('focus', function () { openOverlay(topic, hotspot); });
+							hotspot.addEventListener('blur', closeOverlay);
+							hotspot.addEventListener('click', function () { openOverlay(topic, hotspot); });
+						});
+
+						overlay.addEventListener('click', function (event) {
+							if (event.target === overlay) closeOverlay();
+						});
+
+						mobileItems.forEach(function (item) {
+							var trigger = item.querySelector('.nsc-mobile-trigger');
+							trigger.addEventListener('click', function () {
+								item.classList.toggle('is-open');
+								trigger.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
+							});
+						});
+					})();
+				</script>
+			</section>
+			<!-- ============================================ -->
+			<!-- BLOCO: NO SEU CORE - FIM -->
+			<!-- ============================================ -->
+
+			<!-- ============================================ -->
+			<!-- BLOCO: IMPACTO PARA TODOS - INICIO -->
+			<!-- ============================================ -->
+			<section class="impacto-todos" id="impacto_para_todos">
+				<style>
+					/* ============================================ */
+					/* CSS - BLOCO IMPACTO PARA TODOS */
+					/* ============================================ */
+
+					.impacto-todos * {
+						margin: 0;
+						padding: 0;
+						box-sizing: border-box;
+					}
+
+					.impacto-todos {
+						font-family: 'GothamBook', 'Poppins', sans-serif;
+						position: relative;
+						background: linear-gradient(180deg, #ffffff 0%, #b5c7d2 100%);
+						min-height: 900px;
+						padding: 120px 0 88px;
+						overflow: hidden;
+					}
+
+					.impacto-todos .content-wrapper {
+						max-width: 1360px;
+						margin: 0 auto;
+						padding: 0 28px;
+						width: 100%;
+					}
+
+					.impacto-heading {
+						display: flex;
+						align-items: center;
+						gap: 28px;
+						margin-bottom: 0;
+						position: relative;
+						z-index: 5;
+					}
+
+					.impacto-heading-left,
+					.impacto-heading-right {
+						font-family: 'GothamLight', 'Poppins', sans-serif;
+						font-size: 2.3rem;
+						line-height: 1;
+						letter-spacing: 0.6px;
+						text-transform: uppercase;
+						color: #164f63;
+						white-space: nowrap;
+					}
+
+					.impacto-heading-right {
+						font-family: 'GothamBold', 'Poppins', sans-serif;
+					}
+
+					.impacto-heading-line {
+						flex: 1;
+						height: 2px;
+						background: #2a6175;
+						opacity: 0.65;
+					}
+
+					.impacto-stage {
+						display: grid;
+						grid-template-columns: minmax(380px, 1fr) minmax(620px, 1.4fr);
+						gap: 0;
+						align-items: stretch;
+						min-height: 720px;
+						margin-top: -48px;
+						margin-right: -28px;
+					}
+
+					.impacto-text-panel {
+						position: relative;
+						z-index: 3;
+						padding: 292px 28px 10px 90px;
+						display: flex;
+						flex-direction: column;
+						gap: 18px;
+						justify-content: space-around;
+					}
+
+					.impacto-item {
+						width: 100%;
+						transition: opacity 0.35s ease, transform 0.35s ease, margin 0.35s ease;
+					}
+
+					.impacto-item--estudantes { margin-left: 0; }
+					.impacto-item--professores { margin-left: 72px; }
+					.impacto-item--gestores { margin-left: 148px; }
+					.impacto-item--familias { margin-left: 224px; }
+
+					.impacto-trigger:focus-visible {
+						outline: 2px solid rgba(21, 76, 98, 0.45);
+						outline-offset: 3px;
+					}
+
+					.impacto-trigger {
+						width: 100%;
+						max-width: 340px;
+						display: flex;
+						align-items: center;
+						gap: 14px;
+						border: none;
+						background: transparent;
+						cursor: pointer;
+						padding: 2px 0;
+						text-align: left;
+						color: #154c62;
+					}
+
+					.impacto-trigger-label {
+						font-family: 'GothamBold', 'Poppins', sans-serif;
+						font-size: 1.8rem;
+						line-height: 1;
+					}
+
+					.impacto-trigger-chevron {
+						display: none;
+					}
+
+					.impacto-trigger-line {
+						position: relative;
+						flex: 1;
+						height: 0;
+						border-top: 3px dotted #1f6178;
+						opacity: 0.85;
+					}
+
+					.impacto-trigger-line::after {
+						content: '';
+						position: absolute;
+						right: -1px;
+						top: -9px;
+						width: 20px;
+						height: 20px;
+						border: 2px solid #2c6880;
+						border-radius: 50%;
+						background: rgba(233, 241, 247, 0.65);
+					}
+
+					.impacto-item-body {
+						max-height: 0;
+						overflow: hidden;
+						opacity: 0;
+						transform: translateY(-6px);
+						transition: max-height 0.45s ease, opacity 0.35s ease, transform 0.35s ease;
+						padding-right: 84px;
+					}
+
+					.impacto-item-body p {
+						margin-top: 14px;
+						font-family: 'GothamBook', 'Poppins', sans-serif;
+						font-size: 1.2rem;
+						line-height: 1.18;
+						color: #5d6368;
+					}
+
+					.impacto-item-link {
+						display: inline-block;
+						margin-top: 14px;
+						font-family: 'GothamBold', 'Poppins', sans-serif;
+						font-size: 1.2rem;
+						text-transform: uppercase;
+						text-decoration: underline;
+						text-underline-offset: 5px;
+						color: #d72c12;
+					}
+
+					.impacto-item-link:visited {
+						color: #d72c12;
+					}
+
+					.impacto-stage[data-active="estudantes"] .impacto-item--estudantes .impacto-item-body,
+					.impacto-stage[data-active="professores"] .impacto-item--professores .impacto-item-body,
+					.impacto-stage[data-active="gestores"] .impacto-item--gestores .impacto-item-body,
+					.impacto-stage[data-active="familias"] .impacto-item--familias .impacto-item-body {
+						max-height: 340px;
+						opacity: 1;
+						transform: translateY(0);
+					}
+
+					.impacto-stage[data-active="todos"] .impacto-item-body {
+						max-height: 0;
+						opacity: 0;
+						transform: translateY(-6px);
+					}
+
+					.impacto-stage[data-active="todos"] .impacto-item--estudantes,
+					.impacto-stage[data-active="todos"] .impacto-item--professores,
+					.impacto-stage[data-active="todos"] .impacto-item--gestores,
+					.impacto-stage[data-active="todos"] .impacto-item--familias {
+						opacity: 1;
+						pointer-events: auto;
+						transform: translateY(0);
+					}
+
+					.impacto-stage[data-active="estudantes"] .impacto-item:not(.impacto-item--estudantes),
+					.impacto-stage[data-active="professores"] .impacto-item:not(.impacto-item--professores),
+					.impacto-stage[data-active="gestores"] .impacto-item:not(.impacto-item--gestores),
+					.impacto-stage[data-active="familias"] .impacto-item:not(.impacto-item--familias) {
+						opacity: 0;
+						pointer-events: none;
+						transform: translateY(-10px);
+						margin-top: 0;
+						margin-bottom: 0;
+					}
+
+					.impacto-stage[data-active="estudantes"] .impacto-item--estudantes,
+					.impacto-stage[data-active="professores"] .impacto-item--professores,
+					.impacto-stage[data-active="gestores"] .impacto-item--gestores,
+					.impacto-stage[data-active="familias"] .impacto-item--familias {
+						margin-left: 0;
+					}
+
+					.impacto-visual {
+						position: relative;
+						min-height: 720px;
+						overflow: visible;
+						z-index: 2;
+						margin-right: min(0px, calc((100vw - 1360px) / -1.5));
+					}
+
+					.impacto-layer {
+						position: absolute;
+						inset: 118px 0 0 0;
+						display: flex;
+						align-items: flex-start;
+						justify-content: flex-end;
+						opacity: 0;
+						pointer-events: none;
+						transition: opacity 0.45s ease;
+					}
+
+					.impacto-layer img {
+						width: min(1090px, 76vw);
+						height: auto;
+						object-fit: contain;
+						transform: none;
+					}
+
+					.impacto-stage[data-active="todos"] .impacto-layer--todos,
+					.impacto-stage[data-active="estudantes"] .impacto-layer--estudantes,
+					.impacto-stage[data-active="professores"] .impacto-layer--professores,
+					.impacto-stage[data-active="gestores"] .impacto-layer--gestores,
+					.impacto-stage[data-active="familias"] .impacto-layer--familias {
+						opacity: 1;
+					}
+
+					/* zoom alto ~90% pra cima */
+					@media (min-resolution: 1.25dppx) {
+						.impacto-layer {
+							inset: 128px -80px 0 0;
+						}
+					}
+
+					@media (max-width: 1399.98px) {
+						.impacto-heading-left,
+						.impacto-heading-right {
+							font-size: 2.35rem;
+						}
+
+						.impacto-stage {
+							grid-template-columns: minmax(320px, 0.9fr) minmax(540px, 1.2fr);
+							margin-right: -28px;
+						}
+
+						.impacto-trigger-label {
+							font-size: 1.9rem;
+						}
+
+						.impacto-item-body p {
+							font-size: 1.28rem;
+						}
+
+						.impacto-item-link {
+							font-size: 1.48rem;
+						}
+
+						.impacto-layer {
+							inset: 138px -95px 0 0;
+						}
+					}
+
+					@media (max-width: 991.98px) {
+						.impacto-todos {
+							min-height: auto;
+							padding: 104px 0 56px;
+						}
+
+						.impacto-heading {
+							gap: 10px;
+							flex-wrap: wrap;
+							margin-bottom: 20px;
+						}
+
+						.impacto-heading-left,
+						.impacto-heading-right {
+							font-size: 1.5rem;
+						}
+
+						.impacto-heading-line {
+							order: 3;
+							width: 100%;
+							flex: none;
+						}
+
+						.impacto-stage {
+							grid-template-columns: 1fr;
+							gap: 24px;
+							min-height: auto;
+							margin-top: 8px;
+							margin-right: 0;
+						}
+
+						.impacto-text-panel {
+							padding: 0;
+							gap: 14px;
+						}
+
+						.impacto-item {
+							background: rgba(255, 255, 255, 0.46);
+							border-radius: 14px;
+							padding: 12px;
+							margin-left: 0;
+							opacity: 1;
+							pointer-events: auto;
+							transform: none;
+						}
+
+						.impacto-stage[data-active] .impacto-item,
+						.impacto-stage[data-active] .impacto-item--estudantes,
+						.impacto-stage[data-active] .impacto-item--professores,
+						.impacto-stage[data-active] .impacto-item--gestores,
+						.impacto-stage[data-active] .impacto-item--familias {
+							margin-top: 0;
+							padding-top: 12px;
+							opacity: 1;
+							pointer-events: auto;
+						}
+
+.impacto-trigger {
+								max-width: none;
+								width: 100%;
+								justify-content: space-between;
+							}
+
+							.impacto-trigger-label {
+								font-size: 1.35rem;
+							}
+
+							.impacto-trigger-line {
+								display: none;
+							}
+
+							.impacto-trigger-chevron {
+								display: block;
+								font-size: 0.9em;
+								line-height: 1;
+								transition: transform 0.25s ease;
+								flex-shrink: 0;
+							}
+
+							.impacto-item.is-open .impacto-trigger-chevron {
+								transform: rotate(180deg);
+							}
+
+							.impacto-item-body {
+								padding-right: 0;
+								max-height: 0;
+								opacity: 0;
+								transform: translateY(-6px);
+							}
+
+							.impacto-item.is-open .impacto-item-body {
+								max-height: 340px;
+								opacity: 1;
+								transform: translateY(0);
+							}
+
+							.impacto-item-body p {
+								font-size: 1rem;
+							}
+
+							.impacto-item-link {
+								font-size: 1rem;
+						}
+
+						.impacto-visual {
+							display: none;
+						}
+					}
+
+					@media (max-width: 767.98px) {
+						.impacto-heading-left {
+							font-size: 1rem;
+						}
+						.impacto-heading-right {
+							font-size: 1.15rem;
+						}
+
+						.impacto-trigger-label {
+							font-size: 1.2rem;
+						}
+
+						.impacto-item-body p {
+							font-size: 0.95rem;
+						}
+
+						.impacto-item-link {
+							font-size: 0.95rem;
+						}
+					}
+				</style>
+
+				<div class="content-wrapper">
+					<div class="impacto-heading">
+						<span class="impacto-heading-left">EDUCAÇÃO PENSADA PARA CADA UM.</span>
+						<span class="impacto-heading-line" aria-hidden="true"></span>
+						<span class="impacto-heading-right">IMPACTO PARA TODOS.</span>
+					</div>
+
+					<div class="impacto-stage" data-active="todos">
+						<div class="impacto-text-panel" aria-label="Publicos de impacto">
+							<div class="impacto-item impacto-item--estudantes">
+								<button class="impacto-trigger" type="button" data-state="estudantes" aria-expanded="false">
+									<span class="impacto-trigger-label">Estudantes</span>
+									<span class="impacto-trigger-line" aria-hidden="true"></span>
+									<i class="bi bi-chevron-down impacto-trigger-chevron" aria-hidden="true"></i>
+								</button>
+								<div class="impacto-item-body">
+									<p>Recursos personalizados, incluindo Tutor IA, feedback contínuo, reconhecimento e desafios significativos.</p>
+									<a class="impacto-item-link" href="#">SAIBA MAIS »</a>
+								</div>
+							</div>
+
+							<div class="impacto-item impacto-item--professores">
+								<button class="impacto-trigger" type="button" data-state="professores" aria-expanded="false">
+									<span class="impacto-trigger-label">Professores</span>
+									<span class="impacto-trigger-line" aria-hidden="true"></span>
+									<i class="bi bi-chevron-down impacto-trigger-chevron" aria-hidden="true"></i>
+								</button>
+								<div class="impacto-item-body">
+									<p>Leitura profunda da turma e de cada estudante, oferecendo caminhos claros para agir no coletivo e no individual, com o apoio de micro-habilidades, microtestes e uma IA segura.</p>
+									<a class="impacto-item-link" href="#">SAIBA MAIS »</a>
+								</div>
+							</div>
+
+							<div class="impacto-item impacto-item--gestores">
+								<button class="impacto-trigger" type="button" data-state="gestores" aria-expanded="false">
+									<span class="impacto-trigger-label">Gestores</span>
+									<span class="impacto-trigger-line" aria-hidden="true"></span>
+									<i class="bi bi-chevron-down impacto-trigger-chevron" aria-hidden="true"></i>
+								</button>
+								<div class="impacto-item-body">
+									<p>Clareza estratégica sobre o caminho pedagógico da escola e diagnósticos concretos para tomadas de decisões, o que contribui diretamente para a evolução de toda a comunidade escolar.</p>
+									<a class="impacto-item-link" href="#">SAIBA MAIS »</a>
+								</div>
+							</div>
+
+							<div class="impacto-item impacto-item--familias">
+								<button class="impacto-trigger" type="button" data-state="familias" aria-expanded="false">
+									<span class="impacto-trigger-label">Famílias</span>
+									<span class="impacto-trigger-line" aria-hidden="true"></span>
+									<i class="bi bi-chevron-down impacto-trigger-chevron" aria-hidden="true"></i>
+								</button>
+								<div class="impacto-item-body">
+									<p>Acompanhamento frequente e de fácil acesso, com relatórios claros, devolutivas personalizadas e o apoio do Tutor IA, sempre alinhado aos conteúdos de Moderna Core para ajudar seus filhos nos estudos além da sala de aula.</p>
+									<a class="impacto-item-link" href="#">SAIBA MAIS »</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="impacto-visual" aria-hidden="true">
+							<div class="impacto-layer impacto-layer--todos">
+								<img src="public/images/VIDRO - Todos - sem texto.png" alt="">
+							</div>
+							<div class="impacto-layer impacto-layer--estudantes">
+								<img src="public/images/VIDRO - Estudante - sem texto.png" alt="">
+							</div>
+							<div class="impacto-layer impacto-layer--professores">
+								<img src="public/images/VIDRO - Professores - sem texto.png" alt="">
+							</div>
+							<div class="impacto-layer impacto-layer--gestores">
+								<img src="public/images/VIDRO - Gestores - sem texto.png" alt="">
+							</div>
+							<div class="impacto-layer impacto-layer--familias">
+								<img src="public/images/VIDRO - Familias - sem texto.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					(function () {
+						'use strict';
+
+						var section = document.getElementById('impacto_para_todos');
+						if (!section) return;
+
+						var stage = section.querySelector('.impacto-stage');
+						var triggers = section.querySelectorAll('.impacto-trigger');
+						var mobileMq = window.matchMedia('(max-width: 991.98px)');
+
+						function setActiveState(state) {
+							stage.setAttribute('data-active', state);
+						}
+
+						function closeAllMobileItems() {
+							section.querySelectorAll('.impacto-item').forEach(function (item) {
+								item.classList.remove('is-open');
+							});
+							section.querySelectorAll('.impacto-trigger').forEach(function (t) {
+								t.setAttribute('aria-expanded', 'false');
+							});
+						}
+
+						triggers.forEach(function (trigger) {
+							var state = trigger.getAttribute('data-state');
+							var item = trigger.closest('.impacto-item');
+
+							/* desktop: abre ao entrar no ITEM */
+							item.addEventListener('mouseenter', function () {
+								if (mobileMq.matches) return;
+								setActiveState(state);
+							});
+
+							/* desktop: fecha ao sair do ITEM */
+							item.addEventListener('mouseleave', function () {
+								if (mobileMq.matches) return;
+								setActiveState('todos');
+							});
+
+							trigger.addEventListener('focus', function () {
+								if (mobileMq.matches) return;
+								setActiveState(state);
+							});
+
+							trigger.addEventListener('click', function () {
+								if (mobileMq.matches) {
+									var isOpen = item.classList.contains('is-open');
+									closeAllMobileItems();
+									if (!isOpen) {
+										item.classList.add('is-open');
+										trigger.setAttribute('aria-expanded', 'true');
+									}
+									return;
+								}
+
+								var current = stage.getAttribute('data-active');
+								setActiveState(current === state ? 'todos' : state);
+							});
+						});
+
+						/* fallback desktop: sair da seção reseta */
+						section.addEventListener('mouseleave', function () {
+							if (mobileMq.matches) return;
+							setActiveState('todos');
+						});
+
+						section.addEventListener('focusout', function (event) {
+							if (mobileMq.matches) return;
+							if (!section.contains(event.relatedTarget)) {
+								setActiveState('todos');
+							}
+						});
+
+						mobileMq.addEventListener('change', function () {
+							if (mobileMq.matches) {
+								setActiveState('todos');
+							} else {
+								closeAllMobileItems();
+							}
+						});
+					})();
+				</script>
+			</section>
+			<!-- ============================================ -->
+			<!-- BLOCO: IMPACTO PARA TODOS - FIM -->
+			<!-- ============================================ -->
+			
+			<!-- ============================================ -->
 			<!-- BLOCO: JORNADA INTEGRADA - INÍCIO -->
 			<!-- ============================================ -->
 			<section class="jornada-integrada" id="jornada_integrada">
@@ -1107,6 +2294,8 @@
 					
 					/* Botão Escola Parceira */
 					.btn-escola-parceira {
+										font-family: 'GothamLight', 'Poppins', sans-serif;
+
 						display: inline-block;
 						background-color: #e86c3a;
 						color: #ffffff;
