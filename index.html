@@ -68,15 +68,42 @@
 				width: 100%;
 			}
 
-			/* HEADER (mesmo da home) */
+			/* HEADER */
 			.site-header {
 				position: fixed;
-				top: 0;
+				top: -12px;
 				left: 0;
 				width: 100%;
 				z-index: 1000;
 				background: transparent;
 			}
+
+			.site-header .nav-menu {
+				display: none;
+				position: absolute;
+				top: calc(100% + 6px);
+				right: 0;
+				background: #1f4c59;
+				border-radius: 12px;
+				padding: 10px 0;
+				min-width: 260px;
+				box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+				z-index: 1001;
+			}
+			.site-header .nav-menu.is-open { display: block; }
+			.site-header .nav-menu a {
+				display: block;
+				padding: 12px 22px;
+				color: #fff;
+				text-decoration: none;
+				font-family: 'GothamBook', 'Poppins', sans-serif;
+				font-size: 0.9rem;
+				letter-spacing: 0.2px;
+				border-bottom: 1px solid rgba(255,255,255,0.1);
+				transition: background 0.15s;
+			}
+			.site-header .nav-menu a:last-child { border-bottom: none; }
+			.site-header .nav-menu a:hover { background: rgba(255,255,255,0.1); }
 
 			/* footer */
 			.site-footer {
@@ -121,41 +148,48 @@
 	
 		<header class="site-header">
 		<div class="container">
-			<div class="row align-items-center">
-			<div class="col-sm-4 col-2">
+			<div class="row align-items-center py-2">
+			<div class="col-sm-4 col-6">
+				<a href="index.html" aria-label="Ir para a home" style="display:inline-block">
 				<img
 				src="public/images/Logo CORE Color.png"
 				alt="Moderna Core"
 				class="img-fluid"
 				style="max-width: 90px"
 				/>
-			</div>
-
-			<!-- BOTÃO DESKTOP -->
-
-			<div class="col-sm-6 col-8 text-end d-flex justify-content-end">
-				<a
-				href="#"
-				class="d-none d-md-block btn rounded-pill px-4 py-2 fw-semibold text-white small"
-				style="background-color: #1f4c59; width: max-content"
-				>
-				➤ SEJA UMA ESCOLA PARCEIRA
 				</a>
 			</div>
 
-			<div class="col-2 text-end">
-				<button
-				class="btn rounded-pill px-3 py-2"
-				style="background-color: #1f4c59"
+			<div class="col-sm-8 col-6 d-flex align-items-center justify-content-end gap-2">
+				<a
+				href="#"
+				class="d-none d-md-inline-flex btn rounded-pill px-4 py-2 fw-semibold text-white small"
+				style="background-color: #1f4c59; white-space: nowrap"
 				>
-				<span class="text-white fs-5">☰</span>
+				➤ SEJA UMA ESCOLA PARCEIRA
+				</a>
+				<div class="position-relative">
+				<button
+					id="btn-hamburger"
+					class="btn rounded-pill px-3 py-2"
+					style="background-color: #1f4c59"
+					aria-label="Abrir menu"
+					aria-expanded="false"
+				>
+					<span class="text-white fs-5">☰</span>
 				</button>
+				<nav class="nav-menu" id="nav-menu" aria-label="Menu principal">
+					<a href="razoes-para-acreditar.html">Razões para acreditar</a>
+					<a href="ecossistema-integrado.html">Ecossistema Integrado</a>
+					<a href="acompanhamento-estrategico.html">Acompanhamento Estratégico</a>
+				</nav>
+				</div>
 			</div>
 			</div>
 
 			<!-- BOTÃO MOBILE -->
 
-			<div class="d-flex justify-content-center d-md-none content-btn-header-mobile">
+			<div class="d-flex justify-content-center d-md-none pb-2">
 			<a
 				href="#"
 				class="btn rounded-pill px-4 py-2 fw-semibold text-white small"
@@ -2581,55 +2615,57 @@
 
 			/* responsivo */
 
-			@media (max-width: 768px) {
-			.footer-contact {
-				align-items: flex-start;
-				margin-top: 20px;
+			@media (max-width: 767.98px) {
+			.footer-logo { text-align: center; }
+			.footer-contact { align-items: flex-start; }
+			.footer-bottom { font-size: 11.5px; }
+			.footer-bottom-links {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+				gap: 2px 8px;
+				margin-top: 6px;
 			}
-
-			.footer-links {
-				margin-top: 20px;
-			}
-
-			.footer-bottom {
-				font-size: 12px;
-			}
+			.footer-bottom-sep { display: none; }
 			}
 		</style>
 
 		<div class="content-wrapper">
-			<div class="row align-items-start">
-			<div class="col-md-4 footer-logo">
+			<div class="row align-items-start gy-3">
+			<div class="col-12 col-md-4 footer-logo text-md-start">
 				<img
 				src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-core-azul-hxsvdquRcy22ha78lbdUuMDxT2apEx.png"
 				alt="Moderna Core"
 				/>
 			</div>
 
-			<div class="col-md-4 footer-links">
+			<div class="col-6 col-md-4 footer-links">
 				<a href="#">Fale conosco</a>
 				<a href="#">Política de privacidade</a>
 			</div>
 
-			<div class="col-md-4 footer-contact">
+			<div class="col-6 col-md-4 footer-contact">
 				<a href="tel:08007703004">0800 770 3004</a>
 				<a href="#">Termos de uso</a>
 			</div>
 			</div>
 
 			<div class="footer-bottom">
-			© 2026 Santillana Educação. Todos os direitos reservados. |
-			<a href="#">Código de Ética</a>
-			|
-			<a href="#">Código Fornecedores</a>
-			|
-			<a href="#">Aviso Privacidade</a>
-			|
-			<a href="#">Solicitação de Dados</a>
-			|
-			<a href="#">Canal de denúncias</a>
-			|
-			<a href="#">SAC</a>
+			<div>© 2026 Santillana Educação. Todos os direitos reservados.</div>
+			<div class="footer-bottom-links">
+				<a href="#">Código de Ética</a>
+				<span class="footer-bottom-sep"> | </span>
+				<a href="#">Código Fornecedores</a>
+				<span class="footer-bottom-sep"> | </span>
+				<a href="#">Aviso Privacidade</a>
+				<span class="footer-bottom-sep"> | </span>
+				<a href="#">Solicitação de Dados</a>
+				<span class="footer-bottom-sep"> | </span>
+				<a href="#">Canal de denúncias</a>
+				<span class="footer-bottom-sep"> | </span>
+				<a href="#">SAC</a>
+			</div>
 			</div>
 		</div>
 		</footer>
@@ -2639,6 +2675,31 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+		<script>
+			(function () {
+				var btn  = document.getElementById('btn-hamburger');
+				var menu = document.getElementById('nav-menu');
+				if (!btn || !menu) return;
+
+				btn.addEventListener('click', function (e) {
+					e.stopPropagation();
+					var isOpen = menu.classList.toggle('is-open');
+					btn.setAttribute('aria-expanded', String(isOpen));
+				});
+
+				menu.querySelectorAll('a').forEach(function (a) {
+					a.addEventListener('click', function () {
+						menu.classList.remove('is-open');
+						btn.setAttribute('aria-expanded', 'false');
+					});
+				});
+
+				document.addEventListener('click', function () {
+					menu.classList.remove('is-open');
+					btn.setAttribute('aria-expanded', 'false');
+				});
+			})();
+		</script>
 
 		<script>
 			document.addEventListener("DOMContentLoaded", function () {
