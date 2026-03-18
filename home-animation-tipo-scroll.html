@@ -221,21 +221,31 @@
 
 			.banner-home{
 				font-family: 'GothamLight', 'Poppins', sans-serif;
-				min-height:110vh;
+				/* 200vh = 100vh visível + 100vh de zona de animação */
+				height: 200vh;
 				background: linear-gradient(
 								165deg,
 								#852323 -1%,
 								#f1592a 5%,
 								#ffffff 60%
 								);
-				display:flex;
-				align-items:center;
-				justify-content:center;
-				position:relative;
-				overflow:hidden;
-				text-align:center;
-				padding-top:100px;
+				position: relative;
+				overflow: visible;
+				text-align: center;
 				margin-top: -110px;
+			}
+
+			/* div interno que gruda durante o scroll da zona de animação */
+			.banner-inner {
+				position: sticky;
+				top: 0;
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+				padding-top: 100px;
+				z-index: 3;
 			}
 
 			/* largura padrão */
@@ -245,7 +255,7 @@
 				padding:0 24px;
 				width:100%;
 				position:relative;
-				z-index:0;
+				z-index:3;
 			}
 
 			/* texto central */
@@ -283,7 +293,7 @@
 				width:120%;
 				max-width:none;
 				height:auto;
-				z-index:1;
+				z-index: 10; /* sangra sobre o próximo bloco */
 				pointer-events:none;
 			}
 
@@ -337,8 +347,8 @@
 			}
 
 			.banner-home .hero-3d{
-			width:200%;
-			opacity:1;
+			width:100%;
+			opacity:.25;
 			}
 
 			.banner-home .hero-child{
@@ -351,7 +361,16 @@
 			@media (max-width:767px){
 
 			.banner-home{
-			min-height:80vh;
+				height: auto;
+				min-height: 80vh;
+				overflow: hidden;
+			}
+
+			.banner-inner {
+				position: relative;
+				height: auto;
+				min-height: 80vh;
+				padding-top: 100px;
 			}
 
 			.banner-home h1{
@@ -371,6 +390,8 @@
 			}
 
 			</style>
+
+			<div class="banner-inner">
 
 			<div class="content-wrapper">
 
@@ -400,6 +421,8 @@
 			src="public/images/menino home banner.png"
 			alt="Menino sorrindo"
 			>
+
+			</div><!-- /banner-inner -->
 
 			</section>
 			<!-- ============================================ -->
@@ -2748,47 +2771,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-		<!-- ANIMAÇÃO DE ENTRADA DO BANNER -->
-		<script>
-			(function () {
-				var hero3d    = document.querySelector('.hero-3d');
-				var heroChild = document.querySelector('.hero-child');
-				if (!hero3d || !heroChild) return;
-
-				// Posições finais — mobile (≤767px) vs desktop
-				var isMobile = window.innerWidth <= 767;
-				var finalHero3d    = isMobile ? 'translateX(-50%) translateY(320px)' : 'translateX(-50%) translateY(160px)';
-				var finalHeroChild = isMobile ? 'translateY(10px)'                   : 'translateY(120px)';
-
-				// Estado inicial: onda e menino abaixo do corte (overflow:hidden)
-				hero3d.style.transform    = 'translateX(-50%) translateY(560px)';
-				heroChild.style.transform = 'translateY(660px)';
-
-				// Aguarda 500ms antes de iniciar + dois rAF para garantir render do estado inicial
-				setTimeout(function () {
-					requestAnimationFrame(function () {
-						requestAnimationFrame(function () {
-							hero3d.style.transition    = 'transform 3400ms cubic-bezier(0.16, 1, 0.3, 1)';
-							heroChild.style.transition = 'transform 3400ms cubic-bezier(0.16, 1, 0.3, 1) 320ms';
-
-							hero3d.style.transform    = finalHero3d;
-							heroChild.style.transform = finalHeroChild;
-
-							// Limpeza via transitionend para evitar snap visual
-							heroChild.addEventListener('transitionend', function onEnd(e) {
-								if (e.propertyName !== 'transform') return;
-								heroChild.removeEventListener('transitionend', onEnd);
-								hero3d.style.transition    = '';
-								heroChild.style.transition = '';
-								hero3d.style.transform    = finalHero3d;
-								heroChild.style.transform = finalHeroChild;
-							});
-						});
-					});
-				}, 500);
-			})();
-		</script>
-
 		<script>
 			(function () {
 				var btn  = document.getElementById('btn-hamburger');
@@ -2815,6 +2797,46 @@
 			})();
 		</script>
 
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
 
+			const section   = document.querySelector(".banner-home");
+			const hero3d    = document.querySelector(".hero-3d");
+			const heroChild = document.querySelector(".hero-child");
+
+			if (!section || !hero3d || !heroChild) return;
+
+			// distância máxima de descida durante a animação
+			const maxMove = 400;
+
+			function animateHero() {
+				// No mobile não aplica transform — só animação passiva
+				if (window.innerWidth <= 767) {
+					hero3d.style.transform    = "translateX(-50%)";
+					heroChild.style.transform = "";
+					return;
+				}
+
+				const rect = section.getBoundingClientRect();
+
+				// scrollProgress: 0 quando a secao está no topo,
+				// avança até 1 ao final dos 100vh extras de animação
+				const progress = Math.max(0, Math.min(-rect.top, window.innerHeight));
+				const t        = progress / window.innerHeight; // 0 → 1
+
+				const move = t * maxMove;
+
+				hero3d.style.transform    = `translateX(-50%) translateY(${move}px)`;
+				heroChild.style.transform = `translateY(${move}px)`;
+				heroChild.style.opacity   = "";
+			}
+
+			window.addEventListener("scroll", animateHero, { passive: true });
+			window.addEventListener("resize", animateHero, { passive: true });
+			animateHero();
+
+			});
+		</script>
 	</body>
 </html>
+
