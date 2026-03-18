@@ -1,6 +1,21 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TVBM7SXJ");
+    </script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -24,6 +39,27 @@
       content="http://modernacore.com.br/razoes-para-acreditar.html"
     />
     <meta property="og:locale" content="pt_BR" />
+
+    <!-- Google Analytics (GA4) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-61G568L64R"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-61G568L64R");
+    </script>
+
+    <!-- RD Station -->
+    <script
+      type="text/javascript"
+      async
+      src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/797df9fa-fd7a-49e3-b996-b0e2839fdd1a-loader.js"
+    ></script>
 
     <link rel="icon" type="image/png" href="public/images/favicon.png" />
 
@@ -155,6 +191,16 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TVBM7SXJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- HEADER -->
 
     <header class="site-header">
@@ -182,7 +228,10 @@
               href="#"
               class="d-none d-md-inline-flex btn rounded-pill px-4 py-2 fw-semibold text-white small"
               style="background-color: #1f4c59; white-space: nowrap"
-              onclick="event.preventDefault(); openModalParceira();"
+              onclick="
+                event.preventDefault();
+                openModalParceira();
+              "
             >
               ➤ SEJA UMA ESCOLA PARCEIRA
             </a>
@@ -214,7 +263,10 @@
             href="#"
             class="btn rounded-pill px-4 py-2 fw-semibold text-white small"
             style="background-color: #1f4c59"
-            onclick="event.preventDefault(); openModalParceira();"
+            onclick="
+              event.preventDefault();
+              openModalParceira();
+            "
           >
             ➤ SEJA UMA ESCOLA PARCEIRA
           </a>
@@ -1081,7 +1133,7 @@
         position: fixed;
         inset: 0;
         z-index: 9999;
-        background: rgba(255, 255, 255, 0.70);
+        background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
         display: flex;
@@ -1124,52 +1176,69 @@
         cursor: pointer;
         padding: 0 4px;
       }
-      .modal-parceira-close:hover { color: #1f4c59; }
+      .modal-parceira-close:hover {
+        color: #1f4c59;
+      }
       @media (max-width: 575px) {
-        .modal-parceira-box { padding: 44px 20px 28px; }
+        .modal-parceira-box {
+          padding: 44px 20px 28px;
+        }
       }
     </style>
 
-    <div id="modal-parceira" class="modal-parceira-overlay" role="dialog" aria-modal="true" aria-label="Seja uma escola parceira">
+    <div
+      id="modal-parceira"
+      class="modal-parceira-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Seja uma escola parceira"
+    >
       <div class="modal-parceira-box">
-        <button class="modal-parceira-close" aria-label="Fechar modal">&times;</button>
+        <button class="modal-parceira-close" aria-label="Fechar modal">
+          &times;
+        </button>
         <div role="main" id="pop-up-do-hotsite-95275bbf6952c5fafcbd"></div>
       </div>
     </div>
 
-    <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"
+    ></script>
     <script type="text/javascript">
-      new RDStationForms('pop-up-do-hotsite-95275bbf6952c5fafcbd', 'null').createForm();
+      new RDStationForms(
+        "pop-up-do-hotsite-95275bbf6952c5fafcbd",
+        "null",
+      ).createForm();
     </script>
 
     <script>
       (function () {
-        var overlay  = document.getElementById('modal-parceira');
-        var closeBtn = overlay.querySelector('.modal-parceira-close');
+        var overlay = document.getElementById("modal-parceira");
+        var closeBtn = overlay.querySelector(".modal-parceira-close");
 
         function openModalParceira() {
-          overlay.classList.add('is-open');
-          document.body.style.overflow = 'hidden';
+          overlay.classList.add("is-open");
+          document.body.style.overflow = "hidden";
         }
 
         function closeModalParceira() {
-          overlay.classList.remove('is-open');
-          document.body.style.overflow = '';
+          overlay.classList.remove("is-open");
+          document.body.style.overflow = "";
         }
 
-        closeBtn.addEventListener('click', closeModalParceira);
+        closeBtn.addEventListener("click", closeModalParceira);
 
-        overlay.addEventListener('click', function (e) {
+        overlay.addEventListener("click", function (e) {
           if (e.target === overlay) closeModalParceira();
         });
 
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape') closeModalParceira();
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeModalParceira();
         });
 
         window.openModalParceira = openModalParceira;
       })();
     </script>
-
   </body>
 </html>
