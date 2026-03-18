@@ -247,7 +247,7 @@
 
 			.banner-home{
 				font-family: 'GothamLight', 'Poppins', sans-serif;
-				min-height:110vh;
+				min-height:732px;
 				background: linear-gradient(
 								165deg,
 								#852323 -1%,
@@ -1034,6 +1034,13 @@
 						color: #ffffff;
 						transform: translateY(-2px);
 					}
+
+					/* zoom 100% pra cima */
+					@media (min-resolution: 1.50dppx) {	
+						.estrategico-element {
+							height: 120%;
+						}
+					}
 					
 					/* Media Queries - Tablets */
 					@media (max-width: 991.98px) {
@@ -1434,6 +1441,34 @@
 
 					.nsc-mobile-list {
 						display: none;
+					}
+
+					/* zoom 100% pra cima */
+					@media (min-resolution: 1.50dppx) {
+						.nsc-heading {
+							font-size: 2rem;
+						}
+						.nsc-hotspot-label {
+    						font-size: 1.5rem;
+						}
+						.nsc-card-text, .nsc-card-link {
+   							 font-size: 1rem;
+						}
+					}
+
+					/* zoom 100% pra cima */
+					@media (min-resolution: 1.50dppx) {
+						.banner-home .hero-child {
+							max-height: 350px;
+						}
+
+						.banner-home h1 {
+							font-size: 2.1rem;
+						}
+
+						.banner-home .hero-text {
+							padding-top: 160px;
+						}
 					}
 
 					/* zoom alto ~80% pra cima */
@@ -2022,6 +2057,25 @@
 					.impacto-stage[data-active="gestores"] .impacto-layer--gestores,
 					.impacto-stage[data-active="familias"] .impacto-layer--familias {
 						opacity: 1;
+					}
+
+					/* zoom 100% pra cima */
+					@media (min-resolution: 1.50dppx) {
+						.impacto-heading-left, .impacto-heading-right {
+							font-size: 1.6rem !important;
+						}
+						.impacto-trigger-label {
+							font-size: 1.5rem !important;
+						}
+						.impacto-layer {
+							inset: 138px -195px 0 0 !important;
+}
+						.impacto-item-body p, .impacto-item-link {
+							font-size: 1rem  !important;
+						}
+						.impacto-layer img {
+   							 width: min(1090px, 81vw) !important;
+						}
 					}
 
 					/* zoom alto ~90% pra cima */
