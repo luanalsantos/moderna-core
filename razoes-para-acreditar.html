@@ -253,25 +253,10 @@
             z-index: 2;
           }
 
-          .moderna-core .dna-ribbon {
-            position: absolute;
-
-            inset: calc(45vh + 420px) calc(16vw) auto auto;
-
-            width: clamp(160px, 11vw, 220px);
-
-            z-index: 1;
-            opacity: 0.95;
-          }
-
           /* zoom normal ~65% pra baixo */
           @media (max-resolution: 0.8dppx) {
             .moderna-core .hero-kid {
               top: 115px;
-            }
-
-            .moderna-core .dna-ribbon {
-              inset: calc(45vh + 390px) calc(16vw) auto auto;
             }
           }
 
@@ -279,15 +264,6 @@
           @media (min-resolution: 1dppx) {
             .moderna-core .hero-kid {
               top: 115px;
-            }
-
-            .moderna-core .dna-ribbon {
-              inset: calc(45vh + 390px) calc(16vw) auto auto;
-            }
-          }
-          @media (min-resolution: 1dppx) and (max-width: 1300px) {
-            .moderna-core .dna-ribbon {
-              inset: calc(45vh + 230px) calc(16vw) auto auto;
             }
           }
           @media (min-resolution: 1dppx) and (min-width: 992px) {
@@ -306,10 +282,6 @@
           }
 
           @media (min-resolution: 1dppx) and (max-width: 992px) {
-            .moderna-core .dna-ribbon {
-              inset: calc(45vh + 90px) calc(16vw) auto auto;
-            }
-
             .content-wrapper {
               max-width: 960px;
             }
@@ -340,10 +312,6 @@
           @media (min-resolution: 1.25dppx) {
             .moderna-core .porque-bloco {
               margin-top: 470px;
-            }
-
-            .moderna-core .dna-ribbon {
-              inset: calc(45vh + 315px) calc(16vw) auto auto;
             }
 
             .moderna-core .section-title {
@@ -471,10 +439,6 @@
             .moderna-core .porque-bloco {
               margin-top: 0px !important;
             }
-
-            .dna-ribbon {
-              display: none;
-            }
           }
         </style>
 
@@ -490,12 +454,6 @@
           class="hero-kid"
           src="public/images/hero-crianca-notebook.png"
           alt="Aluno usando notebook"
-        />
-
-        <img
-          class="dna-ribbon"
-          src="public/images/dna-ribbon.png"
-          alt="Ribbon Moderna"
         />
 
         <div class="content-wrapper porque-bloco">
@@ -559,12 +517,12 @@
                 </div>
 
                 <div class="card-text">
-                  No Moderna Core, o desenvolvimento emocional está integrado à
-                  jornada pedagógica e o estudante sente e regula o que aprende.
+                  No Moderna Core, o socioemocional está integrado à jornada
+                  pedagógica e o estudante sente e regula o que aprende.
                 </div>
               </div>
 
-              <!-- CARD 4 (criado) -->
+              <!-- CARD 4 -->
 
               <div class="card-moderna">
                 <div class="card-icon">
@@ -572,14 +530,33 @@
                 </div>
 
                 <div class="card-title">
-                  Porque conecta tecnologia, dados e aprendizagem.
+                  Porque olha para além do que aparece.
                 </div>
 
                 <div class="card-text">
-                  A solução integra inteligência pedagógica, análise de dados e
-                  recursos digitais para apoiar educadores e potencializar o
-                  desenvolvimento de cada estudante ao longo de toda a jornada
-                  escolar.
+                  O olhar humano está sempre presente na evolução de cada
+                  estudante. Usamos a tecnologia de forma potente, analisando
+                  trajetórias e antecipando necessidades, sem que ele precise
+                  ficar conectado o tempo todo.
+                </div>
+              </div>
+
+              <!-- CARD 5 -->
+
+              <div class="card-moderna">
+                <div class="card-icon">
+                  <img src="public/images/card-5.png" width="45" />
+                </div>
+
+                <div class="card-title">
+                  Porque tem compromisso com a inclusão.
+                </div>
+
+                <div class="card-text">
+                  O Instituto Rodrigues Mendes atua pela educação inclusiva,
+                  desenvolvendo com o Moderna Core recursos que ampliam
+                  aprendizagens e garantem oportunidades com respeito às
+                  diferenças.
                 </div>
               </div>
             </div>
@@ -590,6 +567,7 @@
 
             <div class="dots">
               <div class="dot active"></div>
+              <div class="dot"></div>
               <div class="dot"></div>
               <div class="dot"></div>
               <div class="dot"></div>
@@ -987,17 +965,54 @@
         <div class="footer-bottom">
           <div>© 2026 Santillana Educação. Todos os direitos reservados.</div>
           <div class="footer-bottom-links">
-            <a href="#">Código de Ética</a>
+            <a
+              href="https://www.santillana.com.br/termos-de-uso"
+              target="_blank"
+              rel="noopener"
+              >Termos de Uso</a
+            >
             <span class="footer-bottom-sep"> | </span>
-            <a href="#">Código Fornecedores</a>
+            <a
+              href="https://sta-s3-prd.s3.amazonaws.com/cms/wp-content/uploads/2021/11/08143214/Codigo-de-etica_Santillana-Brasil_2021.pdf"
+              target="_blank"
+              rel="noopener"
+              >Código de Ética</a
+            >
             <span class="footer-bottom-sep"> | </span>
-            <a href="#">Aviso Privacidade</a>
+            <a
+              href="https://wcpro.s3.amazonaws.com/codigo_etica_dos_fornecedores.pdf"
+              target="_blank"
+              rel="noopener"
+              >Código de Fornecedores</a
+            >
             <span class="footer-bottom-sep"> | </span>
-            <a href="#">Solicitação de Dados</a>
+            <a
+              href="https://www.santillana.com.br/aviso-de-privacidade"
+              target="_blank"
+              rel="noopener"
+              >Aviso de Privacidade</a
+            >
             <span class="footer-bottom-sep"> | </span>
-            <a href="#">Canal de denúncias</a>
+            <a
+              href="https://www.santillana.com.br/solicitacao-de-dados"
+              target="_blank"
+              rel="noopener"
+              >Solicitação de Dados</a
+            >
             <span class="footer-bottom-sep"> | </span>
-            <a href="#">SAC</a>
+            <a
+              href="https://www.santillanaeducacao.com.br/canal-de-denuncias/"
+              target="_blank"
+              rel="noopener"
+              >Canal de Denúncias</a
+            >
+            <span class="footer-bottom-sep"> | </span>
+            <a
+              href="mailto:contatocentral@santillana.com"
+              target="_blank"
+              rel="noopener"
+              >SAC</a
+            >
           </div>
         </div>
       </div>
