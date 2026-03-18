@@ -247,7 +247,7 @@
 
 			.banner-home{
 				font-family: 'GothamLight', 'Poppins', sans-serif;
-				min-height:732px;
+				min-height:120vh;
 				background: linear-gradient(
 								165deg,
 								#852323 -1%,
@@ -340,6 +340,13 @@
 			}
 
 			/* responsivo */
+			/* zoom 100% pra cima */
+			@media (min-resolution: 1.50dppx) {
+				.banner-home {
+					min-height: 732px;
+				}
+			}
+
 			/* zoom alto ~90% pra cima */
 			@media (min-resolution: 1.25dppx) {
 				.banner-home .hero-child {
