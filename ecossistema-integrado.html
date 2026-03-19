@@ -506,12 +506,26 @@
 				}
 				.modal-parceira-left {
 					flex: 0 0 auto;
-					height: 180px;
-					border-radius: 24px 24px 0 0;
+					height: 290px;
+					width: 100%;
+					position: relative;
+					margin-top: -70px;
+					border-radius: 0 0 24px 24px;
+					z-index: 1;
+				}
+				.modal-parceira-left img {
+					position: absolute;
+					inset: 0;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					border-radius: 0 0 24px 24px;
 				}
 				.modal-parceira-right {
 					padding: 28px 20px 32px;
 					overflow-y: auto;
+					position: relative;
+					z-index: 2;
 				}
 				.modal-parceira-title { font-size: 1.2rem; }
 			}
