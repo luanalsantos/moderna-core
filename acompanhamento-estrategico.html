@@ -1,0 +1,1486 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TVBM7SXJ");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Moderna Core | Acompanhamento Estratégico</title>
+
+    <!-- SEO / Social -->
+    <meta name="author" content="Santillana Educação" />
+    <meta name="theme-color" content="#1f4c59" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Moderna Core | Acompanhamento Estratégico"
+    />
+    <meta
+      property="og:description"
+      content="A solução educacional que transforma escolas."
+    />
+    <meta
+      property="og:image"
+      content="https://modernacore.com.br/public/images/og-thumbnail.png"
+    />
+    <meta
+      property="og:url"
+      content="https://modernacore.com.br/acompanhamento-estrategico.html"
+    />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Google Analytics (GA4) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-61G568L64R"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-61G568L64R");
+    </script>
+
+    <!-- RD Station -->
+    <script
+      type="text/javascript"
+      async
+      src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/797df9fa-fd7a-49e3-b996-b0e2839fdd1a-loader.js"
+    ></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="public/images/favicon.png" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+      integrity="sha384-CK2SzKma4jA5H/MXDUU7i1TqZlCFaD4T01vtyDFvPlD97JQyS+IsSh1nI2EFbpyk"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+      defer
+    ></script>
+
+    <style>
+      /* ============================================ */
+      /* FONTES                                       */
+      /* ============================================ */
+      @font-face {
+        font-family: "GothamLight";
+        src: url("public/fonts/Gotham Light.otf") format("opentype");
+      }
+      @font-face {
+        font-family: "GothamBook";
+        src: url("public/fonts/Gotham Book.otf") format("opentype");
+      }
+      @font-face {
+        font-family: "GothamBold";
+        src: url("public/fonts/Gotham Bold.otf") format("opentype");
+      }
+
+      /* ============================================ */
+      /* BASE                                         */
+      /* ============================================ */
+      body {
+        font-family: "GothamBook", "Poppins", sans-serif;
+        color: #1a3a4a;
+        background: #ffffff;
+      }
+
+      /* Largura padrão do projeto */
+      .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        width: 100%;
+      }
+
+      /* ============================================ */
+      /* HEADER                                       */
+      /* ============================================ */
+      .site-header {
+        position: fixed;
+        top: -12px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: transparent;
+      }
+
+      .site-header .nav-menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 6px);
+        right: 0;
+        background: #1f4c59;
+        border-radius: 12px;
+        padding: 10px 0;
+        min-width: 260px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+      }
+      .site-header .nav-menu.is-open {
+        display: block;
+      }
+      .site-header .nav-menu a {
+        display: block;
+        padding: 12px 22px;
+        color: #fff;
+        text-decoration: none;
+        font-family: "GothamBook", "Poppins", sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.2px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background 0.15s;
+      }
+      .site-header .nav-menu a:last-child {
+        border-bottom: none;
+      }
+      .site-header .nav-menu a:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* ============================================ */
+      /* FOOTER                                       */
+      /* ============================================ */
+      .site-footer {
+        padding: 30px 0 18px;
+        border-top: 1px solid #e8e8e8;
+        font-size: 14px;
+        color: #5a6a72;
+      }
+
+      .footer-logo img {
+        height: 72px;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .footer-links a,
+      .footer-contact a {
+        color: #5a6a72;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .footer-links a:hover,
+      .footer-contact a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+        font-size: 0.9rem;
+      }
+
+      .footer-bottom {
+        margin-top: 26px;
+        padding-top: 16px;
+        border-top: 1px solid #e8e8e8;
+        text-align: center;
+        font-size: 0.85rem;
+        color: #6b7c84;
+        line-height: 1.6;
+      }
+
+      .footer-bottom a {
+        color: #6b7c84;
+        text-decoration: none;
+      }
+      .footer-bottom a:hover {
+        text-decoration: underline;
+      }
+
+      /* ============================================ */
+      /* RESPONSIVO — header / footer                 */
+      /* ============================================ */
+      @media (max-width: 767.98px) {
+        .footer-logo {
+          text-align: center;
+        }
+        .footer-contact {
+          align-items: flex-start;
+        }
+        .footer-bottom {
+          font-size: 11.5px;
+        }
+        .footer-bottom-links {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 2px 8px;
+          margin-top: 6px;
+        }
+        .footer-bottom-sep {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TVBM7SXJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ============================================ -->
+    <!-- HEADER                                       -->
+    <!-- ============================================ -->
+    <header class="site-header">
+      <div class="container">
+        <div class="row align-items-center py-2">
+          <div class="col-sm-4 col-6">
+            <a
+              href="index.html"
+              aria-label="Ir para a home"
+              style="display: inline-block"
+            >
+              <img
+                src="public/images/Logo CORE Color.png"
+                alt="Moderna Core"
+                class="img-fluid"
+                style="max-width: 90px"
+              />
+            </a>
+          </div>
+
+          <div
+            class="col-sm-8 col-6 d-flex align-items-center justify-content-end gap-2"
+          >
+            <a
+              href="#"
+              class="d-none d-md-inline-flex btn rounded-pill px-4 py-2 fw-semibold text-white small"
+              style="background-color: #1f4c59; white-space: nowrap"
+              onclick="
+                event.preventDefault();
+                openModalParceira();
+              "
+            >
+              ➤ SEJA UMA ESCOLA PARCEIRA
+            </a>
+            <div class="position-relative">
+              <button
+                id="btn-hamburger"
+                class="btn rounded-pill px-3 py-2"
+                style="background-color: #1f4c59"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+              >
+                <span class="text-white fs-5">☰</span>
+              </button>
+              <nav class="nav-menu" id="nav-menu" aria-label="Menu principal">
+                <a href="razoes-para-acreditar.html">Razões para acreditar</a>
+                <!-- <a href="ecossistema-integrado.html">Ecossistema Integrado</a> -->
+                <a href="acompanhamento-estrategico.html"
+                  >Acompanhamento Estratégico</a
+                >
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTÃO MOBILE -->
+        <div class="d-flex justify-content-center d-md-none pb-2">
+          <a
+            href="#"
+            class="btn rounded-pill px-4 py-2 fw-semibold text-white small"
+            style="background-color: #1f4c59"
+            onclick="
+              event.preventDefault();
+              openModalParceira();
+            "
+          >
+            ➤ SEJA UMA ESCOLA PARCEIRA
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- MAIN                                         -->
+    <!-- ============================================ -->
+    <main class="flex-grow-1">
+      <!-- ============================================ -->
+      <!-- BLOCO: HERO ACOMPANHAMENTO - INÍCIO         -->
+      <!-- ============================================ -->
+      <section class="acompanhamento-hero" id="acompanhamento_hero">
+        <style>
+          .acompanhamento-hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, #fbcfc1 0%, #ffffff 100%);
+            padding: 130px 0 90px;
+          }
+
+          .acompanhamento-hero-top {
+            position: relative;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+          }
+
+          .acompanhamento-onda {
+            position: absolute;
+            top: -135px;
+            right: -80px;
+            width: min(1920px, 78vw);
+            height: auto;
+            z-index: 1;
+            pointer-events: none;
+          }
+
+          .acompanhamento-hero-copy {
+            position: relative;
+            z-index: 2;
+            font-family: "GothamLight", "Poppins", sans-serif;
+            font-size: clamp(2.9rem, 2vw, 2rem);
+            line-height: 1.12;
+            color: #0f4657;
+            max-width: 680px;
+            letter-spacing: 0.2px;
+          }
+
+          .acompanhamento-hero-copy strong {
+            font-family: "GothamBold", "Poppins", sans-serif;
+            font-weight: 700;
+          }
+
+          .acompanhamento-hero-bottom {
+            margin-top: 10px;
+            text-align: center;
+            color: #f1592a;
+            padding: 0 18px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+          }
+
+          .acompanhamento-hero-bottom h2 {
+            margin: 0;
+            font-family: "GothamBold", "Poppins", sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.1rem, 3.5vw, 3.6rem);
+            line-height: 1.05;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+          }
+
+          .acompanhamento-hero-bottom p {
+            margin: 26px 0 0;
+            font-family: "GothamBook", "Poppins", sans-serif;
+            font-size: clamp(1.55rem, 2.6vw, 2.4rem);
+            line-height: 1.22;
+          }
+
+          /* zoom 80% pra baixo */
+          @media (max-resolution: 1.2dppx) {
+            .acompanhamento-onda {
+              top: -145px;
+              width: min(1050px, 75vw);
+            }
+
+            .acompanhamento-hero-copy {
+              font-size: clamp(3.4rem, 2vw, 2rem);
+            }
+          }
+
+          @media (max-width: 991.98px) {
+            .acompanhamento-hero {
+              padding: 120px 0 72px;
+            }
+
+            .acompanhamento-hero-top {
+              min-height: 460px;
+            }
+
+            .acompanhamento-onda {
+              right: -180px;
+              width: min(700px, 90vw);
+            }
+
+            .acompanhamento-hero-copy {
+              font-size: clamp(2rem, 4.8vw, 3rem);
+              max-width: 560px;
+            }
+
+            .acompanhamento-hero-bottom p {
+              font-size: clamp(1.35rem, 2.9vw, 2rem);
+            }
+          }
+
+          @media (max-width: 767.98px) {
+            .acompanhamento-hero {
+              padding: 120px 0 56px;
+            }
+
+            .acompanhamento-hero-top {
+              min-height: auto;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 18px;
+            }
+
+            .acompanhamento-onda {
+              position: static;
+              width: min(620px, 130%);
+              margin: 0 auto;
+              margin-top: -140px;
+              margin-left: -25%;
+            }
+
+            .acompanhamento-hero-copy {
+              text-align: center;
+              max-width: 100%;
+              font-size: clamp(1.7rem, 9.2vw, 2.55rem);
+              line-height: 1.14;
+              padding-top: 30px;
+            }
+
+            .acompanhamento-hero-bottom {
+              margin-top: 110px;
+            }
+
+            .acompanhamento-hero-bottom h2 {
+              font-size: clamp(1.8rem, 4.6vw, 1.6rem);
+            }
+
+            .acompanhamento-hero-bottom p {
+              margin-top: 18px;
+              font-size: clamp(1.6rem, 2vw, 1rem);
+              line-height: 1.28;
+            }
+          }
+        </style>
+
+        <div class="container">
+          <div class="acompanhamento-hero-top">
+            <img
+              class="acompanhamento-onda"
+              src="public/images/ACOMPANHAMENTO-ESTRATEGICO/ONDA_recortada.png"
+              alt=""
+            />
+
+            <div class="acompanhamento-hero-copy">
+              Juntos em cada<br />
+              passo da jornada,<br />
+              <strong>rumo à melhor versão</strong><br />
+              de cada estudante.
+            </div>
+          </div>
+
+          <div class="acompanhamento-hero-bottom">
+            <h2>Acompanhamento ativo</h2>
+            <p>
+              Presença que escuta, orienta e potencializa<br />
+              cada escola, com visão de comunidade<br />
+              e evolução contínua.
+            </p>
+          </div>
+        </div>
+
+        <script>
+          (function () {
+            // Bloco inicial sem interações por enquanto.
+          })();
+        </script>
+      </section>
+      <!-- ============================================ -->
+      <!-- BLOCO: HERO ACOMPANHAMENTO - FIM            -->
+      <!-- ============================================ -->
+
+      <!-- ============================================ -->
+      <!-- BLOCO: REDE DE APOIO - INÍCIO               -->
+      <!-- ============================================ -->
+      <section class="rede-apoio" id="rede_apoio">
+        <style>
+          .rede-apoio {
+            position: relative;
+            min-height: 850px;
+            padding: 70px 0 60px;
+            overflow: hidden;
+          }
+
+          .rede-grid {
+            display: grid;
+            grid-template-columns: minmax(240px, 440px) 200px minmax(
+                240px,
+                320px
+              );
+            gap: 28px;
+            align-items: start;
+            justify-content: center;
+          }
+
+          .rede-col {
+            padding-top: 204px;
+            z-index: 3;
+          }
+
+          .rede-col.rede-col--left {
+            padding-top: 102px;
+          }
+
+          .rede-item {
+            margin-bottom: 18px;
+          }
+
+          .rede-trigger {
+            width: max-content;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            border: none;
+            background: transparent;
+            padding: 6px 10px;
+            border-radius: 0;
+            cursor: pointer;
+            color: var(--title-color);
+            font-family: "GothamBook", "Poppins", sans-serif;
+            font-size: clamp(1.4rem, 1.6vw, 2rem);
+            line-height: 1.08;
+            text-align: left;
+            transition: color 0.22s ease;
+            position: relative;
+            overflow: visible;
+          }
+
+          .rede-trigger:hover,
+          .rede-trigger:focus-visible {
+            outline: none;
+          }
+
+          .rede-trigger-main {
+            display: inline;
+            position: relative;
+            line-height: 1.06;
+            padding: 2px 10px 3px;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            transition:
+              background-color 0.22s ease,
+              color 0.22s ease;
+          }
+
+          .rede-trigger-main::before {
+            content: "›";
+            position: absolute;
+            left: -14px;
+            top: 0.04em;
+            font-size: 1.1em;
+            line-height: 1;
+            color: var(--title-color);
+            transition: color 0.22s ease;
+            font-family: "GothamBold", "Poppins", sans-serif;
+          }
+
+          .rede-trigger-sub {
+            font-family: "GothamBook", "Poppins", sans-serif;
+            font-size: 0.75em;
+            line-height: 1.22;
+            padding-left: 21px;
+          }
+
+          .rede-desc {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateY(-6px);
+            transition:
+              max-height 0.35s ease,
+              opacity 0.25s ease,
+              transform 0.25s ease;
+            font-family: "GothamLight", "Poppins", sans-serif;
+            color: #555555;
+            font-size: clamp(1rem, 2vw, 1rem);
+            line-height: 1.2;
+            padding: 0 10px;
+            white-space: normal;
+          }
+
+          .rede-item.is-open .rede-desc {
+            max-height: 360px;
+            opacity: 1;
+            transform: translateY(0);
+            padding-top: 10px;
+          }
+
+          .rede-item.is-open .rede-trigger-main {
+            background: var(--active-bg);
+            color: #ffffff;
+          }
+
+          .rede-trigger:hover .rede-trigger-main,
+          .rede-trigger:focus-visible .rede-trigger-main {
+            background: var(--active-bg);
+            color: #ffffff;
+          }
+
+          .rede-sublist {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 10px 0;
+            color: var(--title-color);
+            font-family: "GothamBook", "Poppins", sans-serif;
+            font-size: clamp(1.2rem, 1.2vw, 1.5rem);
+            line-height: 1.2;
+          }
+
+          .rede-item--gestores .rede-sublist {
+            display: flex;
+          }
+
+          .rede-item.is-open .rede-sublist {
+            display: flex;
+          }
+
+          .rede-item--left {
+            --title-color: #f1592a;
+            --active-bg: #f1592a;
+          }
+
+          .rede-item--right {
+            --title-color: #164b5c;
+            --active-bg: #164b5c;
+          }
+
+          .rede-center {
+            position: relative;
+            min-height: 760px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+          }
+
+          .rede-menina {
+            position: relative;
+            z-index: 2;
+            max-height: 690px;
+            width: auto;
+            object-fit: contain;
+          }
+
+          /* zoom 90% pra baixo */
+          @media (max-resolution: 1.25dppx) {
+            .rede-grid {
+              grid-template-columns: minmax(240px, 390px) 200px minmax(
+                  240px,
+                  320px
+                );
+            }
+
+            .rede-col {
+              padding-top: 224px;
+              z-index: 3;
+            }
+
+            .rede-col.rede-col--left {
+              padding-top: 112px;
+            }
+          }
+
+          /* zoom 75% pra baixo */
+          @media (max-resolution: 1.12dppx) {
+            .rede-grid {
+              grid-template-columns: minmax(240px, 415px) 200px minmax(
+                  240px,
+                  320px
+                );
+            }
+
+            .rede-desc {
+              font-size: clamp(1.2rem, 1.4vw, 1.2rem);
+            }
+          }
+
+          @media (max-width: 1399.98px) {
+            .rede-grid {
+              grid-template-columns: minmax(240px, 360px) 200px minmax(
+                  240px,
+                  250px
+                );
+              gap: 20px;
+            }
+
+            .rede-trigger {
+              font-size: clamp(1.4rem, 1.6vw, 2rem);
+            }
+
+            .rede-desc {
+              font-size: clamp(1rem, 2vw, 1rem);
+            }
+
+            .rede-center {
+              min-height: 700px;
+            }
+            .rede-menina {
+              max-height: 640px;
+            }
+          }
+
+          @media (max-width: 991.98px) {
+            .rede-apoio {
+              min-height: auto;
+              padding: 52px 0 0;
+            }
+
+            .rede-col.rede-col--left {
+              padding-top: 50px;
+            }
+
+            .rede-grid {
+              display: block;
+              gap: 24px;
+            }
+
+            .rede-center {
+              display: none;
+            }
+
+            .rede-col--left {
+              padding-top: 0;
+            }
+
+            .rede-col--right {
+              padding-top: 0;
+            }
+
+            .rede-item {
+              background: rgb(238 242 245);
+              border-radius: 14px;
+              padding: 14px;
+              margin-bottom: 14px;
+              backdrop-filter: blur(4px);
+            }
+
+            .rede-item--left {
+              background: rgba(242, 90, 42, 0.08);
+              border: 1px solid rgba(242, 90, 42, 0.18);
+            }
+
+            .rede-item--right {
+              background: rgba(20, 79, 99, 0.08);
+              border: 1px solid rgba(20, 79, 99, 0.18);
+            }
+
+            .rede-menina {
+              max-height: 520px;
+            }
+
+            .rede-trigger {
+              width: 100%;
+              justify-content: space-between;
+              flex-direction: row;
+              align-items: center;
+              gap: 12px;
+              font-family: "GothamBold", "Poppins", sans-serif;
+              font-size: 1.35rem;
+              padding: 0;
+            }
+
+            .rede-trigger::after {
+              content: "▾";
+              font-size: 0.9em;
+              line-height: 1;
+              color: var(--title-color);
+              transition: transform 0.25s ease;
+              flex-shrink: 0;
+            }
+
+            .rede-item.is-open .rede-trigger::after {
+              transform: rotate(180deg);
+            }
+
+            .rede-trigger-main::before {
+              display: none;
+            }
+
+            .rede-trigger-main {
+              flex: 1;
+              padding: 0;
+              font-family: "GothamBold", "Poppins", sans-serif;
+              line-height: 1;
+              background: transparent;
+              color: var(--title-color);
+            }
+
+            .rede-item.is-open .rede-trigger-main,
+            .rede-trigger:hover .rede-trigger-main,
+            .rede-trigger:focus-visible .rede-trigger-main {
+              background: transparent;
+              color: var(--title-color);
+            }
+
+            .rede-desc {
+              font-family: "GothamBook", "Poppins", sans-serif;
+              font-size: 1rem;
+              line-height: 1.28;
+              color: #6b6d72;
+              padding: 0;
+            }
+
+            .rede-desc br {
+              display: none;
+            }
+
+            .rede-item.is-open .rede-desc {
+              max-height: 420px;
+              margin-top: 10px;
+            }
+
+            .rede-mobile-menina-wrap {
+              margin: 18px auto 0;
+              text-align: center;
+              width: min(360px, 85vw);
+              height: 300px;
+              overflow: hidden;
+            }
+
+            .rede-mobile-menina {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: top center;
+            }
+          }
+
+          @media (max-width: 767.98px) {
+            .rede-trigger {
+              font-size: 1.5rem;
+              line-height: 1.8rem;
+            }
+
+            .rede-desc {
+              font-size: 1.4rem;
+            }
+          }
+        </style>
+
+        <div class="container">
+          <div class="rede-grid">
+            <div class="rede-col rede-col--left">
+              <article
+                class="rede-item rede-item--left is-open"
+                data-side="left"
+              >
+                <button class="rede-trigger" type="button" aria-expanded="true">
+                  <span class="rede-trigger-main">Coordenadores</span>
+                </button>
+                <div class="rede-desc">
+                  Transformam dados em decisões<br />
+                  pedagógicas mais claras,<br />
+                  organizando percursos que<br />
+                  fortalecem o progresso<br />
+                  de cada estudante.
+                </div>
+              </article>
+
+              <article class="rede-item rede-item--left" data-side="left">
+                <button
+                  class="rede-trigger"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rede-trigger-main">Professores</span>
+                </button>
+                <div class="rede-desc">
+                  Contam com a robustez dos<br />
+                  materiais didáticos e um método<br />
+                  inspirado pela visão "menos tela,<br />
+                  mais tecnologia" e baseado em<br />
+                  micro-habilidades, microtestes<br />
+                  e uma IA segura.
+                </div>
+              </article>
+
+              <article
+                class="rede-item rede-item--left rede-item--gestores"
+                data-side="left"
+              >
+                <button
+                  class="rede-trigger"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rede-trigger-main">Gestores</span>
+                </button>
+                <div class="rede-desc">
+                  Têm uma visão integrada<br />
+                  da escola para identificar<br />
+                  necessidades e impulsionar<br />
+                  movimentos que mantêm<br />
+                  o estudante no centro.
+                </div>
+                <div class="rede-sublist">
+                  <span>Diretores</span>
+                  <span>Mantenedores</span>
+                </div>
+              </article>
+
+              <article class="rede-item rede-item--left" data-side="left">
+                <button
+                  class="rede-trigger"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rede-trigger-main">Famílias</span>
+                </button>
+                <div class="rede-desc">
+                  Participam da jornada educacional<br />
+                  com acesso a informações objetivas,<br />
+                  além de ferramentas como o Tutor IA,<br />
+                  para auxiliar os filhos em casa, sempre<br />
+                  em parceria com a escola para apoiar<br />
+                  o desenvolvimento cognitivo<br />
+                  e socioemocional.
+                </div>
+              </article>
+
+              <article class="rede-item rede-item--left" data-side="left">
+                <button
+                  class="rede-trigger"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rede-trigger-main">Embaixadores</span>
+                </button>
+                <div class="rede-desc">
+                  Designado pela escola como<br />
+                  seu representante, recebe<br />
+                  treinamento e preparação<br />
+                  sobre o ecossistema para assegurar<br />
+                  sua integração e garantir<br />
+                  a melhor experiência de uso.
+                </div>
+              </article>
+            </div>
+
+            <div class="rede-center" aria-hidden="true">
+              <img
+                class="rede-menina"
+                src="public/images/ACOMPANHAMENTO-ESTRATEGICO/MENINA com circulo.png"
+                alt="Menina com mochila"
+              />
+            </div>
+
+            <div class="rede-col rede-col--right">
+              <article
+                class="rede-item rede-item--right is-open"
+                data-side="right"
+              >
+                <button class="rede-trigger" type="button" aria-expanded="true">
+                  <span class="rede-trigger-main"
+                    >Consultores de<br />Sucesso do Cliente</span
+                  >
+                </button>
+                <div class="rede-desc">
+                  Atua presencialmente<br />
+                  na escola, em alinhamento<br />
+                  constante com a gestão,<br />
+                  atendendo demandas<br />
+                  de primeiro nível e<br />
+                  articulando intervenções<br />
+                  especializadas.
+                </div>
+              </article>
+
+              <article class="rede-item rede-item--right" data-side="right">
+                <button
+                  class="rede-trigger"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rede-trigger-main">Especialistas</span>
+                </button>
+                <div class="rede-desc">
+                  Organizados por segmento<br />
+                  escolar, contribuem para<br />
+                  o aprimoramento contínuo<br />
+                  das práticas educacionais<br />
+                  e para a aplicação de<br />
+                  estratégias pedagógicas<br />
+                  atuais e eficazes.
+                </div>
+              </article>
+
+              <article class="rede-item rede-item--right" data-side="right">
+                <button
+                  class="rede-trigger"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rede-trigger-main">Especialistas Virtuais</span>
+                </button>
+                <div class="rede-desc">
+                  Chatbot que utiliza<br />
+                  inteligência artificial para<br />
+                  prestar atendimento<br />
+                  ininterrupto aos gestores<br />
+                  e educadores que utilizam<br />
+                  o Moderna Core.
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="rede-mobile-menina-wrap d-lg-none" aria-hidden="true">
+            <img
+              class="rede-mobile-menina"
+              src="public/images/ACOMPANHAMENTO-ESTRATEGICO/MENINA.png"
+              alt="Menina com mochila"
+            />
+          </div>
+        </div>
+
+        <script>
+          (function () {
+            var section = document.getElementById("rede_apoio");
+            if (!section) return;
+
+            var items = section.querySelectorAll(".rede-item");
+            var desktopMq = window.matchMedia(
+              "(hover: hover) and (pointer: fine) and (min-width: 992px)",
+            );
+
+            function setItemState(item, isOpen) {
+              item.classList.toggle("is-open", isOpen);
+              var trigger = item.querySelector(".rede-trigger");
+              if (trigger) {
+                trigger.setAttribute(
+                  "aria-expanded",
+                  isOpen ? "true" : "false",
+                );
+              }
+            }
+
+            function closeSide(side, exceptItem) {
+              items.forEach(function (item) {
+                if (item.getAttribute("data-side") !== side) return;
+                if (exceptItem && item === exceptItem) return;
+                setItemState(item, false);
+              });
+            }
+
+            items.forEach(function (item) {
+              var trigger = item.querySelector(".rede-trigger");
+              var side = item.getAttribute("data-side");
+              if (!trigger) return;
+
+              item.addEventListener("mouseenter", function () {
+                if (!desktopMq.matches) return;
+                closeSide(side, item);
+                setItemState(item, true);
+              });
+
+              item.addEventListener("mouseleave", function () {
+                if (!desktopMq.matches) return;
+                setItemState(item, false);
+              });
+
+              trigger.addEventListener("focus", function () {
+                closeSide(side, item);
+                setItemState(item, true);
+              });
+
+              trigger.addEventListener("click", function () {
+                if (desktopMq.matches) return;
+                var isOpen = item.classList.contains("is-open");
+                setItemState(item, !isOpen);
+              });
+            });
+          })();
+        </script>
+      </section>
+      <!-- ============================================ -->
+      <!-- BLOCO: REDE DE APOIO - FIM                  -->
+      <!-- ============================================ -->
+    </main>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer class="site-footer">
+      <div class="content-wrapper">
+        <div class="row align-items-start gy-3">
+          <div class="col-12 col-md-4 footer-logo text-md-start">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-core-azul-hxsvdquRcy22ha78lbdUuMDxT2apEx.png"
+              alt="Moderna Core"
+            />
+          </div>
+
+          <div class="col-6 col-md-4 footer-links">
+            <a href="#">Fale conosco</a>
+            <a href="#">Política de privacidade</a>
+          </div>
+
+          <div class="col-6 col-md-4 footer-contact">
+            <a href="tel:08007703004">0800 770 3004</a>
+            <a href="#">Termos de uso</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 Santillana Educação. Todos os direitos reservados.</div>
+          <div class="footer-bottom-links">
+            <a
+              href="https://www.santillana.com.br/termos-de-uso"
+              target="_blank"
+              rel="noopener"
+              >Termos de Uso</a
+            >
+            <span class="footer-bottom-sep"> | </span>
+            <a
+              href="https://sta-s3-prd.s3.amazonaws.com/cms/wp-content/uploads/2021/11/08143214/Codigo-de-etica_Santillana-Brasil_2021.pdf"
+              target="_blank"
+              rel="noopener"
+              >Código de Ética</a
+            >
+            <span class="footer-bottom-sep"> | </span>
+            <a
+              href="https://wcpro.s3.amazonaws.com/codigo_etica_dos_fornecedores.pdf"
+              target="_blank"
+              rel="noopener"
+              >Código de Fornecedores</a
+            >
+            <span class="footer-bottom-sep"> | </span>
+            <a
+              href="https://www.santillana.com.br/aviso-de-privacidade"
+              target="_blank"
+              rel="noopener"
+              >Aviso de Privacidade</a
+            >
+            <span class="footer-bottom-sep"> | </span>
+            <a
+              href="https://www.santillana.com.br/solicitacao-de-dados"
+              target="_blank"
+              rel="noopener"
+              >Solicitação de Dados</a
+            >
+            <span class="footer-bottom-sep"> | </span>
+            <a
+              href="https://www.santillanaeducacao.com.br/canal-de-denuncias/"
+              target="_blank"
+              rel="noopener"
+              >Canal de Denúncias</a
+            >
+            <span class="footer-bottom-sep"> | </span>
+            <a
+              href="mailto:contatocentral@santillana.com"
+              target="_blank"
+              rel="noopener"
+              >SAC</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- HAMBURGER JS                                 -->
+    <!-- ============================================ -->
+    <script>
+      (function () {
+        var btn = document.getElementById("btn-hamburger");
+        var menu = document.getElementById("nav-menu");
+        if (!btn || !menu) return;
+
+        btn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          var isOpen = menu.classList.toggle("is-open");
+          btn.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        menu.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            menu.classList.remove("is-open");
+            btn.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        document.addEventListener("click", function () {
+          menu.classList.remove("is-open");
+          btn.setAttribute("aria-expanded", "false");
+        });
+      })();
+    </script>
+
+    <!-- ============================================ -->
+    <!-- MODAL: SEJA UMA ESCOLA PARCEIRA            -->
+    <!-- ============================================ -->
+    <style>
+      .modal-parceira-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(96, 144, 192, 0.35);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px;
+        opacity: 0;
+        transition: opacity 260ms ease;
+        pointer-events: none;
+      }
+      .modal-parceira-overlay.is-open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #rd-button-mmt7s7cl.bricks--component-button {
+        height: 38px !important;
+        font-size: 1.2rem !important;
+      }
+      #rd-form-mmt7s7ci .bricks-form__static {
+        font-size: 14px !important;
+        line-height: 16px !important;
+      }
+      .modal-parceira-box {
+        position: relative;
+        background: linear-gradient(165deg, #ffffff 40%, #34768f 100%);
+        border-radius: 24px;
+        box-shadow: 0 24px 64px rgba(31, 76, 89, 0.22);
+        max-width: 900px;
+        width: 100%;
+        max-height: 600px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        transform: translateY(24px) scale(0.97);
+        transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .modal-parceira-overlay.is-open .modal-parceira-box {
+        transform: translateY(0) scale(1);
+      }
+
+      /* Coluna esquerda — arte */
+      .modal-parceira-left {
+        position: relative;
+        flex: 0 0 42%;
+        overflow: visible;
+        border-radius: 24px 0 0 24px;
+      }
+      .modal-parceira-left img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: auto;
+        display: block;
+        border-radius: 24px 0 0 24px;
+      }
+      .modal-parceira-close {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: rgba(255, 255, 255, 0.85);
+        border: none;
+        border-radius: 50%;
+        width: 34px;
+        height: 34px;
+        font-size: 1.3rem;
+        line-height: 1;
+        color: #1f4c59;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        transition: background 0.2s;
+      }
+      .modal-parceira-close:hover {
+        background: #ffffff;
+        color: #f1592a;
+      }
+
+      /* Coluna direita — conteúdo */
+      .modal-parceira-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 44px 36px 44px 40px;
+        gap: 18px;
+        overflow: hidden;
+        min-height: 0;
+        position: relative;
+        z-index: 1;
+      }
+      .modal-parceira-title {
+        font-family: "GothamBold", "Poppins", sans-serif;
+        font-size: 1.55rem;
+        line-height: 1.2;
+        color: #cd3608;
+        margin: 0;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      .modal-parceira-desc {
+        font-family: "GothamBook", "Poppins", sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        color: #1a3a4a;
+        margin: 0;
+      }
+      .modal-parceira-form-wrap {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 0;
+        box-shadow: 0 4px 20px rgba(31, 76, 89, 0.1);
+        overflow-y: auto;
+        flex: 1;
+        min-height: 0;
+      }
+
+      /* Mobile: empilha verticalmente */
+      @media (max-width: 767px) {
+        .modal-parceira-box {
+          flex-direction: column;
+          max-height: 92vh;
+        }
+        .modal-parceira-left {
+          flex: 0 0 auto;
+          height: 180px;
+          border-radius: 24px 24px 0 0;
+        }
+        .modal-parceira-right {
+          padding: 28px 20px 32px;
+          overflow-y: auto;
+        }
+        .modal-parceira-title {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+
+    <div
+      id="modal-parceira"
+      class="modal-parceira-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Seja uma escola parceira"
+    >
+      <div class="modal-parceira-box">
+        <!-- Lado esquerdo: arte + botão fechar -->
+        <div class="modal-parceira-left">
+          <button class="modal-parceira-close" aria-label="Fechar modal">
+            &times;
+          </button>
+          <img src="public/images/arte-form-rd.png" alt="" />
+        </div>
+
+        <!-- Lado direito: título, descrição e formulário -->
+        <div class="modal-parceira-right">
+          <h2 class="modal-parceira-title">
+            Converse com nosso time sobre o Moderna Core
+          </h2>
+          <p class="modal-parceira-desc">
+            Preencha os campos e nossa equipe entrará em contato para
+            compartilhar mais detalhes.
+          </p>
+          <div class="modal-parceira-form-wrap">
+            <div role="main" id="pop-up-do-hotsite-95275bbf6952c5fafcbd"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"
+    ></script>
+    <script type="text/javascript">
+      new RDStationForms(
+        "pop-up-do-hotsite-95275bbf6952c5fafcbd",
+        "null",
+      ).createForm();
+    </script>
+
+    <script>
+      (function () {
+        var overlay = document.getElementById("modal-parceira");
+        var closeBtn = overlay.querySelector(".modal-parceira-close");
+
+        function openModalParceira() {
+          overlay.classList.add("is-open");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeModalParceira() {
+          overlay.classList.remove("is-open");
+          document.body.style.overflow = "";
+        }
+
+        closeBtn.addEventListener("click", closeModalParceira);
+
+        overlay.addEventListener("click", function (e) {
+          if (e.target === overlay) closeModalParceira();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeModalParceira();
+        });
+
+        window.openModalParceira = openModalParceira;
+      })();
+    </script>
+  </body>
+</html>
