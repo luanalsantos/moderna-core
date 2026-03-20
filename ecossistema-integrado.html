@@ -139,46 +139,38 @@
 			/* FOOTER                                       */
 			/* ============================================ */
 			.site-footer {
-				padding: 30px 0 18px;
+				padding: 30px 0;
 				border-top: 1px solid #e8e8e8;
 				font-size: 14px;
 				color: #5a6a72;
 			}
 
-			.footer-logo img { height: 72px; }
-
-			.footer-links {
-				display: flex;
-				flex-direction: column;
-				gap: 6px;
-			}
-
-			.footer-links a,
-			.footer-contact a {
-				color: #5a6a72;
-				text-decoration: none;
-				font-size: 0.9rem;
-			}
-
-			.footer-links a:hover,
-			.footer-contact a:hover { text-decoration: underline; }
-
-			.footer-contact {
-				display: flex;
-				flex-direction: column;
-				align-items: flex-end;
-				gap: 6px;
-				font-size: 0.9rem;
-			}
-
 			.footer-bottom {
-				margin-top: 26px;
+				display: flex;
+				align-items: center;
+				gap: 32px;
 				padding-top: 16px;
-				border-top: 1px solid #e8e8e8;
-				text-align: center;
 				font-size: 0.85rem;
 				color: #6b7c84;
 				line-height: 1.6;
+			}
+
+			.footer-bottom-logo {
+				flex-shrink: 0;
+			}
+
+			.footer-bottom-logo img {
+				height: 72px;
+				width: auto;
+			}
+
+			.footer-bottom-content {
+				flex: 1;
+				text-align: center;
+			}
+
+			.footer-bottom-links {
+				justify-content: center;
 			}
 
 			.footer-bottom a {
@@ -191,14 +183,11 @@
 			/* RESPONSIVO — header / footer                 */
 			/* ============================================ */
 			@media (max-width: 767.98px) {
-				.footer-logo { text-align: center; }
-				.footer-contact { align-items: flex-start; }
-				.footer-bottom { font-size: 11.5px; }
+				.footer-bottom { font-size: 11.5px; flex-direction: column; align-items: flex-start; }
 				.footer-bottom-links {
 					display: flex;
 					flex-wrap: wrap;
 					align-items: center;
-					justify-content: center;
 					gap: 2px 8px;
 					margin-top: 6px;
 				}
@@ -304,26 +293,14 @@
 		<!-- ============================================ -->
 		<footer class="site-footer">
 			<div class="content-wrapper">
-				<div class="row align-items-start gy-3">
-					<div class="col-12 col-md-4 footer-logo text-md-start">
+				<div class="footer-bottom">
+					<div class="footer-bottom-logo">
 						<img
 							src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-core-azul-hxsvdquRcy22ha78lbdUuMDxT2apEx.png"
 							alt="Moderna Core"
 						/>
 					</div>
-
-					<div class="col-6 col-md-4 footer-links">
-						<a href="#">Fale conosco</a>
-						<a href="#">Política de privacidade</a>
-					</div>
-
-					<div class="col-6 col-md-4 footer-contact">
-						<a href="tel:08007703004">0800 770 3004</a>
-						<a href="#">Termos de uso</a>
-					</div>
-				</div>
-
-				<div class="footer-bottom">
+					<div class="footer-bottom-content">
 					<div>© 2026 Santillana Educação. Todos os direitos reservados.</div>
 					<div class="footer-bottom-links">
 						<a href="https://www.santillana.com.br/termos-de-uso" target="_blank" rel="noopener">Termos de Uso</a>
@@ -338,7 +315,8 @@
 						<span class="footer-bottom-sep"> | </span>
 						<a href="https://www.santillanaeducacao.com.br/canal-de-denuncias/" target="_blank" rel="noopener">Canal de Denúncias</a>
 						<span class="footer-bottom-sep"> | </span>
-						<a href="mailto:contatocentral@santillana.com" target="_blank" rel="noopener">SAC</a>
+						<a href="https://www.santillanaeducacao.com.br/sac/" target="_blank" rel="noopener">SAC</a>
+					</div>
 					</div>
 				</div>
 			</div>

@@ -1091,7 +1091,7 @@
       <style>
         .site-footer {
           background: #ffffff;
-          padding: 30px 0 18px;
+          padding: 30px 0;
           border-top: 1px solid #e8e8e8;
           font-size: 14px;
           color: #5a6a72;
@@ -1104,44 +1104,32 @@
           width: 100%;
         }
 
-        .footer-logo img {
-          height: 72px;
-        }
-
-        .footer-links {
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-        }
-
-        .footer-links a,
-        .footer-contact a {
-          color: #5a6a72;
-          text-decoration: none;
-          font-size: 0.9rem;
-        }
-
-        .footer-links a:hover,
-        .footer-contact a:hover {
-          text-decoration: underline;
-        }
-
-        .footer-contact {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          gap: 6px;
-          font-size: 0.9rem;
-        }
-
         .footer-bottom {
-          margin-top: 26px;
+          display: flex;
+          align-items: center;
+          gap: 32px;
           padding-top: 16px;
-          border-top: 1px solid #e8e8e8;
-          text-align: center;
           font-size: 0.85rem;
           color: #6b7c84;
           line-height: 1.6;
+        }
+
+        .footer-bottom-logo {
+          flex-shrink: 0;
+        }
+
+        .footer-bottom-logo img {
+          height: 72px;
+          width: auto;
+        }
+
+        .footer-bottom-content {
+          flex: 1;
+          text-align: center;
+        }
+
+        .footer-bottom-links {
+          justify-content: center;
         }
 
         .footer-bottom a {
@@ -1154,51 +1142,45 @@
         }
 
         @media (max-width: 768px) {
-          .footer-contact {
-            align-items: flex-start;
-            margin-top: 20px;
-          }
-
-          .footer-links {
-            margin-top: 20px;
-          }
-
           .footer-bottom {
             font-size: 12px;
+            flex-direction: column;
+            align-items: flex-start;
           }
+          .footer-bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2px 8px;
+            margin-top: 6px;
+          }
+          .footer-bottom-sep { display: none; }
         }
       </style>
 
       <div class="content-wrapper">
-        <div class="row align-items-start">
-          <div class="col-md-4 footer-logo">
-            <img src="public/images/logo-core-azul.png" alt="Moderna Core" />
-          </div>
-
-          <div class="col-md-4 footer-links">
-            <a href="#">Fale conosco</a>
-            <a href="#">Política de privacidade</a>
-          </div>
-
-          <div class="col-md-4 footer-contact">
-            <a href="tel:08007703004">0800 770 3004</a>
-            <a href="#">Termos de uso</a>
-          </div>
-        </div>
-
         <div class="footer-bottom">
-          © 2026 Santillana Educação. Todos os direitos reservados. |
-          <a href="#">Código de Ética</a>
-          |
-          <a href="#">Código Fornecedores</a>
-          |
-          <a href="#">Aviso Privacidade</a>
-          |
-          <a href="#">Solicitação de Dados</a>
-          |
-          <a href="#">Canal de denúncias</a>
-          |
-          <a href="#">SAC</a>
+          <div class="footer-bottom-logo">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-core-azul-hxsvdquRcy22ha78lbdUuMDxT2apEx.png" alt="Moderna Core" />
+          </div>
+          <div class="footer-bottom-content">
+          <div>© 2026 Santillana Educação. Todos os direitos reservados.</div>
+          <div class="footer-bottom-links">
+          <a href="https://www.santillana.com.br/termos-de-uso" target="_blank" rel="noopener">Termos de Uso</a>
+          <span class="footer-bottom-sep"> | </span>
+          <a href="https://sta-s3-prd.s3.amazonaws.com/cms/wp-content/uploads/2021/11/08143214/Codigo-de-etica_Santillana-Brasil_2021.pdf" target="_blank" rel="noopener">Código de Ética</a>
+          <span class="footer-bottom-sep"> | </span>
+          <a href="https://wcpro.s3.amazonaws.com/codigo_etica_dos_fornecedores.pdf" target="_blank" rel="noopener">Código de Fornecedores</a>
+          <span class="footer-bottom-sep"> | </span>
+          <a href="https://www.santillana.com.br/aviso-de-privacidade" target="_blank" rel="noopener">Aviso de Privacidade</a>
+          <span class="footer-bottom-sep"> | </span>
+          <a href="https://www.santillana.com.br/solicitacao-de-dados" target="_blank" rel="noopener">Solicitação de Dados</a>
+          <span class="footer-bottom-sep"> | </span>
+          <a href="https://www.santillanaeducacao.com.br/canal-de-denuncias/" target="_blank" rel="noopener">Canal de Denúncias</a>
+          <span class="footer-bottom-sep"> | </span>
+          <a href="https://www.santillanaeducacao.com.br/sac/" target="_blank" rel="noopener">SAC</a>
+          </div>
+          </div>
         </div>
       </div>
     </footer>
