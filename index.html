@@ -395,17 +395,17 @@
 			}
 
 			.banner-home h1{
-			font-size:1.7rem;
+			font-size: 1.7rem !important;;
 			}
 
 			.banner-home .hero-text {
-    padding-top: 10px;
-}
+				padding-top: 10px !important;;
+			}
 
-			.banner-home .hero-child{
-			max-height: 280px;
-        bottom: 18px;
-        right: 15px;
+			.banner-home .hero-child {
+				max-height: 280px !important;;
+				bottom: 18px;
+				right: 15px;
 			}
 
 			}
@@ -597,8 +597,8 @@
 					/* Media Queries - Mobile */
 					@media (max-width: 767.98px) {
 						.proposta-pedagogica {
-							padding: 198px 0 30px;
-							min-height: 100vh;
+							padding: 90px 0 90px;
+      						 min-height: 750px;
 						}
 						
 						.proposta-pedagogica .proposta-title {
@@ -3042,7 +3042,11 @@
 			}
 			#rd-button-mmt7s7cl.bricks--component-button {
     height: 38px !important;
-    font-size: 1.2rem !important; }
+    font-size: 1.2rem !important;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+ }
 
 
 			.modal-parceira-box {
@@ -3170,11 +3174,23 @@
 					z-index: 2;
 				}
 				.modal-parceira-title { font-size: 1.2rem; }
+				.modal-parceira-close--mobile {
+					display: flex !important;
+					position: absolute;
+					top: 12px;
+					right: 12px;
+					left: auto;
+					z-index: 10;
+				}
+			}
+			@media (min-width: 768px) {
+				.modal-parceira-close--mobile { display: none !important; }
 			}
 		</style>
 
 		<div id="modal-parceira" class="modal-parceira-overlay" role="dialog" aria-modal="true" aria-label="Seja uma escola parceira">
 			<div class="modal-parceira-box">
+				<button class="modal-parceira-close modal-parceira-close--mobile" aria-label="Fechar modal">&times;</button>
 
 				<!-- Lado esquerdo: arte + botão fechar -->
 				<div class="modal-parceira-left">
@@ -3202,7 +3218,7 @@
 		<script>
 			(function () {
 				var overlay  = document.getElementById('modal-parceira');
-				var closeBtn = overlay.querySelector('.modal-parceira-close');
+				var closeBtns = overlay.querySelectorAll('.modal-parceira-close');
 
 				function openModalParceira() {
 					overlay.classList.add('is-open');
@@ -3214,7 +3230,7 @@
 					document.body.style.overflow = '';
 				}
 
-				closeBtn.addEventListener('click', closeModalParceira);
+				closeBtns.forEach(function(btn) { btn.addEventListener('click', closeModalParceira); });
 
 				overlay.addEventListener('click', function (e) {
 					if (e.target === overlay) closeModalParceira();
