@@ -167,6 +167,26 @@
 				.content-btn-header-mobile {
 					margin-top: 20px;
 				}
+				.site-header .header-actions {
+					align-items: stretch;
+				}
+				.site-header .header-actions .position-relative {
+					display: flex;
+					align-items: stretch;
+				}
+				.site-header .header-actions .position-relative .btn {
+					height: 100%;
+				}
+				.site-header .btn-escola-header {
+					font-size: 0.8rem !important;
+					line-height: 1rem;
+					width: fit-content;
+					text-align: center;
+					white-space: normal;
+					flex-shrink: 0;
+					align-items: center;
+					gap: 4px;
+				}
 			}
 		</style>
 	</head>
@@ -190,14 +210,14 @@
 				</a>
 			</div>
 
-			<div class="col-sm-8 col-6 d-flex align-items-center justify-content-end gap-2">
+			<div class="col-sm-8 col-6 d-flex align-items-center justify-content-end gap-2 header-actions">
 				<a
 				href="#"
-				class="d-none d-md-inline-flex btn rounded-pill px-4 py-2 fw-semibold text-white small"
-				style="background-color: #1f4c59; white-space: nowrap"
+				class="d-inline-flex btn btn-escola-header rounded-pill px-4 py-2 fw-semibold text-white small"
+				style="background-color: #1f4c59"
 				onclick="event.preventDefault(); openModalParceira();"
 				>
-				➤ SEJA UMA ESCOLA PARCEIRA
+				➤ SEJA UMA<br class="d-md-none"> ESCOLA PARCEIRA
 				</a>
 				<div class="position-relative">
 				<button
@@ -211,24 +231,11 @@
 				</button>
 				<nav class="nav-menu" id="nav-menu" aria-label="Menu principal">
 					<a href="razoes-para-acreditar.html">Razões para acreditar</a>
-					<!-- <a href="ecossistema-integrado.html">Ecossistema Integrado</a>-->
+					<a href="ecossistema-integrado.html">Ecossistema Integrado</a>
 					<a href="acompanhamento-estrategico.html">Acompanhamento Estratégico</a> 
 				</nav>
 				</div>
 			</div>
-			</div>
-
-			<!-- BOTÃO MOBILE -->
-
-			<div class="d-flex justify-content-center d-md-none pb-2">
-			<a
-				href="#"
-				class="btn rounded-pill px-4 py-2 fw-semibold text-white small"
-				style="background-color: #1f4c59"
-				onclick="event.preventDefault(); openModalParceira();"
-			>
-				➤ SEJA UMA ESCOLA PARCEIRA
-			</a>
 			</div>
 		</div>
 		</header>
