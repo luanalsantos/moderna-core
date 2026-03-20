@@ -572,7 +572,7 @@
 
                 <div class="card-text">
                   No Moderna Core, o socioemocional está integrado à jornada
-                  pedagógica e o estudante sente e regula o que aprende.
+                  pedagógica: o que o estudante sente e como se regula importa tanto quanto o estudante pensa e como ele aprende.
                 </div>
               </div>
 
@@ -619,53 +619,84 @@
           <div class="slider-controls">
             <div class="arrow" onclick="prevCard()">‹</div>
 
-            <div class="dots">
-              <div class="dot active"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-            </div>
+            <div class="dots" id="carouselDots"></div>
 
             <div class="arrow" onclick="nextCard()">›</div>
           </div>
         </div>
 
         <script>
-          let cardIndex = 0;
+          (function() {
+            var cardIndex = 0;
+            var track = document.getElementById("cardsTrack");
+            var dotsContainer = document.getElementById("carouselDots");
+            var cards = track ? track.querySelectorAll(".card-moderna") : [];
+            var cardCount = cards.length;
 
-          const track = document.getElementById("cardsTrack");
-          const dots = document.querySelectorAll(".dot");
-
-          function updateSlider() {
-            const card = track.firstElementChild;
-            const gap = parseFloat(window.getComputedStyle(track).gap) || 24;
-            const step = card.offsetWidth + gap;
-            track.style.transform = `translateX(-${cardIndex * step}px)`;
-
-            dots.forEach((d) => d.classList.remove("active"));
-            dots[cardIndex].classList.add("active");
-          }
-
-          function nextCard() {
-            cardIndex++;
-
-            if (cardIndex >= dots.length) {
-              cardIndex = 0;
+            function getMaxIndex() {
+              var w = window.innerWidth;
+              var cardsVisible = w <= 991 ? 1 : 3;
+              return Math.max(0, cardCount - cardsVisible);
             }
 
-            updateSlider();
-          }
-
-          function prevCard() {
-            cardIndex--;
-
-            if (cardIndex < 0) {
-              cardIndex = dots.length - 1;
+            function buildDots() {
+              var maxIdx = getMaxIndex();
+              var dotCount = maxIdx + 1;
+              dotsContainer.innerHTML = "";
+              for (var i = 0; i < dotCount; i++) {
+                var dot = document.createElement("div");
+                dot.className = "dot" + (i === 0 ? " active" : "");
+                dot.setAttribute("data-index", i);
+                dot.addEventListener("click", function() {
+                  cardIndex = parseInt(this.getAttribute("data-index"), 10);
+                  updateSlider();
+                });
+                dotsContainer.appendChild(dot);
+              }
             }
 
+            function updateSlider() {
+              var maxIdx = getMaxIndex();
+              cardIndex = Math.max(0, Math.min(cardIndex, maxIdx));
+
+              var card = track.firstElementChild;
+              var gap = parseFloat(window.getComputedStyle(track).gap) || 24;
+              var step = card.offsetWidth + gap;
+              track.style.transform = "translateX(-" + (cardIndex * step) + "px)";
+
+              var dots = dotsContainer.querySelectorAll(".dot");
+              dots.forEach(function(d, i) {
+                d.classList.toggle("active", i === cardIndex);
+              });
+            }
+
+            window.prevCard = function() {
+              cardIndex--;
+              var maxIdx = getMaxIndex();
+              if (cardIndex < 0) cardIndex = maxIdx;
+              updateSlider();
+            };
+
+            window.nextCard = function() {
+              cardIndex++;
+              var maxIdx = getMaxIndex();
+              if (cardIndex > maxIdx) cardIndex = 0;
+              updateSlider();
+            };
+
+            buildDots();
             updateSlider();
-          }
+
+            var resizeTimeout;
+            window.addEventListener("resize", function() {
+              clearTimeout(resizeTimeout);
+              resizeTimeout = setTimeout(function() {
+                buildDots();
+                cardIndex = Math.min(cardIndex, getMaxIndex());
+                updateSlider();
+              }, 150);
+            });
+          })();
         </script>
       </section>
 
