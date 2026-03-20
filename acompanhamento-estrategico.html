@@ -227,11 +227,14 @@
       /* ============================================ */
       /* RESPONSIVO — header / footer                 */
       /* ============================================ */
-      @media (max-width: 767.98px) {
+        @media (max-width: 767.98px) {
         .footer-bottom {
           font-size: 11.5px;
           flex-direction: column;
           align-items: flex-start;
+        }
+        .footer-bottom-logo {
+          align-self: center;
         }
         .footer-bottom-links {
           display: flex;
@@ -476,23 +479,26 @@
             .acompanhamento-hero-copy {
               text-align: center;
               max-width: 100%;
-              font-size: clamp(1.7rem, 9.2vw, 2.55rem);
+              font-size: clamp(1.4rem, 9vw, 2rem);
               line-height: 1.14;
               padding-top: 30px;
             }
 
             .acompanhamento-hero-bottom {
-              margin-top: 110px;
+              margin-top: 45px;
             }
 
             .acompanhamento-hero-bottom h2 {
-              font-size: clamp(1.8rem, 4.6vw, 1.6rem);
+              font-size: clamp(1.4rem, 4.2vw, 1.2rem);
             }
 
             .acompanhamento-hero-bottom p {
               margin-top: 18px;
               font-size: clamp(1.6rem, 2vw, 1rem);
               line-height: 1.28;
+            }
+            .acompanhamento-hero-bottom p br {
+              display: none;
             }
           }
         </style>
@@ -856,18 +862,7 @@
             }
 
             .rede-mobile-menina-wrap {
-              margin: 18px auto 0;
-              text-align: center;
-              width: min(360px, 85vw);
-              height: 300px;
-              overflow: hidden;
-            }
-
-            .rede-mobile-menina {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              object-position: top center;
+              display: none;
             }
           }
 
@@ -1083,6 +1078,13 @@
               });
             }
 
+            function closeAllExcept(exceptItem) {
+              items.forEach(function (item) {
+                if (exceptItem && item === exceptItem) return;
+                setItemState(item, false);
+              });
+            }
+
             items.forEach(function (item) {
               var trigger = item.querySelector(".rede-trigger");
               var side = item.getAttribute("data-side");
@@ -1100,16 +1102,37 @@
               });
 
               trigger.addEventListener("focus", function () {
-                closeSide(side, item);
-                setItemState(item, true);
+                if (desktopMq.matches) {
+                  closeSide(side, item);
+                  setItemState(item, true);
+                } else {
+                  closeAllExcept(null);
+                  setItemState(item, true);
+                }
               });
 
               trigger.addEventListener("click", function () {
                 if (desktopMq.matches) return;
                 var isOpen = item.classList.contains("is-open");
-                setItemState(item, !isOpen);
+                closeAllExcept(isOpen ? item : null);
+                if (!isOpen) setItemState(item, true);
               });
             });
+
+            function ensureSingleOpen() {
+              if (desktopMq.matches) return;
+              var openItems = [];
+              items.forEach(function (item) {
+                if (item.classList.contains("is-open")) openItems.push(item);
+              });
+              if (openItems.length > 1) {
+                openItems.slice(1).forEach(function (item) {
+                  setItemState(item, false);
+                });
+              }
+            }
+            ensureSingleOpen();
+            desktopMq.addEventListener("change", ensureSingleOpen);
           })();
         </script>
       </section>
