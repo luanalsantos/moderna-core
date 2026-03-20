@@ -1118,6 +1118,14 @@
 						display: none;
 					}
 
+					.nsc-wave-girl-wrap {
+						display: contents;
+					}
+
+					.nsc-girl-wrap {
+						display: contents;
+					}
+
 					/* zoom 100% pra cima */
 					@media (min-resolution: 1.50dppx) {
 						.nsc-heading {
@@ -1225,14 +1233,41 @@
 							margin-bottom: 16px;
 						}
 
+						.nsc-wave-girl-wrap {
+							display: block;
+							position: relative;
+							margin-top: 50px;
+							width: 100%;
+						}
+
 						.nsc-wave {
 							position: static;
 							transform: none;
 							width: 100%;
-							margin-top: 24px;
+							display: block;
 						}
 
-						.nsc-girl,
+						.nsc-girl-wrap {
+							position: absolute;
+							inset: 0;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							pointer-events: none;
+							z-index: 2;
+						}
+
+						.nsc-girl {
+							display: block !important;
+							position: static;
+							left: auto;
+							bottom: auto;
+							transform: none;
+							max-height: 200px;
+							width: auto;
+							object-fit: contain;
+						}
+
 						.nsc-hotspot,
 						.nsc-overlay {
 							display: none;
@@ -1263,6 +1298,13 @@
 							font-family: 'GothamBold', 'Poppins', sans-serif;
 							font-size: 1.35rem;
 							cursor: pointer;
+						}
+
+						.nsc-mobile-trigger-icon {
+							width: 40px;
+							height: 40px;
+							object-fit: contain;
+							flex-shrink: 0;
 						}
 
 						.nsc-mobile-trigger-text {
@@ -1320,6 +1362,10 @@
 							gap: 4px;
 						}
 
+						.nsc-girl {
+							max-height: 160px;
+						}
+
 						.nsc-mobile-trigger {
 							font-size: 1.2rem;
 						}
@@ -1375,6 +1421,7 @@
 					<div class="nsc-mobile-list" aria-label="Tópicos no seu core">
 						<div class="nsc-mobile-item">
 							<button class="nsc-mobile-trigger nsc-mobile-trigger--blue" type="button" aria-expanded="false" aria-controls="nsc-mobile-content-1">
+								<img class="nsc-mobile-trigger-icon" src="public/images/NO-SEU-CORE-inteligencia curricular.png" alt="">
 								<span class="nsc-mobile-trigger-text">Inteligência curricular</span>
 								<i class="bi bi-chevron-down nsc-mobile-chevron" aria-hidden="true"></i>
 							</button>
@@ -1385,6 +1432,7 @@
 						</div>
 						<div class="nsc-mobile-item">
 							<button class="nsc-mobile-trigger nsc-mobile-trigger--orange" type="button" aria-expanded="false" aria-controls="nsc-mobile-content-2">
+								<img class="nsc-mobile-trigger-icon" src="public/images/NO-SEU-CORE-menos tela.png" alt="">
 								<span class="nsc-mobile-trigger-text">Menos tela, mais tecnologia</span>
 								<i class="bi bi-chevron-down nsc-mobile-chevron" aria-hidden="true"></i>
 							</button>
@@ -1395,6 +1443,7 @@
 						</div>
 						<div class="nsc-mobile-item">
 							<button class="nsc-mobile-trigger nsc-mobile-trigger--red" type="button" aria-expanded="false" aria-controls="nsc-mobile-content-3">
+								<img class="nsc-mobile-trigger-icon" src="public/images/NO-SEU-CORE-cultura de evolucao.png" alt="">
 								<span class="nsc-mobile-trigger-text">Cultura da evolução</span>
 								<i class="bi bi-chevron-down nsc-mobile-chevron" aria-hidden="true"></i>
 							</button>
@@ -1406,8 +1455,12 @@
 					</div>
 				</div>
 
-				<img class="nsc-wave" src="public/images/NO-SEU-CORE-onda.png" alt="Onda decorativa">
-				<img class="nsc-girl" src="public/images/NO-SEU-CRE-menina.png" alt="Menina ao centro">
+				<div class="nsc-wave-girl-wrap">
+					<img class="nsc-wave" src="public/images/NO-SEU-CORE-onda.png" alt="Onda decorativa">
+					<div class="nsc-girl-wrap">
+						<img class="nsc-girl" src="public/images/NO-SEU-CRE-menina.png" alt="Menina ao centro">
+					</div>
+				</div>
 
 				<script>
 					(function () {
@@ -1908,7 +1961,7 @@
 
 					@media (max-width: 767.98px) {
 						.impacto-heading-left {
-							font-size: 1rem;
+							white-space: pre-wrap;
 						}
 						.impacto-heading-right {
 							font-size: 1.15rem;
