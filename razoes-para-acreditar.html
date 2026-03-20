@@ -478,6 +478,9 @@
             .card-moderna {
               min-width: 80%;
             }
+            .cards-slider {
+              touch-action: pan-y;
+            }
           }
 
           @media (max-width: 767px) {
@@ -526,7 +529,7 @@
             ideal para a sua escola?
           </h2>
 
-          <div class="cards-slider">
+          <div class="cards-slider" id="cardsSlider">
             <div class="cards-track" id="cardsTrack">
               <!-- CARD 1 -->
 
@@ -700,6 +703,32 @@
                 updateSlider();
               }, 150);
             });
+
+            /* Touch/swipe para mobile */
+            var sliderEl = document.getElementById("cardsSlider");
+            if (sliderEl) {
+              var touchStartX = 0;
+              var touchStartY = 0;
+              var touchEndX = 0;
+              var touchEndY = 0;
+              var minSwipe = 50;
+
+              sliderEl.addEventListener("touchstart", function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+              }, { passive: true });
+
+              sliderEl.addEventListener("touchend", function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                var diffX = touchStartX - touchEndX;
+                var diffY = Math.abs(touchStartY - touchEndY);
+                if (Math.abs(diffX) >= minSwipe && Math.abs(diffX) > diffY) {
+                  if (diffX > 0) nextCard();
+                  else prevCard();
+                }
+              }, { passive: true });
+            }
           })();
         </script>
       </section>
