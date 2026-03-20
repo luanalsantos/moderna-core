@@ -617,6 +617,69 @@
 							display: none;
 						}
 					}
+					
+					/* Slider Proposta Pedagógica */
+					.proposta-pedagogica .proposta-slider {
+						width: 100%;
+						max-width: 1200px;
+						margin: 0 auto;
+						position: relative;
+						z-index: 2;
+					}
+					.proposta-pedagogica .proposta-slide {
+						display: none;
+					}
+					.proposta-pedagogica .proposta-slide.active {
+						display: block;
+					}
+					.proposta-pedagogica .proposta-slider-controls {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						gap: 22px;
+						margin-top: 48px;
+						padding: 0 24px;
+					}
+					.proposta-pedagogica .proposta-slider-arrow {
+						font-size: 46px;
+						color: #1a3a4a;
+						cursor: pointer;
+						line-height: 1;
+						user-select: none;
+						transition: opacity 0.2s;
+						border: none;
+						background: none;
+					}
+					.proposta-pedagogica .proposta-slider-arrow:hover {
+						opacity: 0.7;
+					}
+					.proposta-pedagogica .proposta-slider-arrow.disabled {
+						opacity: 0.3;
+						cursor: not-allowed;
+						pointer-events: none;
+					}
+					.proposta-pedagogica .proposta-slider-dots {
+						display: flex;
+						gap: 10px;
+						margin-top: 8px;
+					}
+					.proposta-pedagogica .proposta-slider-dot {
+						width: 10px;
+						height: 10px;
+						border-radius: 50%;
+						background: #9eafb6;
+						cursor: pointer;
+						transition: background 0.2s;
+						border: none;
+					}
+					.proposta-pedagogica .proposta-slider-dot:hover {
+						background: #9ca8ae;
+					}
+					.proposta-pedagogica .proposta-slider-dot.active {
+						background: #1a3a4a;
+						width: 30px;
+						border-radius: 12px;
+					}
 				</style>
 				
 				<!-- Leques decorativos com animação de scroll -->
@@ -632,24 +695,64 @@
 				>
 				
 				<!-- HTML do Bloco Proposta Pedagogica -->
-				<div class="content-wrapper">
-					<h1 class="proposta-title">
-						O QUE NOS MOVE? <strong>ENTENDER O QUE</br>MOVE O ESTUDANTE.</strong>
-					</h1>
+				<div class="proposta-slider" data-proposta-slider>
+					<!-- Slide 1 -->
+					<div class="proposta-slide active" data-proposta-slide="0">
+						<div class="content-wrapper">
+							<h1 class="proposta-title">
+								O QUE NOS MOVE? <strong>ENTENDER O QUE</br>MOVE O ESTUDANTE.</strong>
+							</h1>
+							
+							<div class="proposta-columns">
+								<!-- Coluna Esquerda -->
+								<div class="proposta-col">
+									<p>Acreditamos que a Educação é o caminho para que cada estudante alcance seu melhor.</p>
+									<p>Por isso, Moderna Core integra inteligência curricular, pessoas e tecnologia para tornar a aprendizagem mais efetiva, personalizada em um sistema de ensino orientado ao desenvolvimento contínuo.</p>
+								</div>
+								
+								<!-- Coluna Direita -->
+								<div class="proposta-col">
+									<p>Aqui, dados e tecnologia atuam como ferramentas para acompanhar a evolução real de cada estudante, permitindo identificar oportunidades, apoiar decisões e impulsionar seu potencial de forma consistente.</p>
+									<div class="proposta-bold">Moderna Core.
+									</br> Expandir o aprender é o que nos move.</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					
-					<div class="proposta-columns">
-						<!-- Coluna Esquerda -->
-						<div class="proposta-col">
-							<p>Acreditamos que a Educação é o caminho para que cada estudante alcance seu melhor.</p>
-							<p>Por isso, Moderna Core integra inteligência curricular, pessoas e tecnologia para tornar a aprendizagem mais efetiva, personalizada em um sistema de ensino orientado ao desenvolvimento contínuo.</p>
+					<!-- Slide 2 -->
+					<div class="proposta-slide" data-proposta-slide="1">
+						<div class="content-wrapper">
+							<h1 class="proposta-title" style="font-size: 1.9rem;">
+								<strong>UM ECOSSISTEMA COM PELE DE PAPEL E CORAÇÃO DIGITAL.</strong>
+							</h1>
+							
+							<div class="proposta-columns">
+								<!-- Coluna Esquerda -->
+								<div class="proposta-col">
+									<p>Moderna Core evolui a experiência de ensino ao unir excelência acadêmica e inteligência tecnológica em um ecossistema que já nasce integrado.</p>
+									<p>Na superfície, a pele de papel: o visível, a confiança do livro didático e o olhar humano que orienta cada etapa da aprendizagem.</p>
+								</div>
+								
+								<!-- Coluna Direita -->
+								<div class="proposta-col">
+									<p>Nos bastidores, o coração digital: o invisível que pulsa em silêncio, usando IA e dados para apoiar decisões, personalizar trajetórias e impulsionar resultados.</p>
+									<p>Tradição e inovação avançando juntas para que cada estudante alcance o seu melhor.</p>
+									<div class="proposta-bold">Moderna Core.
+									</br> Expandir o aprender é o que nos move.</div>
+								</div>
+							</div>
 						</div>
-						
-						<!-- Coluna Direita -->
-						<div class="proposta-col">
-							<p>Aqui, dados e tecnologia atuam como ferramentas para acompanhar a evolução real de cada estudante, permitindo identificar oportunidades, apoiar decisões e impulsionar seu potencial de forma consistente.</p>
-							<div class="proposta-bold">Moderna Core.
-              </br> Expandir o aprender é o que nos move.</div>
+					</div>
+					
+					<!-- Controles -->
+					<div class="proposta-slider-controls">
+						<button type="button" class="proposta-slider-arrow proposta-slider-prev" aria-label="Anterior">‹</button>
+						<div class="proposta-slider-dots">
+							<button type="button" class="proposta-slider-dot active" data-proposta-dot="0" aria-label="Slide 1"></button>
+							<button type="button" class="proposta-slider-dot" data-proposta-dot="1" aria-label="Slide 2"></button>
 						</div>
+						<button type="button" class="proposta-slider-arrow proposta-slider-next" aria-label="Próximo">›</button>
 					</div>
 				</div>
 				
@@ -696,483 +799,41 @@
 						
 						window.addEventListener('scroll', animateLeques);
 						animateLeques();
+						
+						// Slider Proposta Pedagógica
+						var slider = section.querySelector('[data-proposta-slider]');
+						if (!slider) return;
+						var slides = slider.querySelectorAll('[data-proposta-slide]');
+						var dots = slider.querySelectorAll('[data-proposta-dot]');
+						var prevBtn = slider.querySelector('.proposta-slider-prev');
+						var nextBtn = slider.querySelector('.proposta-slider-next');
+						var slideCount = slides.length;
+						var currentIndex = 0;
+						
+						function goToSlide(index) {
+							currentIndex = Math.max(0, Math.min(index, slideCount - 1));
+							slides.forEach(function(s, i) {
+								s.classList.toggle('active', i === currentIndex);
+							});
+							dots.forEach(function(d, i) {
+								d.classList.toggle('active', i === currentIndex);
+							});
+							if (prevBtn) prevBtn.classList.toggle('disabled', currentIndex === 0);
+							if (nextBtn) nextBtn.classList.toggle('disabled', currentIndex === slideCount - 1);
+						}
+						
+						if (prevBtn) prevBtn.addEventListener('click', function() { goToSlide(currentIndex - 1); });
+						if (nextBtn) nextBtn.addEventListener('click', function() { goToSlide(currentIndex + 1); });
+						dots.forEach(function(d, i) {
+							d.addEventListener('click', function() { goToSlide(i); });
+						});
+						goToSlide(0);
 					})();
 				</script>
 				
 			</section>
 			<!-- ============================================ -->
 			<!-- BLOCO: PROPOSTA PEDAGOGICA - FIM -->
-			<!-- ============================================ -->
-			
-			<!-- ============================================ -->
-			<!-- BLOCO: PELO ESTUDANTE - INÍCIO -->
-			<!-- ============================================ -->
-			<section class="pelo-estudante" id="pelo_estudante">
-				
-				<!-- CSS do Bloco Pelo Estudante -->
-				<style>
-					/* ============================================ */
-					/* CSS - BLOCO PELO ESTUDANTE */
-					/* ============================================ */
-					
-					.pelo-estudante * {
-						margin: 0;
-						padding: 0;
-						box-sizing: border-box;
-					}
-					
-					.pelo-estudante {
-										font-family: 'GothamLight', 'Poppins', sans-serif;
-
-						background-color: #1a3a4a;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						overflow: hidden;
-						will-change: height;
-					}
-					
-					.pelo-estudante .content-wrapper {
-						max-width: 1200px;
-						margin: 0 auto;
-						padding: 0 24px;
-						width: 100%;
-					}
-					
-					/* Layout da frase */
-					.pelo-estudante-phrase {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						gap: 16px;
-						position: relative;
-					}
-					
-					.pelo-estudante-text {
-						font-size: 3.8rem;
-						font-weight: 300;
-						color: #ffffff;
-						white-space: nowrap;
-						line-height: 1;
-					}
-					
-					.pelo-estudante-text--bold {
-										font-family: 'GothamBold', 'Poppins', sans-serif;
-
-						font-weight: 700;
-					}
-					
-					/* Container das moedas */
-					.pelo-estudante-coins {
-						position: relative;
-						width: 150px;
-    					height: 100px;
-						flex-shrink: 0;
-					}
-					
-					.pelo-estudante-coin {
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%, -50%);
-						height: 120px;
-						width: auto;
-						object-fit: contain;
-						transition: opacity 0.1s linear;
-					}
-					
-					.pelo-estudante-coin--1 {
-						opacity: 1;
-					}
-					
-					.pelo-estudante-coin--2 {
-						opacity: 1;
-					}
-					
-					/* Frases alternativas */
-					.pelo-estudante-state {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						gap: 16px;
-						position: absolute;
-						top: 0;
-						left: 0;
-						width: 100%;
-						height: 100%;
-					}
-					
-					.pelo-estudante-state--1 {
-						opacity: 1;
-					}
-					
-					.pelo-estudante-state--2 {
-						opacity: 0;
-					}
-					
-					.pelo-estudante-state--2 .pelo-estudante-text {
-						font-size: 3.2rem;
-					}
-					
-					/* Media Queries - Tablets */
-					@media (max-width: 991.98px) {
-						.pelo-estudante-text,
-						.pelo-estudante-state--2 .pelo-estudante-text {
-							font-size: 2rem;
-						}
-						
-						.pelo-estudante-coins {
-							width: 80px;
-							height: 70px;
-						}
-						
-						.pelo-estudante-coin {
-							height: 60px;
-						}
-					}
-					
-					/* Media Queries - Mobile */
-					@media (max-width: 767.98px) {
-						.pelo-estudante-text, .pelo-estudante-state--2 .pelo-estudante-text {
-							font-size: 1.3rem;
-						}
-						
-						.pelo-estudante-coins {
-							width: 50px;
-							height: 50px;
-						}
-						
-						.pelo-estudante-coin {
-							height: 40px;
-						}
-						
-						.pelo-estudante-phrase {
-							gap: 8px;
-						}
-					}
-				</style>
-				
-				<!-- HTML do Bloco Pelo Estudante -->
-				<div class="content-wrapper">
-					<div class="pelo-estudante-phrase">
-						<!-- State 1: TODOS PELO [moeda] ESTUDANTE. -->
-						<div class="pelo-estudante-state pelo-estudante-state--1">
-							<span class="pelo-estudante-text">TODOS PELO</span>
-							<div class="pelo-estudante-coins">
-								<img class="pelo-estudante-coin pelo-estudante-coin--1" src="public/images/moedas.png" alt="">
-							</div>
-							<span class="pelo-estudante-text pelo-estudante-text--bold">ESTUDANTE.</span>
-						</div>
-						
-						<!-- State 2: TUDO PELA SUA [moeda] EVOLUÇÃO. -->
-						<div class="pelo-estudante-state pelo-estudante-state--2">
-							<span class="pelo-estudante-text">TUDO PELA SUA</span>
-							<div class="pelo-estudante-coins">
-								<img class="pelo-estudante-coin pelo-estudante-coin--2" src="public/images/moeda.png" alt="">
-							</div>
-							<span class="pelo-estudante-text pelo-estudante-text--bold">EVOLUÇÃO.</span>
-						</div>
-					</div>
-				</div>
-				
-				<!-- JavaScript do Bloco Pelo Estudante -->
-				<script>
-					(function() {
-						'use strict';
-						
-						var section = document.getElementById('pelo_estudante');
-						var state1 = section.querySelector('.pelo-estudante-state--1');
-						var state2 = section.querySelector('.pelo-estudante-state--2');
-						
-						var maxHeight = 500;
-						var minHeight = 200;
-						section.style.height = maxHeight + 'px';
-						
-						function animatePeloEstudante() {
-							var rect = section.getBoundingClientRect();
-							var windowH = window.innerHeight;
-							
-							// Progress: 0 quando seção entra, 1 quando já passou bastante
-							var start = windowH;
-							var end = -rect.height * 0.5;
-							var progress = (start - rect.top) / (start - end);
-							progress = Math.max(0, Math.min(1, progress));
-							
-							// Altura diminui conforme scrolla
-							var currentHeight = maxHeight - (progress * (maxHeight - minHeight));
-							section.style.height = currentHeight + 'px';
-							
-							// Transição entre states: 0→0.5 = state1, 0.5→1 = state2
-							var swapPoint = 0.45;
-							
-							if (progress < swapPoint) {
-								// State 1 visível
-								var state1Opacity = 1;
-								state1.style.opacity = state1Opacity;
-								state2.style.opacity = 0;
-							} else {
-								// State 2 aparece
-								var fadeProgress = Math.min(1, (progress - swapPoint) / 0.2);
-								state1.style.opacity = 1 - fadeProgress;
-								state2.style.opacity = fadeProgress;
-							}
-						}
-						
-						window.addEventListener('scroll', animatePeloEstudante);
-						animatePeloEstudante();
-					})();
-				</script>
-				
-			</section>
-			<!-- ============================================ -->
-			<!-- BLOCO: PELO ESTUDANTE - FIM -->
-			<!-- ============================================ -->
-			
-			<!-- ============================================ -->
-			<!-- BLOCO: ACOMPANHAMENTO ESTRATEGICO - INÍCIO -->
-			<!-- ============================================ -->
-			<section class="acompanhamento-estrategico" id="acompanhamento_estrategico">
-				
-				<!-- CSS do Bloco Acompanhamento Estrategico -->
-				<style>
-					/* ============================================ */
-					/* CSS - BLOCO ACOMPANHAMENTO ESTRATEGICO */
-					/* ============================================ */
-					
-					/* Reset e estilos globais para acompanhamento estrategico */
-					.acompanhamento-estrategico * {
-						margin: 0;
-						padding: 0;
-						box-sizing: border-box;
-					}
-					
-					/* Container principal */
-					.acompanhamento-estrategico {
-										font-family: 'GothamLight', 'Poppins', sans-serif;
-
-						color: #1a3a4a;
-						height: 90vh;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						background: linear-gradient(135deg, #ffffff 0%, #fff5f0 30%, #ffe5d4 70%, #ffdcc4 100%);
-						padding: 80px 0;
-						position: relative;
-						overflow: hidden;
-					}
-					
-					/* Wrapper de conteúdo */
-					.acompanhamento-estrategico .content-wrapper {
-						max-width: 1200px;
-						margin: 0 auto;
-						padding: 0 24px;
-						width: 100%;
-						position: relative;
-						z-index: 2;
-					}
-					
-					/* Elementos decorativos laranja */
-					.estrategico-element {
-						position: absolute;
-						top: 50%;
-						left: 60%;
-						height: 100%;
-						width: auto;
-						z-index: 3;
-						pointer-events: none;
-						will-change: transform;
-					}
-					
-					.estrategico-element--dir {
-						transform: translate(-30%, -50%);
-					}
-					
-					.estrategico-element--esq {
-						transform: translate(-70%, -50%);
-					}
-					
-					/* Container do conteúdo */
-					.acompanhamento-estrategico .acompanhamento-content {
-						display: flex;
-						flex-direction: column;
-						align-items: center;
-						text-align: center;
-						gap: 32px;
-					}
-					
-					/* Texto principal */
-					.acompanhamento-estrategico .acompanhamento-text {
-						font-size: 1.50rem;
-						line-height: 1.8;
-						color: #1a3a4a;
-						font-weight: 400;
-						max-width: 750px;
-					}
-					
-					.acompanhamento-estrategico .acompanhamento-text strong {
-						font-weight: 700;
-						color: #1a3a4a;
-										font-family: 'GothamBold', 'Poppins', sans-serif;
-
-					}
-					
-					/* Botão */
-					.acompanhamento-estrategico .btn-escola-parceira {
-										font-family: 'GothamLight', 'Poppins', sans-serif;
-
-						display: inline-block;
-						background-color: #e86c3a;
-						color: #ffffff;
-						font-size: 1rem;
-						font-weight: 500;
-						letter-spacing: 1.5px;
-						text-transform: uppercase;
-						padding: 10px 30px;
-						border: none;
-						border-radius: 50px;
-						text-decoration: none;
-						transition: background-color 0.3s ease, transform 0.2s ease;
-						width: fit-content;
-						opacity: 0;
-					}
-					
-					.acompanhamento-estrategico .btn-escola-parceira:hover {
-						background-color: #d45a2a;
-						color: #ffffff;
-						transform: translateY(-2px);
-					}
-
-					/* zoom 100% pra cima */
-					@media (min-resolution: 1.50dppx) {	
-						.estrategico-element {
-							height: 120%;
-						}
-					}
-					
-					/* Media Queries - Tablets */
-					@media (max-width: 991.98px) {
-						.acompanhamento-estrategico {
-							padding: 60px 0;
-							height: auto;
-    						min-height: 400px;
-						}
-						
-						.acompanhamento-estrategico .acompanhamento-text {
-							font-size: 1.1rem;
-						}
-						
-						.acompanhamento-estrategico .acompanhamento-content {
-							gap: 28px;
-						}
-						
-						.estrategico-element {
-							display: none;
-						}
-						
-						.acompanhamento-estrategico .btn-escola-parceira {
-							opacity: 1;
-						}
-					}
-					
-					/* Media Queries - Mobile */
-					@media (max-width: 767.98px) {
-						.acompanhamento-estrategico {
-							padding: 48px 0;
-							min-height: auto;
-						}
-						
-						.acompanhamento-estrategico .acompanhamento-text {
-							font-size: 1rem;
-							line-height: 1.6;
-						}
-						
-						.acompanhamento-estrategico .acompanhamento-content {
-							gap: 24px;
-						}
-						
-						.acompanhamento-estrategico .btn-escola-parceira {
-							font-size: 0.85rem;
-							padding: 8px 24px;
-						}
-					}
-				</style>
-				
-				<!-- Elementos decorativos laranja -->
-				<img
-					class="estrategico-element estrategico-element--esq"
-					src="public/images/ESTRATEGICO-Laranja-Esq.png"
-					alt=""
-				>
-				<img
-					class="estrategico-element estrategico-element--dir"
-					src="public/images/ESTRATEGICO-Laranja-Dir.png"
-					alt=""
-				>
-				
-				<!-- HTML do Bloco Acompanhamento Estrategico -->
-				<div class="content-wrapper">
-					<div class="acompanhamento-content">
-						<p class="acompanhamento-text">
-							Em todas as etapas, a comunidade escolar – <strong>dos estudantes e suas famílias aos gestores e professores</strong> – conta com o acompanhamento estratégico da nossa equipe de consultores de sucesso do cliente e especialistas.
-						</p>
-						<a href="#" class="btn-escola-parceira">CONHEÇA NOSSA SOLUÇÃO</a>
-					</div>
-				</div>
-				
-				<!-- JavaScript do Bloco Acompanhamento Estrategico -->
-				<script>
-					(function() {
-						'use strict';
-						
-						var section = document.getElementById('acompanhamento_estrategico');
-						var elEsq = section.querySelector('.estrategico-element--esq');
-						var elDir = section.querySelector('.estrategico-element--dir');
-						var btnSolucao = section.querySelector('.btn-escola-parceira');
-						
-						function animateEstrategico() {
-							if (window.innerWidth <= 991) return;
-							
-							var rect = section.getBoundingClientRect();
-							var windowH = window.innerHeight;
-							var sectionCenter = rect.top + rect.height / 2;
-							var viewportCenter = windowH / 2;
-							
-							// Progress: 0 quando seção entra na viewport, 1 quando o topo da seção sai pela viewport
-							var start = windowH; // rect.top quando seção aparece embaixo
-							var end = -rect.height * 0.3; // rect.top quando já passou bastante
-							var progress = (start - rect.top) / (start - end);
-							progress = Math.max(0, Math.min(1, progress));
-							
-							// Steps 1-3: elementos se abrem (progress 0 → 0.75)
-							var openProgress = Math.min(1, progress / 0.75);
-							
-							// Deslocamento diagonal máximo (reduzido para manter elementos visíveis)
-							var maxOffsetX = 35;  // % horizontal
-							var maxOffsetY = 25;   // % vertical
-							
-							var offsetX = openProgress * maxOffsetX;
-							var offsetY = openProgress * maxOffsetY;
-							
-							// Dir vai pra right e top (diagonal ↗) - mais escondido
-							var dirOffsetX = openProgress * 50;
-							elDir.style.transform = 'translate(calc(-30% + ' + dirOffsetX + '%), calc(-50% - ' + offsetY + '%))';
-							
-							// Esq vai pra left e bottom (diagonal ↙)
-							elEsq.style.transform = 'translate(calc(-70% - ' + offsetX + '%), calc(-50% + ' + offsetY + '%))';
-							
-							// Step 4: botão aparece (progress 0.75 → 1)
-							var btnProgress = Math.max(0, (progress - 0.45) / 0.25);
-							btnSolucao.style.opacity = btnProgress;
-						}
-						
-						window.addEventListener('scroll', animateEstrategico);
-						animateEstrategico();
-					})();
-				</script>
-				
-			</section>
-			<!-- ============================================ -->
-			<!-- BLOCO: ACOMPANHAMENTO ESTRATEGICO - FIM -->
 			<!-- ============================================ -->
 			
 			<!-- ============================================ -->
@@ -2416,6 +2077,478 @@
 			<!-- ============================================ -->
 			<!-- BLOCO: IMPACTO PARA TODOS - FIM -->
 			<!-- ============================================ -->
+
+			<!-- ============================================ -->
+			<!-- BLOCO: PELO ESTUDANTE - INÍCIO -->
+			<!-- ============================================ -->
+			<section class="pelo-estudante" id="pelo_estudante">
+				
+				<!-- CSS do Bloco Pelo Estudante -->
+				<style>
+					/* ============================================ */
+					/* CSS - BLOCO PELO ESTUDANTE */
+					/* ============================================ */
+					
+					.pelo-estudante * {
+						margin: 0;
+						padding: 0;
+						box-sizing: border-box;
+					}
+					
+					.pelo-estudante {
+										font-family: 'GothamLight', 'Poppins', sans-serif;
+
+						background-color: #1a3a4a;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						overflow: hidden;
+						will-change: height;
+					}
+					
+					.pelo-estudante .content-wrapper {
+						max-width: 1200px;
+						margin: 0 auto;
+						padding: 0 24px;
+						width: 100%;
+					}
+					
+					/* Layout da frase */
+					.pelo-estudante-phrase {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						gap: 16px;
+						position: relative;
+					}
+					
+					.pelo-estudante-text {
+						font-size: 3.8rem;
+						font-weight: 300;
+						color: #ffffff;
+						white-space: nowrap;
+						line-height: 1;
+					}
+					
+					.pelo-estudante-text--bold {
+										font-family: 'GothamBold', 'Poppins', sans-serif;
+
+						font-weight: 700;
+					}
+					
+					/* Container das moedas */
+					.pelo-estudante-coins {
+						position: relative;
+						width: 150px;
+    					height: 100px;
+						flex-shrink: 0;
+					}
+					
+					.pelo-estudante-coin {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						height: 120px;
+						width: auto;
+						object-fit: contain;
+						transition: opacity 0.1s linear;
+					}
+					
+					.pelo-estudante-coin--1 {
+						opacity: 1;
+					}
+					
+					.pelo-estudante-coin--2 {
+						opacity: 1;
+					}
+					
+					/* Frases alternativas */
+					.pelo-estudante-state {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						gap: 16px;
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+					}
+					
+					.pelo-estudante-state--1 {
+						opacity: 1;
+					}
+					
+					.pelo-estudante-state--2 {
+						opacity: 0;
+					}
+					
+					.pelo-estudante-state--2 .pelo-estudante-text {
+						font-size: 3.2rem;
+					}
+					
+					/* Media Queries - Tablets */
+					@media (max-width: 991.98px) {
+						.pelo-estudante-text,
+						.pelo-estudante-state--2 .pelo-estudante-text {
+							font-size: 2rem;
+						}
+						
+						.pelo-estudante-coins {
+							width: 80px;
+							height: 70px;
+						}
+						
+						.pelo-estudante-coin {
+							height: 60px;
+						}
+					}
+					
+					/* Media Queries - Mobile */
+					@media (max-width: 767.98px) {
+						.pelo-estudante-text, .pelo-estudante-state--2 .pelo-estudante-text {
+							font-size: 1.3rem;
+						}
+						
+						.pelo-estudante-coins {
+							width: 50px;
+							height: 50px;
+						}
+						
+						.pelo-estudante-coin {
+							height: 40px;
+						}
+						
+						.pelo-estudante-phrase {
+							gap: 8px;
+						}
+					}
+				</style>
+				
+				<!-- HTML do Bloco Pelo Estudante -->
+				<div class="content-wrapper">
+					<div class="pelo-estudante-phrase">
+						<!-- State 1: TODOS PELO [moeda] ESTUDANTE. -->
+						<div class="pelo-estudante-state pelo-estudante-state--1">
+							<span class="pelo-estudante-text">TODOS PELO</span>
+							<div class="pelo-estudante-coins">
+								<img class="pelo-estudante-coin pelo-estudante-coin--1" src="public/images/moedas.png" alt="">
+							</div>
+							<span class="pelo-estudante-text pelo-estudante-text--bold">ESTUDANTE.</span>
+						</div>
+						
+						<!-- State 2: TUDO PELA SUA [moeda] EVOLUÇÃO. -->
+						<div class="pelo-estudante-state pelo-estudante-state--2">
+							<span class="pelo-estudante-text">TUDO PELA SUA</span>
+							<div class="pelo-estudante-coins">
+								<img class="pelo-estudante-coin pelo-estudante-coin--2" src="public/images/moeda.png" alt="">
+							</div>
+							<span class="pelo-estudante-text pelo-estudante-text--bold">EVOLUÇÃO.</span>
+						</div>
+					</div>
+				</div>
+				
+				<!-- JavaScript do Bloco Pelo Estudante -->
+				<script>
+					(function() {
+						'use strict';
+						
+						var section = document.getElementById('pelo_estudante');
+						var state1 = section.querySelector('.pelo-estudante-state--1');
+						var state2 = section.querySelector('.pelo-estudante-state--2');
+						
+						var maxHeight = 500;
+						var minHeight = 200;
+						section.style.height = maxHeight + 'px';
+						
+						function animatePeloEstudante() {
+							var rect = section.getBoundingClientRect();
+							var windowH = window.innerHeight;
+							
+							// Progress: 0 quando seção entra, 1 quando já passou bastante
+							var start = windowH;
+							var end = -rect.height * 0.5;
+							var progress = (start - rect.top) / (start - end);
+							progress = Math.max(0, Math.min(1, progress));
+							
+							// Altura diminui conforme scrolla
+							var currentHeight = maxHeight - (progress * (maxHeight - minHeight));
+							section.style.height = currentHeight + 'px';
+							
+							// Transição entre states: 0→0.5 = state1, 0.5→1 = state2
+							var swapPoint = 0.45;
+							
+							if (progress < swapPoint) {
+								// State 1 visível
+								var state1Opacity = 1;
+								state1.style.opacity = state1Opacity;
+								state2.style.opacity = 0;
+							} else {
+								// State 2 aparece
+								var fadeProgress = Math.min(1, (progress - swapPoint) / 0.2);
+								state1.style.opacity = 1 - fadeProgress;
+								state2.style.opacity = fadeProgress;
+							}
+						}
+						
+						window.addEventListener('scroll', animatePeloEstudante);
+						animatePeloEstudante();
+					})();
+				</script>
+				
+			</section>
+			<!-- ============================================ -->
+			<!-- BLOCO: PELO ESTUDANTE - FIM -->
+			<!-- ============================================ -->
+			
+			<!-- ============================================ -->
+			<!-- BLOCO: ACOMPANHAMENTO ESTRATEGICO - INÍCIO -->
+			<!-- ============================================ -->
+			<section class="acompanhamento-estrategico" id="acompanhamento_estrategico">
+				
+				<!-- CSS do Bloco Acompanhamento Estrategico -->
+				<style>
+					/* ============================================ */
+					/* CSS - BLOCO ACOMPANHAMENTO ESTRATEGICO */
+					/* ============================================ */
+					
+					/* Reset e estilos globais para acompanhamento estrategico */
+					.acompanhamento-estrategico * {
+						margin: 0;
+						padding: 0;
+						box-sizing: border-box;
+					}
+					
+					/* Container principal */
+					.acompanhamento-estrategico {
+										font-family: 'GothamLight', 'Poppins', sans-serif;
+
+						color: #1a3a4a;
+						height: 90vh;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						background: linear-gradient(135deg, #ffffff 0%, #fff5f0 30%, #ffe5d4 70%, #ffdcc4 100%);
+						padding: 80px 0;
+						position: relative;
+						overflow: hidden;
+					}
+					
+					/* Wrapper de conteúdo */
+					.acompanhamento-estrategico .content-wrapper {
+						max-width: 1200px;
+						margin: 0 auto;
+						padding: 0 24px;
+						width: 100%;
+						position: relative;
+						z-index: 2;
+					}
+					
+					/* Elementos decorativos laranja */
+					.estrategico-element {
+						position: absolute;
+						top: 50%;
+						left: 60%;
+						height: 100%;
+						width: auto;
+						z-index: 3;
+						pointer-events: none;
+						will-change: transform;
+					}
+					
+					.estrategico-element--dir {
+						transform: translate(-30%, -50%);
+					}
+					
+					.estrategico-element--esq {
+						transform: translate(-70%, -50%);
+					}
+					
+					/* Container do conteúdo */
+					.acompanhamento-estrategico .acompanhamento-content {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						text-align: center;
+						gap: 32px;
+					}
+					
+					/* Texto principal */
+					.acompanhamento-estrategico .acompanhamento-text {
+						font-size: 1.50rem;
+						line-height: 1.8;
+						color: #1a3a4a;
+						font-weight: 400;
+						max-width: 750px;
+					}
+					
+					.acompanhamento-estrategico .acompanhamento-text strong {
+						font-weight: 700;
+						color: #1a3a4a;
+										font-family: 'GothamBold', 'Poppins', sans-serif;
+
+					}
+					
+					/* Botão */
+					.acompanhamento-estrategico .btn-escola-parceira {
+										font-family: 'GothamLight', 'Poppins', sans-serif;
+
+						display: inline-block;
+						background-color: #e86c3a;
+						color: #ffffff;
+						font-size: 1rem;
+						font-weight: 500;
+						letter-spacing: 1.5px;
+						text-transform: uppercase;
+						padding: 10px 30px;
+						border: none;
+						border-radius: 50px;
+						text-decoration: none;
+						transition: background-color 0.3s ease, transform 0.2s ease;
+						width: fit-content;
+						opacity: 0;
+					}
+					
+					.acompanhamento-estrategico .btn-escola-parceira:hover {
+						background-color: #d45a2a;
+						color: #ffffff;
+						transform: translateY(-2px);
+					}
+
+					/* zoom 100% pra cima */
+					@media (min-resolution: 1.50dppx) {	
+						.estrategico-element {
+							height: 120%;
+						}
+					}
+					
+					/* Media Queries - Tablets */
+					@media (max-width: 991.98px) {
+						.acompanhamento-estrategico {
+							padding: 60px 0;
+							height: auto;
+    						min-height: 400px;
+						}
+						
+						.acompanhamento-estrategico .acompanhamento-text {
+							font-size: 1.1rem;
+						}
+						
+						.acompanhamento-estrategico .acompanhamento-content {
+							gap: 28px;
+						}
+						
+						.estrategico-element {
+							display: none;
+						}
+						
+						.acompanhamento-estrategico .btn-escola-parceira {
+							opacity: 1;
+						}
+					}
+					
+					/* Media Queries - Mobile */
+					@media (max-width: 767.98px) {
+						.acompanhamento-estrategico {
+							padding: 48px 0;
+							min-height: auto;
+						}
+						
+						.acompanhamento-estrategico .acompanhamento-text {
+							font-size: 1rem;
+							line-height: 1.6;
+						}
+						
+						.acompanhamento-estrategico .acompanhamento-content {
+							gap: 24px;
+						}
+						
+						.acompanhamento-estrategico .btn-escola-parceira {
+							font-size: 0.85rem;
+							padding: 8px 24px;
+						}
+					}
+				</style>
+				
+				<!-- Elementos decorativos laranja -->
+				<img
+					class="estrategico-element estrategico-element--esq"
+					src="public/images/ESTRATEGICO-Laranja-Esq.png"
+					alt=""
+				>
+				<img
+					class="estrategico-element estrategico-element--dir"
+					src="public/images/ESTRATEGICO-Laranja-Dir.png"
+					alt=""
+				>
+				
+				<!-- HTML do Bloco Acompanhamento Estrategico -->
+				<div class="content-wrapper">
+					<div class="acompanhamento-content">
+						<p class="acompanhamento-text">
+							Em todas as etapas, a comunidade escolar – <strong>dos estudantes e suas famílias aos gestores e professores</strong> – conta com o acompanhamento estratégico da nossa equipe de consultores de sucesso do cliente e especialistas.
+						</p>
+						<a href="razoes-para-acreditar.html" class="btn-escola-parceira">CONHEÇA NOSSA SOLUÇÃO</a>
+					</div>
+				</div>
+				
+				<!-- JavaScript do Bloco Acompanhamento Estrategico -->
+				<script>
+					(function() {
+						'use strict';
+						
+						var section = document.getElementById('acompanhamento_estrategico');
+						var elEsq = section.querySelector('.estrategico-element--esq');
+						var elDir = section.querySelector('.estrategico-element--dir');
+						var btnSolucao = section.querySelector('.btn-escola-parceira');
+						
+						function animateEstrategico() {
+							if (window.innerWidth <= 991) return;
+							
+							var rect = section.getBoundingClientRect();
+							var windowH = window.innerHeight;
+							var sectionCenter = rect.top + rect.height / 2;
+							var viewportCenter = windowH / 2;
+							
+							// Progress: 0 quando seção entra na viewport, 1 quando o topo da seção sai pela viewport
+							var start = windowH; // rect.top quando seção aparece embaixo
+							var end = -rect.height * 0.3; // rect.top quando já passou bastante
+							var progress = (start - rect.top) / (start - end);
+							progress = Math.max(0, Math.min(1, progress));
+							
+							// Steps 1-3: elementos se abrem (progress 0 → 0.75)
+							var openProgress = Math.min(1, progress / 0.75);
+							
+							// Deslocamento diagonal máximo (reduzido para manter elementos visíveis)
+							var maxOffsetX = 35;  // % horizontal
+							var maxOffsetY = 25;   // % vertical
+							
+							var offsetX = openProgress * maxOffsetX;
+							var offsetY = openProgress * maxOffsetY;
+							
+							// Dir vai pra right e top (diagonal ↗) - mais escondido
+							var dirOffsetX = openProgress * 50;
+							elDir.style.transform = 'translate(calc(-30% + ' + dirOffsetX + '%), calc(-50% - ' + offsetY + '%))';
+							
+							// Esq vai pra left e bottom (diagonal ↙)
+							elEsq.style.transform = 'translate(calc(-70% - ' + offsetX + '%), calc(-50% + ' + offsetY + '%))';
+							
+							// Step 4: botão aparece (progress 0.75 → 1)
+							var btnProgress = Math.max(0, (progress - 0.45) / 0.25);
+							btnSolucao.style.opacity = btnProgress;
+						}
+						
+						window.addEventListener('scroll', animateEstrategico);
+						animateEstrategico();
+					})();
+				</script>
+				
+			</section>
+			<!-- ============================================ -->
+			<!-- BLOCO: ACOMPANHAMENTO ESTRATEGICO - FIM -->
+			<!-- ============================================ -->
+			
 			
 			<!-- ============================================ -->
 			<!-- BLOCO: JORNADA INTEGRADA - INÍCIO -->
@@ -2930,11 +3063,7 @@
 			#rd-button-mmt7s7cl.bricks--component-button {
     height: 38px !important;
     font-size: 1.2rem !important; }
-	#rd-form-mmt7s7ci .bricks-form__static {
-    
-    font-size: 14px !important;
-    line-height: 16px !important;
-	}
+
 
 			.modal-parceira-box {
 				position: relative;
