@@ -1474,8 +1474,17 @@
 					mobileItems.forEach(function (item) {
 						var trigger = item.querySelector('.nsc-mobile-trigger');
 						trigger.addEventListener('click', function () {
-							item.classList.toggle('is-open');
-							trigger.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
+							var isCurrentlyOpen = item.classList.contains('is-open');
+							// Fechar todos os demais (accordion: só um ativo por vez)
+							mobileItems.forEach(function (other) {
+								other.classList.remove('is-open');
+								var otherTrigger = other.querySelector('.nsc-mobile-trigger');
+								if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+							});
+							if (!isCurrentlyOpen) {
+								item.classList.add('is-open');
+								trigger.setAttribute('aria-expanded', 'true');
+							}
 						});
 					});
 					})();
