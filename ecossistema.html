@@ -321,6 +321,8 @@
             .ecossistema-hero {
               min-height: auto;
               padding: 100px 0 0;
+              flex-direction: column;
+              align-items: center;
             }
 
             .ecossistema-hero .hero-inner {
@@ -331,6 +333,7 @@
             .ecossistema-hero .hero-text {
               max-width: 620px;
               padding: 34px 0 22px;
+              margin-top: -170px;
             }
 
             .ecossistema-hero .hero-text h1 {
@@ -339,20 +342,28 @@
 
             .ecossistema-hero .hero-media {
               position: static;
-              width: 100%;
-              height: auto;
-              margin: 10px auto 0;
-              max-width: 560px;
+        width: 140%;
+        height: auto;
+        margin: 0 0 10px;
+        max-width: 560px;
+        order: 0;
+            }
+
+            .ecossistema-hero .content-wrapper {
+              order: 1;
             }
 
             .ecossistema-hero .hero-child {
               height: auto;
+              top: -140px;
+        right: -20px;
             }
           }
 
           @media (max-width: 575.98px) {
             .ecossistema-hero .hero-text h1 {
-              font-size: 1.7rem;
+              font-size: 2rem;
+              text-align: center;
             }
           }
         </style>
@@ -888,10 +899,37 @@
               min-height: 0;
             }
 
+            .ecossistema-evolucao .pillars-col {
+              width: 100%;
+            }
+
+            .ecossistema-evolucao .pillars-col .gradient-box {
+              width: 100%;
+              align-items: center;
+              text-align: center;
+              padding-left: 18px;
+              padding-right: 18px;
+            }
+
+            .ecossistema-evolucao .pillars-col .gradient-box h5,
+            .ecossistema-evolucao .pillars-col .gradient-box p {
+              text-align: center;
+            }
+
             .ecossistema-evolucao .gradient-box {
-              width: min(446px, 100%);
+              width: 100%;
               height: auto;
               min-height: 156px;
+            }
+
+            .ecossistema-evolucao .gradient-box h5 {
+              font-size: 1.6rem;
+              line-height: 1.6rem;
+            }
+
+            .ecossistema-evolucao .gradient-box p {
+              font-size: 1.6rem;
+              line-height: 1.2;
             }
 
             .ecossistema-evolucao .pillars-left {
@@ -916,6 +954,10 @@
               bottom: -120px;
               width: 160%;
               opacity: 0.85;
+            }
+
+            .ecossistema-tecnologia .gradient-card {
+              border-radius: 90px !important;
             }
           }
         </style>
